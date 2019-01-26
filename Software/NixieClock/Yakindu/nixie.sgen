@@ -1,0 +1,11 @@
+GeneratorModel for yakindu::c {
+
+	statechart nixie {
+
+		feature Outlet {
+			targetProject = "NixieClock"
+			targetFolder = "Yakindu/src-gen"
+			libraryTargetFolder = "Yakindu/src"
+		}
+	}
+}
