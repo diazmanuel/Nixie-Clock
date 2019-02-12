@@ -90,6 +90,7 @@ osMessageQId Q_ButtonsHandle;
 osSemaphoreId S_AlarmHandle;
 osSemaphoreId S_SensorHandle;
 /* USER CODE BEGIN PV */
+uint8_t buttonFlag[3]={0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -111,7 +112,53 @@ void StartAlarmTask(void const * argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+uint8_t event(){
+	uint8_t aux=0;
+	static uint8_t start[3]={1,1,1};
+	if((HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin))==GPIO_PIN_RESET){
+		if(!buttonFlag[E_B1-1]){
+			aux=E_B1;
+			if(start[E_B1-1]){
+				buttonFlag[E_B1-1]=10;
+				start[E_B1-1]=0;
+			}else{
+				buttonFlag[E_B1-1]=1;
+			}
+		}
+	}else{
+		buttonFlag[E_B1-1]=0;
+		start[E_B1-1]=1;
+	}
+	if((HAL_GPIO_ReadPin(B2_GPIO_Port,B2_Pin))==GPIO_PIN_RESET){
+		if(!buttonFlag[E_B2-1]){
+			aux=E_B2;
+			if(start[E_B2-1]){
+				buttonFlag[E_B2-1]=10;
+				start[E_B2-1]=0;
+			}else{
+				buttonFlag[E_B2-1]=1;
+			}
+		}
+	}else{
+		buttonFlag[E_B2-1]=0;
+		start[E_B2-1]=1;
+	}
+	if((HAL_GPIO_ReadPin(B3_GPIO_Port,B3_Pin))==GPIO_PIN_RESET){
+		if(!buttonFlag[E_B3-1]){
+			aux=E_B3;
+			if(start[E_B3-1]){
+				buttonFlag[E_B3-1]=10;
+				start[E_B3-1]=0;
+			}else{
+				buttonFlag[E_B3-1]=1;
+			}
+		}
+	}else{
+		buttonFlag[E_B3-1]=0;
+		start[E_B3-1]=1;
+	}
+	return aux;
+}
 /* USER CODE END 0 */
 
 /**
@@ -484,17 +531,23 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Alarm_Pin Sensor_Pin */
-  GPIO_InitStruct.Pin = Alarm_Pin|Sensor_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  /*Configure GPIO pin : Alarm_Pin */
+  GPIO_InitStruct.Pin = Alarm_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(Alarm_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : B1_Pin B2_Pin B3_Pin */
   GPIO_InitStruct.Pin = B1_Pin|B2_Pin|B3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Sensor_Pin */
+  GPIO_InitStruct.Pin = Sensor_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(Sensor_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : Nixie_LP_Pin Nixie_DP_Pin Nixie_0_Pin Nixie_9_Pin 
                            Nixie_8_Pin Nixie_7_Pin Nixie_6_Pin NixieCrl_1_Pin 
@@ -546,23 +599,16 @@ void StartPullingTask(void const * argument)
 {
 
   /* USER CODE BEGIN 5 */
+
   /* Infinite loop */
 	uint8_t aux=0;
   for(;;)
   {
-	  if((HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_2))==GPIO_PIN_RESET){
-		  aux=E_B1;
-		  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
+	  aux=event();
+	  if(aux){
+	  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
 	  }
-	  if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_3)==GPIO_PIN_RESET){
-		  aux=E_B2;
-		  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
-	  }
-	  if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_4)==GPIO_PIN_RESET){
-		  aux=E_B3;
-		  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
-	  }
-    osDelay(150);
+    osDelay(100);
   }
   /* USER CODE END 5 */ 
 }
@@ -636,7 +682,7 @@ void StartAlarmTask(void const * argument)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
-	static uint8_t aux=0;
+	static uint8_t aux=0,aux2=0;
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1) {
     HAL_IncTick();
@@ -649,9 +695,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	 if (!aux){
 		getRTC(&hi2c2);
 	 }
-	 nixieDisplay();
+	 if(!aux2){
+			if(buttonFlag[E_B1-1]){
+				buttonFlag[E_B1-1]--;
+			}
+			if(buttonFlag[E_B2-1]){
+				buttonFlag[E_B2-1]--;
+			}
+			if(buttonFlag[E_B3-1]){
+				buttonFlag[E_B3-1]--;
+			}
+	 }
+	 //nixieDisplay();
+	 segmentDisplay();
 	 nixieLed();
 	 aux++;
+	 aux2++;
+	 aux2%=100;
 	 aux%=250;
   }
   if (htim->Instance == TIM2){

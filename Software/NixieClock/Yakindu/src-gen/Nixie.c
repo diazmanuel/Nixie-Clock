@@ -96,12 +96,12 @@ static void exseq_t_MODE2_Sleep(Nixie* handle);
 static void exseq_t_MODE3_Alarm(Nixie* handle);
 static void exseq_t_Alarm_Alarm(Nixie* handle);
 static void react_t__choice_0(Nixie* handle);
-static void react_nixie_t__entry_Default(Nixie* handle);
-static void react_nixie_t_START_Configuration__entry_Default(Nixie* handle);
-static void react_nixie_t_MODE1_Awake__entry_Default(Nixie* handle);
-static void react_nixie_t_MODE2_Sleep__entry_Default(Nixie* handle);
-static void react_nixie_t_MODE3_Alarm__entry_Default(Nixie* handle);
-static void react_nixie_t_Alarm_Alarm__entry_Default(Nixie* handle);
+static void react_t__entry_Default(Nixie* handle);
+static void react_t_START_Configuration__entry_Default(Nixie* handle);
+static void react_t_MODE1_Awake__entry_Default(Nixie* handle);
+static void react_t_MODE2_Sleep__entry_Default(Nixie* handle);
+static void react_t_MODE3_Alarm__entry_Default(Nixie* handle);
+static void react_t_Alarm_Alarm__entry_Default(Nixie* handle);
 static sc_boolean react(Nixie* handle);
 static sc_boolean t_START_react(Nixie* handle, const sc_boolean try_transition);
 static sc_boolean t_START_Configuration_Config_react(Nixie* handle, const sc_boolean try_transition);
@@ -960,42 +960,42 @@ static void enseq_t_Alarm_Alarm_Alarm_OFF__default(Nixie* handle)
 static void enseq_t_default(Nixie* handle)
 {
 	/* 'default' enter sequence for region t */
-	react_nixie_t__entry_Default(handle);
+	react_t__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region Configuration */
 static void enseq_t_START_Configuration_default(Nixie* handle)
 {
 	/* 'default' enter sequence for region Configuration */
-	react_nixie_t_START_Configuration__entry_Default(handle);
+	react_t_START_Configuration__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region Awake */
 static void enseq_t_MODE1_Awake_default(Nixie* handle)
 {
 	/* 'default' enter sequence for region Awake */
-	react_nixie_t_MODE1_Awake__entry_Default(handle);
+	react_t_MODE1_Awake__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region Sleep */
 static void enseq_t_MODE2_Sleep_default(Nixie* handle)
 {
 	/* 'default' enter sequence for region Sleep */
-	react_nixie_t_MODE2_Sleep__entry_Default(handle);
+	react_t_MODE2_Sleep__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region Alarm */
 static void enseq_t_MODE3_Alarm_default(Nixie* handle)
 {
 	/* 'default' enter sequence for region Alarm */
-	react_nixie_t_MODE3_Alarm__entry_Default(handle);
+	react_t_MODE3_Alarm__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region Alarm */
 static void enseq_t_Alarm_Alarm_default(Nixie* handle)
 {
 	/* 'default' enter sequence for region Alarm */
-	react_nixie_t_Alarm_Alarm__entry_Default(handle);
+	react_t_Alarm_Alarm__entry_Default(handle);
 }
 
 /* Default exit sequence for state START */
@@ -1469,42 +1469,42 @@ static void react_t__choice_0(Nixie* handle)
 }
 
 /* Default react sequence for initial entry  */
-static void react_nixie_t__entry_Default(Nixie* handle)
+static void react_t__entry_Default(Nixie* handle)
 {
 	/* Default react sequence for initial entry  */
 	enseq_t_START_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void react_nixie_t_START_Configuration__entry_Default(Nixie* handle)
+static void react_t_START_Configuration__entry_Default(Nixie* handle)
 {
 	/* Default react sequence for initial entry  */
 	enseq_t_START_Configuration_Config_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void react_nixie_t_MODE1_Awake__entry_Default(Nixie* handle)
+static void react_t_MODE1_Awake__entry_Default(Nixie* handle)
 {
 	/* Default react sequence for initial entry  */
 	enseq_t_MODE1_Awake_Awake_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void react_nixie_t_MODE2_Sleep__entry_Default(Nixie* handle)
+static void react_t_MODE2_Sleep__entry_Default(Nixie* handle)
 {
 	/* Default react sequence for initial entry  */
 	enseq_t_MODE2_Sleep_Sleep_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void react_nixie_t_MODE3_Alarm__entry_Default(Nixie* handle)
+static void react_t_MODE3_Alarm__entry_Default(Nixie* handle)
 {
 	/* Default react sequence for initial entry  */
 	enseq_t_MODE3_Alarm_AlarmConfig_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void react_nixie_t_Alarm_Alarm__entry_Default(Nixie* handle)
+static void react_t_Alarm_Alarm__entry_Default(Nixie* handle)
 {
 	/* Default react sequence for initial entry  */
 	enseq_t_Alarm_Alarm_Alarm_ON__default(handle);
@@ -1631,7 +1631,7 @@ static sc_boolean t_START_Configuration_Year_react(Nixie* handle, const sc_boole
 				if (handle->iface.B_2_raised == bool_true)
 				{ 
 					exseq_t_START_Configuration_Year(handle);
-					nixieIface_increase(handle, NIXIE_NIXIEIFACE_B_DATE, NIXIE_NIXIEIFACE_YEAR);
+					nixieIface_increase(handle, NIXIE_NIXIEIFACE_B_DATE, NIXIE_NIXIEIFACE_DAY);
 					enseq_t_START_Configuration_Year_default(handle);
 				}  else
 				{
@@ -1688,7 +1688,7 @@ static sc_boolean t_START_Configuration_Day_react(Nixie* handle, const sc_boolea
 				if (handle->iface.B_2_raised == bool_true)
 				{ 
 					exseq_t_START_Configuration_Day(handle);
-					nixieIface_increase(handle, NIXIE_NIXIEIFACE_B_DATE, NIXIE_NIXIEIFACE_DAY);
+					nixieIface_increase(handle, NIXIE_NIXIEIFACE_B_DATE, NIXIE_NIXIEIFACE_YEAR);
 					enseq_t_START_Configuration_Day_default(handle);
 				}  else
 				{
@@ -1954,6 +1954,7 @@ static sc_boolean t_MODE3_Alarm_AlarmConfig_react(Nixie* handle, const sc_boolea
 			if (handle->iface.B_3_raised == bool_true)
 			{ 
 				exseq_t_MODE3_Alarm_AlarmConfig(handle);
+				nixieIface_show(handle, NIXIE_NIXIEIFACE_B_ALARM);
 				enseq_t_MODE3_Alarm_Hour_default(handle);
 			}  else
 			{
@@ -2011,6 +2012,7 @@ static sc_boolean t_MODE3_Alarm_Minute_react(Nixie* handle, const sc_boolean try
 			{ 
 				exseq_t_MODE3_Alarm_Minute(handle);
 				nixieIface_send(handle, NIXIE_NIXIEIFACE_ALARM);
+				nixieIface_show(handle, NIXIE_NIXIEIFACE_ALARM);
 				enseq_t_MODE3_Alarm_AlarmConfig_default(handle);
 			}  else
 			{
