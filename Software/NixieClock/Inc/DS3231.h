@@ -37,14 +37,20 @@
 #define D_TIME 0
 #define D_DATE 1
 #define D_ALARM 2
+
+#define DB_TIME 4
+#define DB_DATE 5
+#define DB_ALARM 6
+
+
 #define D_TEMP 3
 #define D_ALARM_STATE 4
-#define D_SECONDS 0
+#define D_SECONDS 2
 #define D_MINUTES 1
-#define D_HOURS 2
-#define D_DAY 0
+#define D_HOURS 0
+#define D_DAY 2
 #define D_MONTH 1
-#define D_YEAR 2
+#define D_YEAR 0
 
 #define ON 1
 #define OFF 0

@@ -29,9 +29,7 @@ htim1               0x40              Src/stm32f1xx_hal_timebase_tim.o
 pullingHandle       0x4               Src/main.o
 AlarmHandle         0x4               Src/main.o
 Q_ButtonsHandle     0x4               Src/main.o
-SensorHandle        0x4               Src/main.o
 htim2               0x40              Src/main.o
-S_SensorHandle      0x4               Src/main.o
 RTC_DATA            0x3e              Src/DS3231.o
 
 Discarded input sections
@@ -3148,9 +3146,9 @@ Discarded input sections
  .debug_macro   0x00000000      0x853 Src/freertos.o
  .debug_macro   0x00000000       0x1f Src/freertos.o
  .debug_macro   0x00000000       0x83 Src/freertos.o
- .debug_macro   0x00000000      0x175 Src/freertos.o
+ .debug_macro   0x00000000      0x17c Src/freertos.o
  .debug_line    0x00000000      0x81f Src/freertos.o
- .debug_str     0x00000000    0x720c7 Src/freertos.o
+ .debug_str     0x00000000    0x720d2 Src/freertos.o
  .comment       0x00000000       0x80 Src/freertos.o
  .ARM.attributes
                 0x00000000       0x33 Src/freertos.o
@@ -3232,7 +3230,6 @@ Discarded input sections
  .group         0x00000000        0xc Src/main.o
  .group         0x00000000        0xc Src/main.o
  .text          0x00000000        0x0 Src/main.o
- .data          0x00000000        0x0 Src/main.o
  .debug_macro   0x00000000      0xa60 Src/main.o
  .debug_macro   0x00000000      0x175 Src/main.o
  .debug_macro   0x00000000       0x2e Src/main.o
@@ -3291,7 +3288,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x853 Src/main.o
  .debug_macro   0x00000000       0x1f Src/main.o
  .debug_macro   0x00000000       0x83 Src/main.o
- .debug_macro   0x00000000      0x175 Src/main.o
+ .debug_macro   0x00000000      0x17c Src/main.o
  .debug_macro   0x00000000      0x168 Src/main.o
  .debug_macro   0x00000000       0xe4 Src/main.o
  .debug_macro   0x00000000       0x10 Src/main.o
@@ -3369,6 +3366,8 @@ Discarded input sections
  .group         0x00000000        0xc Src/nixieDisplay.o
  .group         0x00000000        0xc Src/nixieDisplay.o
  .text          0x00000000        0x0 Src/nixieDisplay.o
+ .text.nixieDisplay
+                0x00000000      0x264 Src/nixieDisplay.o
  .debug_macro   0x00000000      0xa60 Src/nixieDisplay.o
  .debug_macro   0x00000000      0x175 Src/nixieDisplay.o
  .debug_macro   0x00000000       0x2e Src/nixieDisplay.o
@@ -3427,8 +3426,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x853 Src/nixieDisplay.o
  .debug_macro   0x00000000       0x1f Src/nixieDisplay.o
  .debug_macro   0x00000000       0x83 Src/nixieDisplay.o
- .debug_macro   0x00000000      0x175 Src/nixieDisplay.o
- .debug_macro   0x00000000       0xf4 Src/nixieDisplay.o
+ .debug_macro   0x00000000      0x17c Src/nixieDisplay.o
+ .debug_macro   0x00000000      0x106 Src/nixieDisplay.o
  .debug_macro   0x00000000       0x22 Src/nixieDisplay.o
  .debug_macro   0x00000000       0x1c Src/nixieDisplay.o
  .debug_macro   0x00000000       0xa0 Src/nixieDisplay.o
@@ -3557,7 +3556,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x853 Src/stm32f1xx_hal_msp.o
  .debug_macro   0x00000000       0x1f Src/stm32f1xx_hal_msp.o
  .debug_macro   0x00000000       0x83 Src/stm32f1xx_hal_msp.o
- .debug_macro   0x00000000      0x175 Src/stm32f1xx_hal_msp.o
+ .debug_macro   0x00000000      0x17c Src/stm32f1xx_hal_msp.o
  .group         0x00000000        0xc Src/stm32f1xx_hal_timebase_tim.o
  .group         0x00000000        0xc Src/stm32f1xx_hal_timebase_tim.o
  .group         0x00000000        0xc Src/stm32f1xx_hal_timebase_tim.o
@@ -3814,7 +3813,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x853 Src/stm32f1xx_it.o
  .debug_macro   0x00000000       0x1f Src/stm32f1xx_it.o
  .debug_macro   0x00000000       0x83 Src/stm32f1xx_it.o
- .debug_macro   0x00000000      0x175 Src/stm32f1xx_it.o
+ .debug_macro   0x00000000      0x17c Src/stm32f1xx_it.o
  .debug_macro   0x00000000       0xdf Src/stm32f1xx_it.o
  .debug_macro   0x00000000      0x168 Src/stm32f1xx_it.o
  .debug_macro   0x00000000       0xe4 Src/stm32f1xx_it.o
@@ -4137,7 +4136,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x08000000                g_pfnVectors
                 0x0800010c                . = ALIGN (0x4)
 
-.text           0x08000110     0x5d2c
+.text           0x08000110     0x6034
                 0x08000110                . = ALIGN (0x4)
  *(.text)
  .text          0x08000110       0x40 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
@@ -4520,595 +4519,593 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x08003b24                vPortFree
  .text.getRTC   0x08003b90       0x20 Src/DS3231.o
                 0x08003b90                getRTC
- .text.Display  0x08003bb0       0x2c Src/DS3231.o
+ .text.Display  0x08003bb0       0x48 Src/DS3231.o
                 0x08003bb0                Display
  .text.setConfigRTC
-                0x08003bdc       0x3e Src/DS3231.o
-                0x08003bdc                setConfigRTC
+                0x08003bf8       0x3e Src/DS3231.o
+                0x08003bf8                setConfigRTC
  .text.stopAlarm
-                0x08003c1a       0x24 Src/DS3231.o
-                0x08003c1a                stopAlarm
- *fill*         0x08003c3e        0x2 
+                0x08003c36       0x24 Src/DS3231.o
+                0x08003c36                stopAlarm
+ *fill*         0x08003c5a        0x2 
  .text.enableAlarm
-                0x08003c40       0x38 Src/DS3231.o
-                0x08003c40                enableAlarm
+                0x08003c5c       0x40 Src/DS3231.o
+                0x08003c5c                enableAlarm
  .text.increase
-                0x08003c78      0x268 Src/DS3231.o
-                0x08003c78                increase
+                0x08003c9c      0x270 Src/DS3231.o
+                0x08003c9c                increase
  .text.resetVarRTC
-                0x08003ee0       0x24 Src/DS3231.o
-                0x08003ee0                resetVarRTC
- .text.setRTC   0x08003f04      0x17c Src/DS3231.o
-                0x08003f04                setRTC
- .text.loadRTC  0x08004080      0x128 Src/DS3231.o
-                0x08004080                loadRTC
+                0x08003f0c       0x24 Src/DS3231.o
+                0x08003f0c                resetVarRTC
+ .text.setRTC   0x08003f30      0x17c Src/DS3231.o
+                0x08003f30                setRTC
+ .text.loadRTC  0x080040ac      0x128 Src/DS3231.o
+                0x080040ac                loadRTC
  .text.MX_GPIO_Init
-                0x080041a8      0x124 Src/main.o
+                0x080041d4      0x124 Src/main.o
  .text.MX_DMA_Init
-                0x080042cc       0x34 Src/main.o
+                0x080042f8       0x34 Src/main.o
  .text.MX_TIM2_Init
-                0x08004300       0x54 Src/main.o
+                0x0800432c       0x54 Src/main.o
  .text.MX_TIM3_Init
-                0x08004354       0x54 Src/main.o
+                0x08004380       0x54 Src/main.o
  .text.MX_TIM4_Init
-                0x080043a8       0x54 Src/main.o
+                0x080043d4       0x54 Src/main.o
  .text.MX_I2C2_Init
-                0x080043fc       0x34 Src/main.o
- .text.StartPullingTask
-                0x08004430       0x80 Src/main.o
-                0x08004430                StartPullingTask
- .text.StartSensorTask
-                0x080044b0       0x20 Src/main.o
-                0x080044b0                StartSensorTask
+                0x08004428       0x34 Src/main.o
  .text.StartButtosTask
-                0x080044d0       0x2c Src/main.o
-                0x080044d0                StartButtosTask
+                0x0800445c       0x2c Src/main.o
+                0x0800445c                StartButtosTask
  .text.StartAlarmTask
-                0x080044fc       0x20 Src/main.o
-                0x080044fc                StartAlarmTask
+                0x08004488       0x20 Src/main.o
+                0x08004488                StartAlarmTask
+ .text.event    0x080044a8       0xe8 Src/main.o
+                0x080044a8                event
+ .text.StartPullingTask
+                0x08004590       0x34 Src/main.o
+                0x08004590                StartPullingTask
  .text.SystemClock_Config
-                0x0800451c       0x52 Src/main.o
-                0x0800451c                SystemClock_Config
- *fill*         0x0800456e        0x2 
- .text.main     0x08004570       0xf0 Src/main.o
-                0x08004570                main
+                0x080045c4       0x52 Src/main.o
+                0x080045c4                SystemClock_Config
+ *fill*         0x08004616        0x2 
+ .text.main     0x08004618       0xc0 Src/main.o
+                0x08004618                main
  .text.HAL_GPIO_EXTI_Callback
-                0x08004660       0x50 Src/main.o
-                0x08004660                HAL_GPIO_EXTI_Callback
+                0x080046d8       0x3c Src/main.o
+                0x080046d8                HAL_GPIO_EXTI_Callback
  .text.HAL_I2C_MemRxCpltCallback
-                0x080046b0       0x18 Src/main.o
-                0x080046b0                HAL_I2C_MemRxCpltCallback
+                0x08004714       0x18 Src/main.o
+                0x08004714                HAL_I2C_MemRxCpltCallback
  .text.HAL_TIM_PeriodElapsedCallback
-                0x080046c8       0x84 Src/main.o
-                0x080046c8                HAL_TIM_PeriodElapsedCallback
+                0x0800472c      0x108 Src/main.o
+                0x0800472c                HAL_TIM_PeriodElapsedCallback
  .text.Error_Handler
-                0x0800474c        0x2 Src/main.o
-                0x0800474c                Error_Handler
- *fill*         0x0800474e        0x2 
+                0x08004834        0x2 Src/main.o
+                0x08004834                Error_Handler
+ *fill*         0x08004836        0x2 
  .text.resetVarNixie
-                0x08004750       0x30 Src/nixieDisplay.o
-                0x08004750                resetVarNixie
+                0x08004838       0x30 Src/nixieDisplay.o
+                0x08004838                resetVarNixie
  .text.nixieLed
-                0x08004780       0xe8 Src/nixieDisplay.o
-                0x08004780                nixieLed
- .text.nixieDisplay
-                0x08004868      0x25c Src/nixieDisplay.o
-                0x08004868                nixieDisplay
+                0x08004868       0xe8 Src/nixieDisplay.o
+                0x08004868                nixieLed
+ .text.segment  0x08004950      0x3a0 Src/nixieDisplay.o
+                0x08004950                segment
+ .text.segmentDisplay
+                0x08004cf0       0xd8 Src/nixieDisplay.o
+                0x08004cf0                segmentDisplay
  .text.nixieIface_increase
-                0x08004ac4        0xc Src/nixieDisplay.o
-                0x08004ac4                nixieIface_increase
+                0x08004dc8        0xc Src/nixieDisplay.o
+                0x08004dc8                nixieIface_increase
  .text.nixieIface_show
-                0x08004ad0        0xc Src/nixieDisplay.o
-                0x08004ad0                nixieIface_show
+                0x08004dd4        0xc Src/nixieDisplay.o
+                0x08004dd4                nixieIface_show
  .text.nixieIface_increaseLed
-                0x08004adc       0x14 Src/nixieDisplay.o
-                0x08004adc                nixieIface_increaseLed
+                0x08004de0       0x14 Src/nixieDisplay.o
+                0x08004de0                nixieIface_increaseLed
  .text.nixieIface_init
-                0x08004af0       0x34 Src/nixieDisplay.o
-                0x08004af0                nixieIface_init
+                0x08004df4       0x34 Src/nixieDisplay.o
+                0x08004df4                nixieIface_init
  .text.nixieIface_showLed
-                0x08004b24        0xc Src/nixieDisplay.o
-                0x08004b24                nixieIface_showLed
+                0x08004e28        0xc Src/nixieDisplay.o
+                0x08004e28                nixieIface_showLed
  .text.nixieIface_ledPower
-                0x08004b30        0xc Src/nixieDisplay.o
-                0x08004b30                nixieIface_ledPower
+                0x08004e34        0xc Src/nixieDisplay.o
+                0x08004e34                nixieIface_ledPower
  .text.nixieIface_send
-                0x08004b3c       0x10 Src/nixieDisplay.o
-                0x08004b3c                nixieIface_send
+                0x08004e40       0x10 Src/nixieDisplay.o
+                0x08004e40                nixieIface_send
  .text.nixieIface_nixiePower
-                0x08004b4c        0xc Src/nixieDisplay.o
-                0x08004b4c                nixieIface_nixiePower
+                0x08004e50        0xc Src/nixieDisplay.o
+                0x08004e50                nixieIface_nixiePower
  .text.nixieIface_buzzer
-                0x08004b58        0xc Src/nixieDisplay.o
-                0x08004b58                nixieIface_buzzer
+                0x08004e5c        0xc Src/nixieDisplay.o
+                0x08004e5c                nixieIface_buzzer
  .text.nixieIface_swapAlarm
-                0x08004b64       0x20 Src/nixieDisplay.o
-                0x08004b64                nixieIface_swapAlarm
+                0x08004e68       0x20 Src/nixieDisplay.o
+                0x08004e68                nixieIface_swapAlarm
  .text.nixieIface_swapLedFlag
-                0x08004b84       0x10 Src/nixieDisplay.o
-                0x08004b84                nixieIface_swapLedFlag
+                0x08004e88       0x10 Src/nixieDisplay.o
+                0x08004e88                nixieIface_swapLedFlag
  .text.nixieIface_alarmFlag
-                0x08004b94       0x10 Src/nixieDisplay.o
-                0x08004b94                nixieIface_alarmFlag
+                0x08004e98       0x10 Src/nixieDisplay.o
+                0x08004e98                nixieIface_alarmFlag
  .text.nixieIface_resetVar
-                0x08004ba4        0x8 Src/nixieDisplay.o
-                0x08004ba4                nixieIface_resetVar
+                0x08004ea8        0x8 Src/nixieDisplay.o
+                0x08004ea8                nixieIface_resetVar
  .text.nixieInit
-                0x08004bac       0x1c Src/nixieDisplay.o
-                0x08004bac                nixieInit
+                0x08004eb0       0x1c Src/nixieDisplay.o
+                0x08004eb0                nixieInit
  .text.nixieEvent
-                0x08004bc8       0x44 Src/nixieDisplay.o
-                0x08004bc8                nixieEvent
+                0x08004ecc       0x44 Src/nixieDisplay.o
+                0x08004ecc                nixieEvent
  .text.stateTimer_start
-                0x08004c0c       0x68 Src/nixieDisplay.o
-                0x08004c0c                stateTimer_start
+                0x08004f10       0x68 Src/nixieDisplay.o
+                0x08004f10                stateTimer_start
  .text.nixie_setTimer
-                0x08004c74       0x18 Src/nixieDisplay.o
-                0x08004c74                nixie_setTimer
+                0x08004f78       0x18 Src/nixieDisplay.o
+                0x08004f78                nixie_setTimer
  .text.stateTimer_update
-                0x08004c8c       0x68 Src/nixieDisplay.o
-                0x08004c8c                stateTimer_update
+                0x08004f90       0x68 Src/nixieDisplay.o
+                0x08004f90                stateTimer_update
  .text.stateTimer_stop
-                0x08004cf4       0x3c Src/nixieDisplay.o
-                0x08004cf4                stateTimer_stop
+                0x08004ff8       0x3c Src/nixieDisplay.o
+                0x08004ff8                stateTimer_stop
  .text.nixie_unsetTimer
-                0x08004d30        0xa Src/nixieDisplay.o
-                0x08004d30                nixie_unsetTimer
- *fill*         0x08004d3a        0x2 
+                0x08005034        0xa Src/nixieDisplay.o
+                0x08005034                nixie_unsetTimer
+ *fill*         0x0800503e        0x2 
  .text.nixieTickUpdate
-                0x08004d3c       0x14 Src/nixieDisplay.o
-                0x08004d3c                nixieTickUpdate
+                0x08005040       0x14 Src/nixieDisplay.o
+                0x08005040                nixieTickUpdate
  .text.nixieBuzzer
-                0x08004d50       0x54 Src/nixieDisplay.o
-                0x08004d50                nixieBuzzer
+                0x08005054       0x54 Src/nixieDisplay.o
+                0x08005054                nixieBuzzer
  .text.HAL_MspInit
-                0x08004da4       0x54 Src/stm32f1xx_hal_msp.o
-                0x08004da4                HAL_MspInit
+                0x080050a8       0x54 Src/stm32f1xx_hal_msp.o
+                0x080050a8                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x08004df8       0xac Src/stm32f1xx_hal_msp.o
-                0x08004df8                HAL_I2C_MspInit
+                0x080050fc       0xac Src/stm32f1xx_hal_msp.o
+                0x080050fc                HAL_I2C_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x08004ea4       0xa0 Src/stm32f1xx_hal_msp.o
-                0x08004ea4                HAL_TIM_Base_MspInit
+                0x080051a8       0xa0 Src/stm32f1xx_hal_msp.o
+                0x080051a8                HAL_TIM_Base_MspInit
  .text.HAL_InitTick
-                0x08004f44       0x78 Src/stm32f1xx_hal_timebase_tim.o
-                0x08004f44                HAL_InitTick
+                0x08005248       0x78 Src/stm32f1xx_hal_timebase_tim.o
+                0x08005248                HAL_InitTick
  .text.NMI_Handler
-                0x08004fbc        0x2 Src/stm32f1xx_it.o
-                0x08004fbc                NMI_Handler
+                0x080052c0        0x2 Src/stm32f1xx_it.o
+                0x080052c0                NMI_Handler
  .text.HardFault_Handler
-                0x08004fbe        0x2 Src/stm32f1xx_it.o
-                0x08004fbe                HardFault_Handler
+                0x080052c2        0x2 Src/stm32f1xx_it.o
+                0x080052c2                HardFault_Handler
  .text.MemManage_Handler
-                0x08004fc0        0x2 Src/stm32f1xx_it.o
-                0x08004fc0                MemManage_Handler
+                0x080052c4        0x2 Src/stm32f1xx_it.o
+                0x080052c4                MemManage_Handler
  .text.BusFault_Handler
-                0x08004fc2        0x2 Src/stm32f1xx_it.o
-                0x08004fc2                BusFault_Handler
+                0x080052c6        0x2 Src/stm32f1xx_it.o
+                0x080052c6                BusFault_Handler
  .text.UsageFault_Handler
-                0x08004fc4        0x2 Src/stm32f1xx_it.o
-                0x08004fc4                UsageFault_Handler
+                0x080052c8        0x2 Src/stm32f1xx_it.o
+                0x080052c8                UsageFault_Handler
  .text.DebugMon_Handler
-                0x08004fc6        0x2 Src/stm32f1xx_it.o
-                0x08004fc6                DebugMon_Handler
+                0x080052ca        0x2 Src/stm32f1xx_it.o
+                0x080052ca                DebugMon_Handler
  .text.EXTI1_IRQHandler
-                0x08004fc8        0xa Src/stm32f1xx_it.o
-                0x08004fc8                EXTI1_IRQHandler
- *fill*         0x08004fd2        0x2 
+                0x080052cc        0xa Src/stm32f1xx_it.o
+                0x080052cc                EXTI1_IRQHandler
+ *fill*         0x080052d6        0x2 
  .text.DMA1_Channel5_IRQHandler
-                0x08004fd4       0x10 Src/stm32f1xx_it.o
-                0x08004fd4                DMA1_Channel5_IRQHandler
- .text.EXTI9_5_IRQHandler
-                0x08004fe4        0xa Src/stm32f1xx_it.o
-                0x08004fe4                EXTI9_5_IRQHandler
- *fill*         0x08004fee        0x2 
+                0x080052d8       0x10 Src/stm32f1xx_it.o
+                0x080052d8                DMA1_Channel5_IRQHandler
  .text.TIM1_UP_IRQHandler
-                0x08004ff0       0x10 Src/stm32f1xx_it.o
-                0x08004ff0                TIM1_UP_IRQHandler
+                0x080052e8       0x10 Src/stm32f1xx_it.o
+                0x080052e8                TIM1_UP_IRQHandler
  .text.TIM2_IRQHandler
-                0x08005000       0x10 Src/stm32f1xx_it.o
-                0x08005000                TIM2_IRQHandler
+                0x080052f8       0x10 Src/stm32f1xx_it.o
+                0x080052f8                TIM2_IRQHandler
  .text.TIM3_IRQHandler
-                0x08005010       0x10 Src/stm32f1xx_it.o
-                0x08005010                TIM3_IRQHandler
+                0x08005308       0x10 Src/stm32f1xx_it.o
+                0x08005308                TIM3_IRQHandler
  .text.TIM4_IRQHandler
-                0x08005020       0x10 Src/stm32f1xx_it.o
-                0x08005020                TIM4_IRQHandler
+                0x08005318       0x10 Src/stm32f1xx_it.o
+                0x08005318                TIM4_IRQHandler
  .text.I2C2_EV_IRQHandler
-                0x08005030       0x10 Src/stm32f1xx_it.o
-                0x08005030                I2C2_EV_IRQHandler
+                0x08005328       0x10 Src/stm32f1xx_it.o
+                0x08005328                I2C2_EV_IRQHandler
  .text.SystemInit
-                0x08005040       0x4c Src/system_stm32f1xx.o
-                0x08005040                SystemInit
+                0x08005338       0x4c Src/system_stm32f1xx.o
+                0x08005338                SystemInit
  .text.clearInEvents
-                0x0800508c       0x1c Yakindu/src-gen/Nixie.o
+                0x08005384       0x1c Yakindu/src-gen/Nixie.o
  .text.check_t__choice_0_tr0_tr0
-                0x080050a8        0xc Yakindu/src-gen/Nixie.o
+                0x080053a0        0xc Yakindu/src-gen/Nixie.o
  .text.check_t__choice_0_tr2_tr2
-                0x080050b4        0xc Yakindu/src-gen/Nixie.o
+                0x080053ac        0xc Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2
-                0x080050c0        0x6 Yakindu/src-gen/Nixie.o
+                0x080053b8        0x6 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Hour_default
-                0x080050c6        0xa Yakindu/src-gen/Nixie.o
+                0x080053be        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Minutes_default
-                0x080050d0        0xa Yakindu/src-gen/Nixie.o
+                0x080053c8        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Year_default
-                0x080050da        0xa Yakindu/src-gen/Nixie.o
+                0x080053d2        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Month_default
-                0x080050e4        0xa Yakindu/src-gen/Nixie.o
+                0x080053dc        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Day_default
-                0x080050ee        0xa Yakindu/src-gen/Nixie.o
+                0x080053e6        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_Awake_default
-                0x080050f8        0xa Yakindu/src-gen/Nixie.o
+                0x080053f0        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_AlarmConfig_default
-                0x08005102        0xa Yakindu/src-gen/Nixie.o
+                0x080053fa        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_Hour_default
-                0x0800510c        0xa Yakindu/src-gen/Nixie.o
+                0x08005404        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_Minute_default
-                0x08005116        0xa Yakindu/src-gen/Nixie.o
+                0x0800540e        0xa Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Config
-                0x08005120        0x8 Yakindu/src-gen/Nixie.o
+                0x08005418        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Hour
-                0x08005128        0x8 Yakindu/src-gen/Nixie.o
+                0x08005420        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Minutes
-                0x08005130        0x8 Yakindu/src-gen/Nixie.o
+                0x08005428        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Year
-                0x08005138        0x8 Yakindu/src-gen/Nixie.o
+                0x08005430        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Month
-                0x08005140        0x8 Yakindu/src-gen/Nixie.o
+                0x08005438        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Day
-                0x08005148        0x8 Yakindu/src-gen/Nixie.o
+                0x08005440        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake_Awake
-                0x08005150        0x8 Yakindu/src-gen/Nixie.o
+                0x08005448        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Sleep
-                0x08005158        0x8 Yakindu/src-gen/Nixie.o
+                0x08005450        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm_AlarmConfig
-                0x08005160        0x8 Yakindu/src-gen/Nixie.o
+                0x08005458        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm_Hour
-                0x08005168        0x8 Yakindu/src-gen/Nixie.o
+                0x08005460        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm_Minute
-                0x08005170        0x8 Yakindu/src-gen/Nixie.o
+                0x08005468        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration
-                0x08005178       0x38 Yakindu/src-gen/Nixie.o
+                0x08005470       0x38 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm
-                0x080051b0       0x24 Yakindu/src-gen/Nixie.o
- .text.react_nixie_t_MODE1_Awake__entry_Default
-                0x080051d4        0x8 Yakindu/src-gen/Nixie.o
+                0x080054a8       0x24 Yakindu/src-gen/Nixie.o
+ .text.react_t_MODE1_Awake__entry_Default
+                0x080054cc        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_default
-                0x080051dc        0x8 Yakindu/src-gen/Nixie.o
- .text.react_nixie_t_MODE3_Alarm__entry_Default
-                0x080051e4        0x8 Yakindu/src-gen/Nixie.o
+                0x080054d4        0x8 Yakindu/src-gen/Nixie.o
+ .text.react_t_MODE3_Alarm__entry_Default
+                0x080054dc        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_default
-                0x080051ec        0x8 Yakindu/src-gen/Nixie.o
- .text.react    0x080051f4        0x4 Yakindu/src-gen/Nixie.o
+                0x080054e4        0x8 Yakindu/src-gen/Nixie.o
+ .text.react    0x080054ec        0x4 Yakindu/src-gen/Nixie.o
  .text.enact_t_START
-                0x080051f8        0x8 Yakindu/src-gen/Nixie.o
+                0x080054f0        0x8 Yakindu/src-gen/Nixie.o
  .text.enact_t_START_Configuration_Config
-                0x08005200       0x14 Yakindu/src-gen/Nixie.o
+                0x080054f8       0x14 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Config_default
-                0x08005214       0x12 Yakindu/src-gen/Nixie.o
- .text.react_nixie_t_START_Configuration__entry_Default
-                0x08005226        0x8 Yakindu/src-gen/Nixie.o
+                0x0800550c       0x12 Yakindu/src-gen/Nixie.o
+ .text.react_t_START_Configuration__entry_Default
+                0x0800551e        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_default
-                0x0800522e        0x8 Yakindu/src-gen/Nixie.o
+                0x08005526        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_default
-                0x08005236       0x10 Yakindu/src-gen/Nixie.o
- .text.react_nixie_t__entry_Default
-                0x08005246        0x8 Yakindu/src-gen/Nixie.o
+                0x0800552e       0x10 Yakindu/src-gen/Nixie.o
+ .text.react_t__entry_Default
+                0x0800553e        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_default
-                0x0800524e        0x8 Yakindu/src-gen/Nixie.o
+                0x08005546        0x8 Yakindu/src-gen/Nixie.o
  .text.exact_t_START
-                0x08005256        0x8 Yakindu/src-gen/Nixie.o
+                0x0800554e        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START
-                0x0800525e       0x10 Yakindu/src-gen/Nixie.o
+                0x08005556       0x10 Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE3
-                0x0800526e        0x8 Yakindu/src-gen/Nixie.o
+                0x08005566        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3
-                0x08005276       0x10 Yakindu/src-gen/Nixie.o
+                0x0800556e       0x10 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE1
-                0x08005286       0x1e Yakindu/src-gen/Nixie.o
+                0x0800557e       0x1e Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_default
-                0x080052a4       0x10 Yakindu/src-gen/Nixie.o
+                0x0800559c       0x10 Yakindu/src-gen/Nixie.o
  .text.t_START_react
-                0x080052b4       0x26 Yakindu/src-gen/Nixie.o
+                0x080055ac       0x26 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Config_react
-                0x080052da       0x32 Yakindu/src-gen/Nixie.o
+                0x080055d2       0x32 Yakindu/src-gen/Nixie.o
  .text.effect_t__choice_0_tr1
-                0x0800530c        0x8 Yakindu/src-gen/Nixie.o
+                0x08005604        0x8 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE3
-                0x08005314       0x20 Yakindu/src-gen/Nixie.o
+                0x0800560c       0x20 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_default
-                0x08005334       0x10 Yakindu/src-gen/Nixie.o
+                0x0800562c       0x10 Yakindu/src-gen/Nixie.o
  .text.effect_t__choice_0_tr2
-                0x08005344        0x8 Yakindu/src-gen/Nixie.o
+                0x0800563c        0x8 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Hour_react
-                0x0800534c       0x46 Yakindu/src-gen/Nixie.o
+                0x08005644       0x46 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Year_react
-                0x08005392       0x46 Yakindu/src-gen/Nixie.o
+                0x0800568a       0x46 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Month_react
-                0x080053d8       0x46 Yakindu/src-gen/Nixie.o
+                0x080056d0       0x46 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Minutes_react
-                0x0800541e       0x5e Yakindu/src-gen/Nixie.o
+                0x08005716       0x5e Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Day_react
-                0x0800547c       0x4e Yakindu/src-gen/Nixie.o
+                0x08005774       0x4e Yakindu/src-gen/Nixie.o
  .text.enact_t_Alarm
-                0x080054ca       0x22 Yakindu/src-gen/Nixie.o
+                0x080057c2       0x22 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE1_Awake_Date
-                0x080054ec       0x24 Yakindu/src-gen/Nixie.o
+                0x080057e4       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_Date_default
-                0x08005510       0x12 Yakindu/src-gen/Nixie.o
+                0x08005808       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE1_Awake_Temperature
-                0x08005522       0x24 Yakindu/src-gen/Nixie.o
+                0x0800581a       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_Temperature_default
-                0x08005546       0x12 Yakindu/src-gen/Nixie.o
+                0x0800583e       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Date
-                0x08005558       0x24 Yakindu/src-gen/Nixie.o
+                0x08005850       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Date_default
-                0x0800557c       0x12 Yakindu/src-gen/Nixie.o
+                0x08005874       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Temperature
-                0x0800558e       0x24 Yakindu/src-gen/Nixie.o
+                0x08005886       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Temperature_default
-                0x080055b2       0x12 Yakindu/src-gen/Nixie.o
+                0x080058aa       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_Alarm_Alarm_Alarm_ON_
-                0x080055c4       0x20 Yakindu/src-gen/Nixie.o
+                0x080058bc       0x20 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_Alarm_Alarm_ON__default
-                0x080055e4       0x12 Yakindu/src-gen/Nixie.o
- .text.react_nixie_t_Alarm_Alarm__entry_Default
-                0x080055f6        0x8 Yakindu/src-gen/Nixie.o
+                0x080058dc       0x12 Yakindu/src-gen/Nixie.o
+ .text.react_t_Alarm_Alarm__entry_Default
+                0x080058ee        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_Alarm_default
-                0x080055fe        0x8 Yakindu/src-gen/Nixie.o
+                0x080058f6        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_default
-                0x08005606       0x10 Yakindu/src-gen/Nixie.o
+                0x080058fe       0x10 Yakindu/src-gen/Nixie.o
  .text.t_MODE3_react
-                0x08005616       0x38 Yakindu/src-gen/Nixie.o
+                0x0800590e       0x38 Yakindu/src-gen/Nixie.o
  .text.t_MODE3_Alarm_Hour_react
-                0x0800564e       0x46 Yakindu/src-gen/Nixie.o
+                0x08005946       0x46 Yakindu/src-gen/Nixie.o
  .text.t_MODE3_Alarm_Minute_react
-                0x08005694       0x4e Yakindu/src-gen/Nixie.o
+                0x0800598c       0x56 Yakindu/src-gen/Nixie.o
  .text.exact_t_Alarm
-                0x080056e2        0xc Yakindu/src-gen/Nixie.o
- *fill*         0x080056ee        0x2 
+                0x080059e2        0xc Yakindu/src-gen/Nixie.o
+ *fill*         0x080059ee        0x2 
  .text.enact_t_Alarm_Alarm_Alarm_OFF_
-                0x080056f0       0x24 Yakindu/src-gen/Nixie.o
+                0x080059f0       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_Alarm_Alarm_OFF__default
-                0x08005714       0x12 Yakindu/src-gen/Nixie.o
+                0x08005a14       0x12 Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE1_Awake_Date
-                0x08005726        0xc Yakindu/src-gen/Nixie.o
+                0x08005a26        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake_Date
-                0x08005732        0xe Yakindu/src-gen/Nixie.o
+                0x08005a32        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE1_Awake_Temperature
-                0x08005740       0x1e Yakindu/src-gen/Nixie.o
+                0x08005a40       0x1e Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake_Temperature
-                0x0800575e        0xe Yakindu/src-gen/Nixie.o
+                0x08005a5e        0xe Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake
-                0x0800576c       0x24 Yakindu/src-gen/Nixie.o
+                0x08005a6c       0x24 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1
-                0x08005790        0x8 Yakindu/src-gen/Nixie.o
+                0x08005a90        0x8 Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2_Sleep_Date
-                0x08005798        0xc Yakindu/src-gen/Nixie.o
+                0x08005a98        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Date
-                0x080057a4        0xe Yakindu/src-gen/Nixie.o
+                0x08005aa4        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2_Sleep_Temperature
-                0x080057b2        0xc Yakindu/src-gen/Nixie.o
+                0x08005ab2        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Temperature
-                0x080057be        0xe Yakindu/src-gen/Nixie.o
+                0x08005abe        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2_Sleep_Wake_Up
-                0x080057cc        0xc Yakindu/src-gen/Nixie.o
+                0x08005acc        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Wake_Up
-                0x080057d8        0xe Yakindu/src-gen/Nixie.o
+                0x08005ad8        0xe Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep
-                0x080057e6       0x2a Yakindu/src-gen/Nixie.o
+                0x08005ae6       0x2a Yakindu/src-gen/Nixie.o
  .text.exact_t_Alarm_Alarm_Alarm_OFF_
-                0x08005810        0xc Yakindu/src-gen/Nixie.o
+                0x08005b10        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm_Alarm_Alarm_OFF_
-                0x0800581c        0xe Yakindu/src-gen/Nixie.o
+                0x08005b1c        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_Alarm_Alarm_Alarm_ON_
-                0x0800582a        0xc Yakindu/src-gen/Nixie.o
+                0x08005b2a        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm_Alarm_Alarm_ON_
-                0x08005836        0xe Yakindu/src-gen/Nixie.o
+                0x08005b36        0xe Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm_Alarm
-                0x08005844       0x1a Yakindu/src-gen/Nixie.o
+                0x08005b44       0x1a Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm
-                0x0800585e       0x10 Yakindu/src-gen/Nixie.o
+                0x08005b5e       0x10 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Sleep
-                0x0800586e       0x14 Yakindu/src-gen/Nixie.o
+                0x08005b6e       0x14 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Sleep_default
-                0x08005882       0x12 Yakindu/src-gen/Nixie.o
- .text.react_nixie_t_MODE2_Sleep__entry_Default
-                0x08005894        0x8 Yakindu/src-gen/Nixie.o
+                0x08005b82       0x12 Yakindu/src-gen/Nixie.o
+ .text.react_t_MODE2_Sleep__entry_Default
+                0x08005b94        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_default
-                0x0800589c        0x8 Yakindu/src-gen/Nixie.o
+                0x08005b9c        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_default
-                0x080058a4       0x10 Yakindu/src-gen/Nixie.o
+                0x08005ba4       0x10 Yakindu/src-gen/Nixie.o
  .text.t_MODE1_react
-                0x080058b4       0x38 Yakindu/src-gen/Nixie.o
+                0x08005bb4       0x38 Yakindu/src-gen/Nixie.o
  .text.t_MODE1_Awake_Awake_react
-                0x080058ec       0x5a Yakindu/src-gen/Nixie.o
+                0x08005bec       0x5a Yakindu/src-gen/Nixie.o
  .text.t_MODE1_Awake_Date_react
-                0x08005946       0x2a Yakindu/src-gen/Nixie.o
+                0x08005c46       0x2a Yakindu/src-gen/Nixie.o
  .text.t_MODE1_Awake_Temperature_react
-                0x08005970       0x2a Yakindu/src-gen/Nixie.o
+                0x08005c70       0x2a Yakindu/src-gen/Nixie.o
  .text.effect_t__choice_0_tr0
-                0x0800599a        0x8 Yakindu/src-gen/Nixie.o
+                0x08005c9a        0x8 Yakindu/src-gen/Nixie.o
  .text.react_t__choice_0
-                0x080059a2       0x2a Yakindu/src-gen/Nixie.o
+                0x08005ca2       0x2a Yakindu/src-gen/Nixie.o
  .text.t_Alarm_react
-                0x080059cc       0x2c Yakindu/src-gen/Nixie.o
+                0x08005ccc       0x2c Yakindu/src-gen/Nixie.o
  .text.t_Alarm_Alarm_Alarm_ON__react
-                0x080059f8       0x2a Yakindu/src-gen/Nixie.o
+                0x08005cf8       0x2a Yakindu/src-gen/Nixie.o
  .text.t_Alarm_Alarm_Alarm_OFF__react
-                0x08005a22       0x2a Yakindu/src-gen/Nixie.o
+                0x08005d22       0x2a Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2
-                0x08005a4c        0xa Yakindu/src-gen/Nixie.o
+                0x08005d4c        0xa Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2
-                0x08005a56       0x10 Yakindu/src-gen/Nixie.o
+                0x08005d56       0x10 Yakindu/src-gen/Nixie.o
  .text.t_MODE2_react
-                0x08005a66       0x38 Yakindu/src-gen/Nixie.o
+                0x08005d66       0x38 Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Wake_Up_react
-                0x08005a9e       0x3c Yakindu/src-gen/Nixie.o
+                0x08005d9e       0x3c Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Date_react
-                0x08005ada       0x2a Yakindu/src-gen/Nixie.o
+                0x08005dda       0x2a Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Wake_Up
-                0x08005b04       0x34 Yakindu/src-gen/Nixie.o
+                0x08005e04       0x34 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Wake_Up_default
-                0x08005b38       0x12 Yakindu/src-gen/Nixie.o
+                0x08005e38       0x12 Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Sleep_react
-                0x08005b4a       0x2a Yakindu/src-gen/Nixie.o
+                0x08005e4a       0x2a Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Temperature_react
-                0x08005b74       0x2a Yakindu/src-gen/Nixie.o
+                0x08005e74       0x2a Yakindu/src-gen/Nixie.o
  .text.t_MODE3_Alarm_AlarmConfig_react
-                0x08005b9e       0x42 Yakindu/src-gen/Nixie.o
+                0x08005e9e       0x4a Yakindu/src-gen/Nixie.o
  .text.nixie_init
-                0x08005be0       0x22 Yakindu/src-gen/Nixie.o
-                0x08005be0                nixie_init
+                0x08005ee8       0x22 Yakindu/src-gen/Nixie.o
+                0x08005ee8                nixie_init
  .text.nixie_enter
-                0x08005c02        0x8 Yakindu/src-gen/Nixie.o
-                0x08005c02                nixie_enter
- *fill*         0x08005c0a        0x2 
+                0x08005f0a        0x8 Yakindu/src-gen/Nixie.o
+                0x08005f0a                nixie_enter
+ *fill*         0x08005f12        0x2 
  .text.nixie_runCycle
-                0x08005c0c      0x13c Yakindu/src-gen/Nixie.o
-                0x08005c0c                nixie_runCycle
+                0x08005f14      0x13c Yakindu/src-gen/Nixie.o
+                0x08005f14                nixie_runCycle
  .text.nixie_raiseTimeEvent
-                0x08005d48       0x12 Yakindu/src-gen/Nixie.o
-                0x08005d48                nixie_raiseTimeEvent
+                0x08006050       0x12 Yakindu/src-gen/Nixie.o
+                0x08006050                nixie_raiseTimeEvent
  .text.nixieIface_raise_s_SENSOR
-                0x08005d5a        0x6 Yakindu/src-gen/Nixie.o
-                0x08005d5a                nixieIface_raise_s_SENSOR
+                0x08006062        0x6 Yakindu/src-gen/Nixie.o
+                0x08006062                nixieIface_raise_s_SENSOR
  .text.nixieIface_raise_b_1
-                0x08005d60        0x6 Yakindu/src-gen/Nixie.o
-                0x08005d60                nixieIface_raise_b_1
+                0x08006068        0x6 Yakindu/src-gen/Nixie.o
+                0x08006068                nixieIface_raise_b_1
  .text.nixieIface_raise_b_2
-                0x08005d66        0x6 Yakindu/src-gen/Nixie.o
-                0x08005d66                nixieIface_raise_b_2
+                0x0800606e        0x6 Yakindu/src-gen/Nixie.o
+                0x0800606e                nixieIface_raise_b_2
  .text.nixieIface_raise_b_3
-                0x08005d6c        0x6 Yakindu/src-gen/Nixie.o
-                0x08005d6c                nixieIface_raise_b_3
+                0x08006074        0x6 Yakindu/src-gen/Nixie.o
+                0x08006074                nixieIface_raise_b_3
  .text.nixieIface_raise_e_ALARM
-                0x08005d72        0x6 Yakindu/src-gen/Nixie.o
-                0x08005d72                nixieIface_raise_e_ALARM
+                0x0800607a        0x6 Yakindu/src-gen/Nixie.o
+                0x0800607a                nixieIface_raise_e_ALARM
  .text.Reset_Handler
-                0x08005d78       0x48 startup/startup_stm32f103xb.o
-                0x08005d78                Reset_Handler
+                0x08006080       0x48 startup/startup_stm32f103xb.o
+                0x08006080                Reset_Handler
  .text.Default_Handler
-                0x08005dc0        0x2 startup/startup_stm32f103xb.o
-                0x08005dc0                RTC_Alarm_IRQHandler
-                0x08005dc0                EXTI2_IRQHandler
-                0x08005dc0                TIM1_CC_IRQHandler
-                0x08005dc0                PVD_IRQHandler
-                0x08005dc0                EXTI3_IRQHandler
-                0x08005dc0                EXTI0_IRQHandler
-                0x08005dc0                ADC1_2_IRQHandler
-                0x08005dc0                SPI1_IRQHandler
-                0x08005dc0                TAMPER_IRQHandler
-                0x08005dc0                DMA1_Channel4_IRQHandler
-                0x08005dc0                USART3_IRQHandler
-                0x08005dc0                RTC_IRQHandler
-                0x08005dc0                DMA1_Channel7_IRQHandler
-                0x08005dc0                CAN1_RX1_IRQHandler
-                0x08005dc0                I2C1_EV_IRQHandler
-                0x08005dc0                DMA1_Channel6_IRQHandler
-                0x08005dc0                RCC_IRQHandler
-                0x08005dc0                TIM1_TRG_COM_IRQHandler
-                0x08005dc0                DMA1_Channel1_IRQHandler
-                0x08005dc0                Default_Handler
-                0x08005dc0                EXTI15_10_IRQHandler
-                0x08005dc0                SPI2_IRQHandler
-                0x08005dc0                EXTI4_IRQHandler
-                0x08005dc0                USB_LP_CAN1_RX0_IRQHandler
-                0x08005dc0                USB_HP_CAN1_TX_IRQHandler
-                0x08005dc0                DMA1_Channel3_IRQHandler
-                0x08005dc0                WWDG_IRQHandler
-                0x08005dc0                TIM1_BRK_IRQHandler
-                0x08005dc0                USART2_IRQHandler
-                0x08005dc0                I2C2_ER_IRQHandler
-                0x08005dc0                DMA1_Channel2_IRQHandler
-                0x08005dc0                CAN1_SCE_IRQHandler
-                0x08005dc0                FLASH_IRQHandler
-                0x08005dc0                USART1_IRQHandler
-                0x08005dc0                I2C1_ER_IRQHandler
-                0x08005dc0                USBWakeUp_IRQHandler
- *fill*         0x08005dc2        0x2 
+                0x080060c8        0x2 startup/startup_stm32f103xb.o
+                0x080060c8                RTC_Alarm_IRQHandler
+                0x080060c8                EXTI2_IRQHandler
+                0x080060c8                TIM1_CC_IRQHandler
+                0x080060c8                PVD_IRQHandler
+                0x080060c8                EXTI3_IRQHandler
+                0x080060c8                EXTI0_IRQHandler
+                0x080060c8                ADC1_2_IRQHandler
+                0x080060c8                SPI1_IRQHandler
+                0x080060c8                TAMPER_IRQHandler
+                0x080060c8                DMA1_Channel4_IRQHandler
+                0x080060c8                USART3_IRQHandler
+                0x080060c8                RTC_IRQHandler
+                0x080060c8                DMA1_Channel7_IRQHandler
+                0x080060c8                CAN1_RX1_IRQHandler
+                0x080060c8                I2C1_EV_IRQHandler
+                0x080060c8                DMA1_Channel6_IRQHandler
+                0x080060c8                RCC_IRQHandler
+                0x080060c8                TIM1_TRG_COM_IRQHandler
+                0x080060c8                DMA1_Channel1_IRQHandler
+                0x080060c8                Default_Handler
+                0x080060c8                EXTI15_10_IRQHandler
+                0x080060c8                EXTI9_5_IRQHandler
+                0x080060c8                SPI2_IRQHandler
+                0x080060c8                EXTI4_IRQHandler
+                0x080060c8                USB_LP_CAN1_RX0_IRQHandler
+                0x080060c8                USB_HP_CAN1_TX_IRQHandler
+                0x080060c8                DMA1_Channel3_IRQHandler
+                0x080060c8                WWDG_IRQHandler
+                0x080060c8                TIM1_BRK_IRQHandler
+                0x080060c8                USART2_IRQHandler
+                0x080060c8                I2C2_ER_IRQHandler
+                0x080060c8                DMA1_Channel2_IRQHandler
+                0x080060c8                CAN1_SCE_IRQHandler
+                0x080060c8                FLASH_IRQHandler
+                0x080060c8                USART1_IRQHandler
+                0x080060c8                I2C1_ER_IRQHandler
+                0x080060c8                USBWakeUp_IRQHandler
+ *fill*         0x080060ca        0x2 
  .text.__libc_init_array
-                0x08005dc4       0x48 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
-                0x08005dc4                __libc_init_array
- .text.memcpy   0x08005e0c       0x16 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
-                0x08005e0c                memcpy
+                0x080060cc       0x48 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+                0x080060cc                __libc_init_array
+ .text.memcpy   0x08006114       0x16 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
+                0x08006114                memcpy
  *(.glue_7)
- .glue_7        0x08005e22        0x0 linker stubs
+ .glue_7        0x0800612a        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08005e22        0x0 linker stubs
+ .glue_7t       0x0800612a        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x08005e22        0x2 
- .eh_frame      0x08005e24        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ *fill*         0x0800612a        0x2 
+ .eh_frame      0x0800612c        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x08005e24        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x08005e24                _init
- .init          0x08005e28        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x0800612c        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0800612c                _init
+ .init          0x08006130        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x08005e30        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x08005e30                _fini
- .fini          0x08005e34        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x08005e3c                . = ALIGN (0x4)
-                0x08005e3c                _etext = .
+ .fini          0x08006138        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x08006138                _fini
+ .fini          0x0800613c        0x8 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x08006144                . = ALIGN (0x4)
+                0x08006144                _etext = .
 
-.vfp11_veneer   0x08005e3c        0x0
- .vfp11_veneer  0x08005e3c        0x0 linker stubs
+.vfp11_veneer   0x08006144        0x0
+ .vfp11_veneer  0x08006144        0x0 linker stubs
 
-.v4_bx          0x08005e3c        0x0
- .v4_bx         0x08005e3c        0x0 linker stubs
+.v4_bx          0x08006144        0x0
+ .v4_bx         0x08006144        0x0 linker stubs
 
-.iplt           0x08005e3c        0x0
- .iplt          0x08005e3c        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x08006144        0x0
+ .iplt          0x08006144        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x08005e3c       0xac
-                0x08005e3c                . = ALIGN (0x4)
+.rodata         0x08006144       0x90
+                0x08006144                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08005e3c       0x12 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- *fill*         0x08005e4e        0x2 
- .rodata        0x08005e50       0x58 Src/main.o
- .rodata        0x08005ea8       0x18 Src/system_stm32f1xx.o
-                0x08005ea8                AHBPrescTable
-                0x08005eb8                APBPrescTable
+ .rodata        0x08006144       0x12 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ *fill*         0x08006156        0x2 
+ .rodata        0x08006158       0x44 Src/main.o
+ .rodata        0x0800619c       0x18 Src/system_stm32f1xx.o
+                0x0800619c                AHBPrescTable
+                0x080061ac                APBPrescTable
  *(.rodata*)
  .rodata.str1.4
-                0x08005ec0        0x5 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- *fill*         0x08005ec5        0x3 
+                0x080061b4        0x5 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ *fill*         0x080061b9        0x3 
  .rodata.str1.4
-                0x08005ec8       0x20 Src/main.o
-                0x08005ee8                . = ALIGN (0x4)
+                0x080061bc       0x18 Src/main.o
+                0x080061d4                . = ALIGN (0x4)
 
-.rel.dyn        0x08005ee8        0x0
- .rel.iplt      0x08005ee8        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x080061d4        0x0
+ .rel.iplt      0x080061d4        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08005ee8        0x0
-                0x08005ee8                __exidx_start = .
+.ARM            0x080061d4        0x0
+                0x080061d4                __exidx_start = .
  *(.ARM.exidx*)
-                0x08005ee8                __exidx_end = .
+                0x080061d4                __exidx_end = .
 
-.preinit_array  0x08005ee8        0x0
-                0x08005ee8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080061d4        0x0
+                0x080061d4                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08005ee8                PROVIDE (__preinit_array_end = .)
+                0x080061d4                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08005ee8        0x4
-                0x08005ee8                PROVIDE (__init_array_start = .)
+.init_array     0x080061d4        0x4
+                0x080061d4                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08005ee8        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x08005eec                PROVIDE (__init_array_end = .)
+ .init_array    0x080061d4        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x080061d8                PROVIDE (__init_array_end = .)
 
-.fini_array     0x08005eec        0x4
+.fini_array     0x080061d8        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08005eec        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .fini_array    0x080061d8        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x08005ef0                _sidata = LOADADDR (.data)
+                0x080061dc                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x14 load address 0x08005ef0
+.data           0x20000000       0x18 load address 0x080061dc
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -5116,51 +5113,51 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x20000000                uwTickFreq
                 0x20000004                uwTickPrio
  .data          0x20000008        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
- .data          0x2000000c        0x3 Src/nixieDisplay.o
- *fill*         0x2000000f        0x1 
- .data          0x20000010        0x4 Src/system_stm32f1xx.o
-                0x20000010                SystemCoreClock
+ .data          0x2000000c        0x3 Src/main.o
+ .data          0x2000000f        0x3 Src/nixieDisplay.o
+ *fill*         0x20000012        0x2 
+ .data          0x20000014        0x4 Src/system_stm32f1xx.o
+                0x20000014                SystemCoreClock
  *(.data*)
-                0x20000014                . = ALIGN (0x4)
-                0x20000014                _edata = .
+                0x20000018                . = ALIGN (0x4)
+                0x20000018                _edata = .
 
-.igot.plt       0x20000014        0x0 load address 0x08005f04
- .igot.plt      0x20000014        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x20000014                . = ALIGN (0x4)
+.igot.plt       0x20000018        0x0 load address 0x080061f4
+ .igot.plt      0x20000018        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x20000018                . = ALIGN (0x4)
 
-.bss            0x20000014     0x240c load address 0x08005f04
-                0x20000014                _sbss = .
-                0x20000014                __bss_start__ = _sbss
+.bss            0x20000018     0x2408 load address 0x080061f4
+                0x20000018                _sbss = .
+                0x20000018                __bss_start__ = _sbss
  *(.bss)
- .bss           0x20000014       0x1c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
- .bss           0x20000030      0x12c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x20000130                pxCurrentTCB
- .bss           0x2000015c        0x8 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
- .bss           0x20000164     0x2018 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss           0x2000217c        0x1 Src/main.o
- *fill*         0x2000217d        0x3 
- .bss           0x20002180       0xa5 Src/nixieDisplay.o
+ .bss           0x20000018       0x1c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .bss           0x20000034      0x12c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x20000134                pxCurrentTCB
+ .bss           0x20000160        0x8 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+ .bss           0x20000168     0x2018 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss           0x20002180        0x7 Src/main.o
+                0x20002180                buttonFlag
+ *fill*         0x20002187        0x1 
+ .bss           0x20002188       0xa5 Src/nixieDisplay.o
  *(.bss*)
  *(COMMON)
- *fill*         0x20002225        0x3 
- COMMON         0x20002228        0x4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x20002228                uwTick
- COMMON         0x2000222c       0x3e Src/DS3231.o
-                0x2000222c                RTC_DATA
- *fill*         0x2000226a        0x2 
- COMMON         0x2000226c      0x174 Src/main.o
-                0x2000226c                htim4
-                0x200022ac                hi2c2
-                0x20002300                htim3
-                0x20002340                S_AlarmHandle
-                0x20002344                hdma_i2c2_rx
-                0x20002388                ButtonsHandle
-                0x2000238c                pullingHandle
-                0x20002390                AlarmHandle
-                0x20002394                Q_ButtonsHandle
-                0x20002398                SensorHandle
-                0x2000239c                htim2
-                0x200023dc                S_SensorHandle
+ *fill*         0x2000222d        0x3 
+ COMMON         0x20002230        0x4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x20002230                uwTick
+ COMMON         0x20002234       0x3e Src/DS3231.o
+                0x20002234                RTC_DATA
+ *fill*         0x20002272        0x2 
+ COMMON         0x20002274      0x16c Src/main.o
+                0x20002274                htim4
+                0x200022b4                hi2c2
+                0x20002308                htim3
+                0x20002348                S_AlarmHandle
+                0x2000234c                hdma_i2c2_rx
+                0x20002390                ButtonsHandle
+                0x20002394                pullingHandle
+                0x20002398                AlarmHandle
+                0x2000239c                Q_ButtonsHandle
+                0x200023a0                htim2
  COMMON         0x200023e0       0x40 Src/stm32f1xx_hal_timebase_tim.o
                 0x200023e0                htim1
                 0x20002420                . = ALIGN (0x4)
@@ -5168,7 +5165,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x20002420                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20002420      0x600 load address 0x08005f04
+                0x20002420      0x600 load address 0x080061f4
                 0x20002420                . = ALIGN (0x8)
                 [!provide]                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
@@ -5244,7 +5241,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x00000527       0x1d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(NixieClock.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x23cf1
+.debug_info     0x00000000    0x246f5
  .debug_info    0x00000000      0xfb4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_info    0x00000fb4     0x14bc Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_info    0x00002470     0x105b Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5259,17 +5256,17 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_info    0x00012cb3     0x2915 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .debug_info    0x000155c8      0x4cb Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_info    0x00015a93      0xc71 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_info    0x00016704     0x1306 Src/DS3231.o
- .debug_info    0x00017a0a     0x2240 Src/main.o
- .debug_info    0x00019c4a     0x22d7 Src/nixieDisplay.o
- .debug_info    0x0001bf21     0x1742 Src/stm32f1xx_hal_msp.o
- .debug_info    0x0001d663     0x11da Src/stm32f1xx_hal_timebase_tim.o
- .debug_info    0x0001e83d     0x127c Src/stm32f1xx_it.o
- .debug_info    0x0001fab9      0xc5c Src/system_stm32f1xx.o
- .debug_info    0x00020715     0x35ba Yakindu/src-gen/Nixie.o
- .debug_info    0x00023ccf       0x22 startup/startup_stm32f103xb.o
+ .debug_info    0x00016704     0x1307 Src/DS3231.o
+ .debug_info    0x00017a0b     0x21f0 Src/main.o
+ .debug_info    0x00019bfb     0x2d1f Src/nixieDisplay.o
+ .debug_info    0x0001c91a     0x1742 Src/stm32f1xx_hal_msp.o
+ .debug_info    0x0001e05c     0x11da Src/stm32f1xx_hal_timebase_tim.o
+ .debug_info    0x0001f236     0x1255 Src/stm32f1xx_it.o
+ .debug_info    0x0002048b      0xc5c Src/system_stm32f1xx.o
+ .debug_info    0x000210e7     0x35ec Yakindu/src-gen/Nixie.o
+ .debug_info    0x000246d3       0x22 startup/startup_stm32f103xb.o
 
-.debug_abbrev   0x00000000     0x3fff
+.debug_abbrev   0x00000000     0x3ffd
  .debug_abbrev  0x00000000      0x301 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_abbrev  0x00000301      0x3cd Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_abbrev  0x000006ce      0x2e5 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5285,16 +5282,16 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_abbrev  0x000025aa      0x24e Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_abbrev  0x000027f8      0x318 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_abbrev  0x00002b10      0x2ab Src/DS3231.o
- .debug_abbrev  0x00002dbb      0x30a Src/main.o
- .debug_abbrev  0x000030c5      0x37c Src/nixieDisplay.o
- .debug_abbrev  0x00003441      0x299 Src/stm32f1xx_hal_msp.o
- .debug_abbrev  0x000036da      0x299 Src/stm32f1xx_hal_timebase_tim.o
- .debug_abbrev  0x00003973      0x263 Src/stm32f1xx_it.o
- .debug_abbrev  0x00003bd6      0x228 Src/system_stm32f1xx.o
- .debug_abbrev  0x00003dfe      0x1ef Yakindu/src-gen/Nixie.o
- .debug_abbrev  0x00003fed       0x12 startup/startup_stm32f103xb.o
+ .debug_abbrev  0x00002dbb      0x319 Src/main.o
+ .debug_abbrev  0x000030d4      0x36b Src/nixieDisplay.o
+ .debug_abbrev  0x0000343f      0x299 Src/stm32f1xx_hal_msp.o
+ .debug_abbrev  0x000036d8      0x299 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_abbrev  0x00003971      0x263 Src/stm32f1xx_it.o
+ .debug_abbrev  0x00003bd4      0x228 Src/system_stm32f1xx.o
+ .debug_abbrev  0x00003dfc      0x1ef Yakindu/src-gen/Nixie.o
+ .debug_abbrev  0x00003feb       0x12 startup/startup_stm32f103xb.o
 
-.debug_loc      0x00000000     0xf05c
+.debug_loc      0x00000000     0xf0d1
  .debug_loc     0x00000000       0xfd Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_loc     0x000000fd      0x5ad Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_loc     0x000006aa      0x7aa Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5309,15 +5306,15 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_loc     0x0000ac9f     0x11ef Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .debug_loc     0x0000be8e       0xce Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_loc     0x0000bf5c      0x291 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_loc     0x0000c1ed      0x294 Src/DS3231.o
- .debug_loc     0x0000c481      0x12c Src/main.o
- .debug_loc     0x0000c5ad      0x4d4 Src/nixieDisplay.o
- .debug_loc     0x0000ca81      0x13b Src/stm32f1xx_hal_msp.o
- .debug_loc     0x0000cbbc       0x79 Src/stm32f1xx_hal_timebase_tim.o
- .debug_loc     0x0000cc35       0xdf Src/system_stm32f1xx.o
- .debug_loc     0x0000cd14     0x2348 Yakindu/src-gen/Nixie.o
+ .debug_loc     0x0000c1ed      0x262 Src/DS3231.o
+ .debug_loc     0x0000c44f      0x194 Src/main.o
+ .debug_loc     0x0000c5e3      0x513 Src/nixieDisplay.o
+ .debug_loc     0x0000caf6      0x13b Src/stm32f1xx_hal_msp.o
+ .debug_loc     0x0000cc31       0x79 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_loc     0x0000ccaa       0xdf Src/system_stm32f1xx.o
+ .debug_loc     0x0000cd89     0x2348 Yakindu/src-gen/Nixie.o
 
-.debug_aranges  0x00000000     0x1708
+.debug_aranges  0x00000000     0x1710
  .debug_aranges
                 0x00000000       0xd0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_aranges
@@ -5351,21 +5348,21 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_aranges
                 0x00000f80       0x98 Src/main.o
  .debug_aranges
-                0x00001018       0xe0 Src/nixieDisplay.o
+                0x00001018       0xf0 Src/nixieDisplay.o
  .debug_aranges
-                0x000010f8       0x40 Src/stm32f1xx_hal_msp.o
+                0x00001108       0x40 Src/stm32f1xx_hal_msp.o
  .debug_aranges
-                0x00001138       0x30 Src/stm32f1xx_hal_timebase_tim.o
+                0x00001148       0x30 Src/stm32f1xx_hal_timebase_tim.o
  .debug_aranges
-                0x00001168       0x88 Src/stm32f1xx_it.o
+                0x00001178       0x80 Src/stm32f1xx_it.o
  .debug_aranges
-                0x000011f0       0x28 Src/system_stm32f1xx.o
+                0x000011f8       0x28 Src/system_stm32f1xx.o
  .debug_aranges
-                0x00001218      0x4c8 Yakindu/src-gen/Nixie.o
+                0x00001220      0x4c8 Yakindu/src-gen/Nixie.o
  .debug_aranges
-                0x000016e0       0x28 startup/startup_stm32f103xb.o
+                0x000016e8       0x28 startup/startup_stm32f103xb.o
 
-.debug_ranges   0x00000000     0x1768
+.debug_ranges   0x00000000     0x1770
  .debug_ranges  0x00000000       0xc0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_ranges  0x000000c0       0xe0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_ranges  0x000001a0       0x70 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5382,15 +5379,15 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_ranges  0x00000f90       0x40 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_ranges  0x00000fd0       0x50 Src/DS3231.o
  .debug_ranges  0x00001020       0x88 Src/main.o
- .debug_ranges  0x000010a8      0x108 Src/nixieDisplay.o
- .debug_ranges  0x000011b0       0x30 Src/stm32f1xx_hal_msp.o
- .debug_ranges  0x000011e0       0x20 Src/stm32f1xx_hal_timebase_tim.o
- .debug_ranges  0x00001200       0x78 Src/stm32f1xx_it.o
- .debug_ranges  0x00001278       0x18 Src/system_stm32f1xx.o
- .debug_ranges  0x00001290      0x4b8 Yakindu/src-gen/Nixie.o
- .debug_ranges  0x00001748       0x20 startup/startup_stm32f103xb.o
+ .debug_ranges  0x000010a8      0x118 Src/nixieDisplay.o
+ .debug_ranges  0x000011c0       0x30 Src/stm32f1xx_hal_msp.o
+ .debug_ranges  0x000011f0       0x20 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_ranges  0x00001210       0x70 Src/stm32f1xx_it.o
+ .debug_ranges  0x00001280       0x18 Src/system_stm32f1xx.o
+ .debug_ranges  0x00001298      0x4b8 Yakindu/src-gen/Nixie.o
+ .debug_ranges  0x00001750       0x20 startup/startup_stm32f103xb.o
 
-.debug_macro    0x00000000    0x17e3d
+.debug_macro    0x00000000    0x17e61
  .debug_macro   0x00000000      0x308 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_macro   0x00000308      0xa60 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_macro   0x00000d68      0x175 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
@@ -5486,23 +5483,23 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_macro   0x00015f29      0x176 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_macro   0x0001609f      0x1a2 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_macro   0x00016241      0x2f7 Src/DS3231.o
- .debug_macro   0x00016538       0xee Src/DS3231.o
- .debug_macro   0x00016626      0x404 Src/main.o
- .debug_macro   0x00016a2a       0xdf Src/main.o
- .debug_macro   0x00016b09       0xf4 Src/main.o
- .debug_macro   0x00016bfd       0x22 Src/main.o
- .debug_macro   0x00016c1f       0x1c Src/main.o
- .debug_macro   0x00016c3b       0xa0 Src/main.o
- .debug_macro   0x00016cdb       0x82 Src/main.o
- .debug_macro   0x00016d5d      0x33a Src/nixieDisplay.o
- .debug_macro   0x00017097      0x2f3 Src/stm32f1xx_hal_msp.o
- .debug_macro   0x0001738a      0x2e4 Src/stm32f1xx_hal_timebase_tim.o
- .debug_macro   0x0001766e      0x3b1 Src/stm32f1xx_it.o
- .debug_macro   0x00017a1f      0x2ea Src/system_stm32f1xx.o
- .debug_macro   0x00017d09       0x94 Yakindu/src-gen/Nixie.o
- .debug_macro   0x00017d9d       0xa0 Yakindu/src-gen/Nixie.o
+ .debug_macro   0x00016538      0x100 Src/DS3231.o
+ .debug_macro   0x00016638      0x404 Src/main.o
+ .debug_macro   0x00016a3c       0xdf Src/main.o
+ .debug_macro   0x00016b1b      0x106 Src/main.o
+ .debug_macro   0x00016c21       0x22 Src/main.o
+ .debug_macro   0x00016c43       0x1c Src/main.o
+ .debug_macro   0x00016c5f       0xa0 Src/main.o
+ .debug_macro   0x00016cff       0x82 Src/main.o
+ .debug_macro   0x00016d81      0x33a Src/nixieDisplay.o
+ .debug_macro   0x000170bb      0x2f3 Src/stm32f1xx_hal_msp.o
+ .debug_macro   0x000173ae      0x2e4 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_macro   0x00017692      0x3b1 Src/stm32f1xx_it.o
+ .debug_macro   0x00017a43      0x2ea Src/system_stm32f1xx.o
+ .debug_macro   0x00017d2d       0x94 Yakindu/src-gen/Nixie.o
+ .debug_macro   0x00017dc1       0xa0 Yakindu/src-gen/Nixie.o
 
-.debug_line     0x00000000     0xee50
+.debug_line     0x00000000     0xef15
  .debug_line    0x00000000      0x8ab Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_line    0x000008ab      0x8c3 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_line    0x0000116e      0xa74 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5517,62 +5514,62 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_line    0x00008665      0xdf6 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .debug_line    0x0000945b      0x5c6 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_line    0x00009a21      0x60d Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x0000a02e      0x858 Src/DS3231.o
- .debug_line    0x0000a886      0xb44 Src/main.o
- .debug_line    0x0000b3ca      0xa4c Src/nixieDisplay.o
- .debug_line    0x0000be16      0x78c Src/stm32f1xx_hal_msp.o
- .debug_line    0x0000c5a2      0x724 Src/stm32f1xx_hal_timebase_tim.o
- .debug_line    0x0000ccc6      0x9c2 Src/stm32f1xx_it.o
- .debug_line    0x0000d688      0x728 Src/system_stm32f1xx.o
- .debug_line    0x0000ddb0     0x1023 Yakindu/src-gen/Nixie.o
- .debug_line    0x0000edd3       0x7d startup/startup_stm32f103xb.o
+ .debug_line    0x0000a02e      0x863 Src/DS3231.o
+ .debug_line    0x0000a891      0xb6e Src/main.o
+ .debug_line    0x0000b3ff      0xaec Src/nixieDisplay.o
+ .debug_line    0x0000beeb      0x78c Src/stm32f1xx_hal_msp.o
+ .debug_line    0x0000c677      0x724 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_line    0x0000cd9b      0x9b0 Src/stm32f1xx_it.o
+ .debug_line    0x0000d74b      0x728 Src/system_stm32f1xx.o
+ .debug_line    0x0000de73     0x1025 Yakindu/src-gen/Nixie.o
+ .debug_line    0x0000ee98       0x7d startup/startup_stm32f103xb.o
 
-.debug_str      0x00000000    0x7bffb
- .debug_str     0x00000000    0x6e9b7 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+.debug_str      0x00000000    0x7bfd9
+ .debug_str     0x00000000    0x6e9c4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
                               0x6ed61 (size before relaxing)
- .debug_str     0x0006e9b7      0x2d8 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_str     0x0006e9c4      0x2d8 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
                               0x6ed30 (size before relaxing)
- .debug_str     0x0006ec8f      0x3dc Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_str     0x0006ec9c      0x3dc Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
                               0x6ea94 (size before relaxing)
- .debug_str     0x0006f06b      0x39e Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_str     0x0006f078      0x39e Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
                               0x6ea77 (size before relaxing)
- .debug_str     0x0006f409      0xcfb Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_str     0x0006f416      0xcfb Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
                               0x6f5b0 (size before relaxing)
- .debug_str     0x00070104      0x348 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_str     0x00070111      0x348 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
                               0x6eacc (size before relaxing)
- .debug_str     0x0007044c      0xf0d Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
+ .debug_str     0x00070459      0xf0d Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
                               0x6f7cc (size before relaxing)
- .debug_str     0x00071359      0x4f1 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
+ .debug_str     0x00071366      0x4f1 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
                               0x6f06e (size before relaxing)
- .debug_str     0x0007184a     0x5d21 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+ .debug_str     0x00071857     0x5d21 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
                                0xc9a6 (size before relaxing)
- .debug_str     0x0007756b      0x234 Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_str     0x00077578      0x234 Middlewares/Third_Party/FreeRTOS/Source/list.o
                                0x9c3a (size before relaxing)
- .debug_str     0x0007779f      0x6f5 Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_str     0x000777ac      0x6f5 Middlewares/Third_Party/FreeRTOS/Source/queue.o
                                0xb28e (size before relaxing)
- .debug_str     0x00077e94      0xf16 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_str     0x00077ea1      0xf16 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
                                0xbccd (size before relaxing)
- .debug_str     0x00078daa      0x666 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+ .debug_str     0x00078db7      0x666 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
                                0x7c1d (size before relaxing)
- .debug_str     0x00079410      0x243 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x0007941d      0x243 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
                                0xa37a (size before relaxing)
- .debug_str     0x00079653      0x2ef Src/DS3231.o
-                              0x6eddc (size before relaxing)
- .debug_str     0x00079942      0xe5b Src/main.o
-                              0x75863 (size before relaxing)
- .debug_str     0x0007a79d      0x742 Src/nixieDisplay.o
-                              0x70365 (size before relaxing)
- .debug_str     0x0007aedf       0x25 Src/stm32f1xx_hal_msp.o
-                              0x6f69c (size before relaxing)
- .debug_str     0x0007af04       0x50 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_str     0x00079660      0x30e Src/DS3231.o
+                              0x6edfb (size before relaxing)
+ .debug_str     0x0007996e      0xe2f Src/main.o
+                              0x75868 (size before relaxing)
+ .debug_str     0x0007a79d      0x757 Src/nixieDisplay.o
+                              0x703a6 (size before relaxing)
+ .debug_str     0x0007aef4       0x25 Src/stm32f1xx_hal_msp.o
+                              0x6f6a7 (size before relaxing)
+ .debug_str     0x0007af19       0x50 Src/stm32f1xx_hal_timebase_tim.o
                               0x6ee80 (size before relaxing)
- .debug_str     0x0007af54      0x10d Src/stm32f1xx_it.o
-                              0x745ae (size before relaxing)
- .debug_str     0x0007b061       0x69 Src/system_stm32f1xx.o
+ .debug_str     0x0007af69       0xfa Src/stm32f1xx_it.o
+                              0x745a6 (size before relaxing)
+ .debug_str     0x0007b063       0x69 Src/system_stm32f1xx.o
                               0x6e722 (size before relaxing)
- .debug_str     0x0007b0ca      0xf02 Yakindu/src-gen/Nixie.o
-                               0x56f9 (size before relaxing)
- .debug_str     0x0007bfcc       0x2f startup/startup_stm32f103xb.o
+ .debug_str     0x0007b0cc      0xede Yakindu/src-gen/Nixie.o
+                               0x56d5 (size before relaxing)
+ .debug_str     0x0007bfaa       0x2f startup/startup_stm32f103xb.o
                                  0x5a (size before relaxing)
 
 .comment        0x00000000       0x7f
@@ -5600,7 +5597,7 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .comment       0x0000007f       0x80 Src/system_stm32f1xx.o
  .comment       0x0000007f       0x80 Yakindu/src-gen/Nixie.o
 
-.debug_frame    0x00000000     0x3ffc
+.debug_frame    0x00000000     0x4018
  .debug_frame   0x00000000      0x1ac Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_frame   0x000001ac      0x12c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_frame   0x000002d8      0x148 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5616,12 +5613,12 @@ OUTPUT(NixieClock.elf elf32-littlearm)
  .debug_frame   0x000029c4       0xe0 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_frame   0x00002aa4       0xac Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_frame   0x00002b50       0xfc Src/DS3231.o
- .debug_frame   0x00002c4c      0x1c8 Src/main.o
- .debug_frame   0x00002e14      0x25c Src/nixieDisplay.o
- .debug_frame   0x00003070       0xa0 Src/stm32f1xx_hal_msp.o
- .debug_frame   0x00003110       0x50 Src/stm32f1xx_hal_timebase_tim.o
- .debug_frame   0x00003160      0x130 Src/stm32f1xx_it.o
- .debug_frame   0x00003290       0x30 Src/system_stm32f1xx.o
- .debug_frame   0x000032c0      0xce8 Yakindu/src-gen/Nixie.o
- .debug_frame   0x00003fa8       0x2c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00003fd4       0x28 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00002c4c      0x1cc Src/main.o
+ .debug_frame   0x00002e18      0x28c Src/nixieDisplay.o
+ .debug_frame   0x000030a4       0xa0 Src/stm32f1xx_hal_msp.o
+ .debug_frame   0x00003144       0x50 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_frame   0x00003194      0x118 Src/stm32f1xx_it.o
+ .debug_frame   0x000032ac       0x30 Src/system_stm32f1xx.o
+ .debug_frame   0x000032dc      0xce8 Yakindu/src-gen/Nixie.o
+ .debug_frame   0x00003fc4       0x2c c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00003ff0       0x28 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)

@@ -24,7 +24,7 @@
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_86TiYBJKEemqgdSn3y6r5Q" specification="" name="Year" incomingTransitions="_YOEOgBJLEemqgdSn3y6r5Q _xQka8BJREemqgdSn3y6r5Q">
             <outgoingTransitions xmi:id="_bd9R8BJLEemqgdSn3y6r5Q" specification="B_3" target="_PKyQIBJLEemqgdSn3y6r5Q"/>
-            <outgoingTransitions xmi:id="_xQka8BJREemqgdSn3y6r5Q" specification="B_2 /&#xA;Increase(B_Date,Year)" target="_86TiYBJKEemqgdSn3y6r5Q"/>
+            <outgoingTransitions xmi:id="_xQka8BJREemqgdSn3y6r5Q" specification="B_2 /&#xA;Increase(B_Date,Day)" target="_86TiYBJKEemqgdSn3y6r5Q"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_PKyQIBJLEemqgdSn3y6r5Q" name="Month" incomingTransitions="_bd9R8BJLEemqgdSn3y6r5Q __wXFUBJREemqgdSn3y6r5Q">
             <outgoingTransitions xmi:id="_eD0g8BJLEemqgdSn3y6r5Q" specification="B_3" target="_SbvDgBJLEemqgdSn3y6r5Q"/>
@@ -32,7 +32,7 @@
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_SbvDgBJLEemqgdSn3y6r5Q" specification="&#xA;" name="Day" incomingTransitions="_eD0g8BJLEemqgdSn3y6r5Q _TDb4gBJSEemqgdSn3y6r5Q">
             <outgoingTransitions xmi:id="_fXw1EBJLEemqgdSn3y6r5Q" specification="B_3 / Send(Date)" target="_K16pABJIEemqgdSn3y6r5Q"/>
-            <outgoingTransitions xmi:id="_TDb4gBJSEemqgdSn3y6r5Q" specification="B_2 /&#xA;Increase(B_Date,Day)" target="_SbvDgBJLEemqgdSn3y6r5Q"/>
+            <outgoingTransitions xmi:id="_TDb4gBJSEemqgdSn3y6r5Q" specification="B_2 /&#xA;Increase(B_Date,Year)" target="_SbvDgBJLEemqgdSn3y6r5Q"/>
           </vertices>
         </regions>
       </vertices>
@@ -83,7 +83,7 @@
         <outgoingTransitions xmi:id="_5LiJUBL0EemUYNZQN7GYJA" specification="B_1" target="_vtLgIBJSEemqgdSn3y6r5Q"/>
         <regions xmi:id="_hIUnwBLPEemUYNZQN7GYJA" name="Alarm">
           <vertices xsi:type="sgraph:State" xmi:id="_1ReHUBLPEemUYNZQN7GYJA" specification="" name="AlarmConfig" incomingTransitions="_zmgZUBLaEemUYNZQN7GYJA _u0TsQBLzEemUYNZQN7GYJA _jJFhoBL7EemUYNZQN7GYJA">
-            <outgoingTransitions xmi:id="_bg0LsBLaEemUYNZQN7GYJA" specification="B_3" target="_f9zjIBLUEemUYNZQN7GYJA"/>
+            <outgoingTransitions xmi:id="_bg0LsBLaEemUYNZQN7GYJA" specification="B_3/Show(B_Alarm)" target="_f9zjIBLUEemUYNZQN7GYJA"/>
             <outgoingTransitions xmi:id="_jJFhoBL7EemUYNZQN7GYJA" specification="B_2 / SwapAlarm()" target="_1ReHUBLPEemUYNZQN7GYJA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_f9zjIBLUEemUYNZQN7GYJA" specification="" name="Hour" incomingTransitions="_bg0LsBLaEemUYNZQN7GYJA _orENMBLfEemUYNZQN7GYJA">
@@ -91,7 +91,7 @@
             <outgoingTransitions xmi:id="_orENMBLfEemUYNZQN7GYJA" specification="B_2 / &#xA;Increase(B_Alarm,Hour)" target="_f9zjIBLUEemUYNZQN7GYJA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_pkgXoBLUEemUYNZQN7GYJA" name="Minute" incomingTransitions="_ysQXkBLaEemUYNZQN7GYJA _zahWUBLbEemUYNZQN7GYJA">
-            <outgoingTransitions xmi:id="_zmgZUBLaEemUYNZQN7GYJA" specification="B_3/ Send(Alarm)" target="_1ReHUBLPEemUYNZQN7GYJA"/>
+            <outgoingTransitions xmi:id="_zmgZUBLaEemUYNZQN7GYJA" specification="B_3/ Send(Alarm);Show(Alarm)" target="_1ReHUBLPEemUYNZQN7GYJA"/>
             <outgoingTransitions xmi:id="_zahWUBLbEemUYNZQN7GYJA" specification="B_2 /&#xA;Increase(B_Alarm,Minute)" target="_pkgXoBLUEemUYNZQN7GYJA"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_tbrscBLzEemUYNZQN7GYJA">
@@ -809,7 +809,7 @@
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_6IjBURHaEemqgdSn3y6r5Q" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
       <styles xsi:type="notation:StringValueStyle" xmi:id="_wnS_sBYbEem06p8OWVHBfQ" name="featureToShow" stringValue="specification"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_6IpH8BHaEemqgdSn3y6r5Q" x="-820" y="-1660" width="2564" height="1940"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_6IpH8BHaEemqgdSn3y6r5Q" x="-855" y="-1645" width="2564" height="1940"/>
     </children>
     <children xsi:type="notation:Shape" xmi:id="_6I4YgBHaEemqgdSn3y6r5Q" type="StatechartText" fontName="Verdana" lineColor="4210752">
       <children xsi:type="notation:DecorationNode" xmi:id="_6I4_kBHaEemqgdSn3y6r5Q" type="StatechartName">
@@ -1168,7 +1168,7 @@
       <children xsi:type="notation:DecorationNode" xmi:id="_zmiOhBLaEemUYNZQN7GYJA" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_zmiOhRLaEemUYNZQN7GYJA"/>
         <styles xsi:type="notation:StringValueStyle" xmi:id="_wtQdxRYbEem06p8OWVHBfQ" name="featureToShow" stringValue="specification"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_zmiOhhLaEemUYNZQN7GYJA" x="-47" y="12"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_zmiOhhLaEemUYNZQN7GYJA" x="-99" y="16"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_zmiOgRLaEemUYNZQN7GYJA" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_zmiOgxLaEemUYNZQN7GYJA" fontName="Verdana"/>

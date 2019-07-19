@@ -105,17 +105,16 @@ void Error_Handler(void);
 #define B2_GPIO_Port GPIOA
 #define B3_Pin GPIO_PIN_4
 #define B3_GPIO_Port GPIOA
-#define Sensor_Pin GPIO_PIN_5
-#define Sensor_GPIO_Port GPIOA
-#define Sensor_EXTI_IRQn EXTI9_5_IRQn
+#define SENSOR_Pin GPIO_PIN_5
+#define SENSOR_GPIO_Port GPIOA
+#define Nixie_0_Pin GPIO_PIN_6
+#define Nixie_0_GPIO_Port GPIOA
 #define NixieCrl_P_Pin GPIO_PIN_7
 #define NixieCrl_P_GPIO_Port GPIOA
 #define Nixie_LP_Pin GPIO_PIN_0
 #define Nixie_LP_GPIO_Port GPIOB
 #define Nixie_DP_Pin GPIO_PIN_1
 #define Nixie_DP_GPIO_Port GPIOB
-#define Nixie_0_Pin GPIO_PIN_2
-#define Nixie_0_GPIO_Port GPIOB
 #define Nixie_9_Pin GPIO_PIN_12
 #define Nixie_9_GPIO_Port GPIOB
 #define Nixie_8_Pin GPIO_PIN_13
@@ -146,6 +145,10 @@ void Error_Handler(void);
 #define NixieCrl_4_GPIO_Port GPIOB
 #define NixieCrl_5_Pin GPIO_PIN_7
 #define NixieCrl_5_GPIO_Port GPIOB
+#define GPIO_STATE_Pin GPIO_PIN_8
+#define GPIO_STATE_GPIO_Port GPIOB
+#define SQRT_Pin GPIO_PIN_9
+#define SQRT_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

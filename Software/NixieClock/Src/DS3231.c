@@ -27,6 +27,15 @@ uint8_t * Display(uint8_t State){
 		case D_TEMP:
 			return RTC_DATA.TEMP;
 			break;
+		case DB_TIME:
+			return RTC_DATA.TIME[CONFIG];
+			break;
+		case DB_DATE:
+			return RTC_DATA.DATE[CONFIG];
+			break;
+		case DB_ALARM:
+			return RTC_DATA.ALARM[CONFIG];
+			break;
 		default:
 			return RTC_DATA.TIME[CURRENT];
 			break;
@@ -49,7 +58,7 @@ void stopAlarm(I2C_HandleTypeDef *hi2c){
 	HAL_I2C_Master_Transmit(&(*hi2c),DS3231_ADDRESS,data,2,100);
 }
 uint8_t enableAlarm(I2C_HandleTypeDef *hi2c){
-	uint8_t STATE=(~RTC_DATA.A1IE);
+	uint8_t STATE=!(RTC_DATA.A1IE);
 	uint8_t data[2];
 	data[0]=CONFIG1_ADDRESS;
 	data[1]=(RTC_DATA.A1IE)? 0x04 : 0x05;
@@ -59,7 +68,7 @@ uint8_t enableAlarm(I2C_HandleTypeDef *hi2c){
 
 void increase(uint8_t type,uint8_t unit){
 	switch(type){
-	case D_TIME:
+	case DB_TIME:
 		switch(unit){
 		case D_SECONDS:
 			if((RTC_DATA.TIME[CONFIG][1]==5) && (RTC_DATA.TIME[CONFIG][0]==9)){
@@ -102,10 +111,10 @@ void increase(uint8_t type,uint8_t unit){
 			break;
 			}
 		break;
-	case D_DATE:
+	case DB_DATE:
 		switch(unit){
 		case D_DAY:
-			if((RTC_DATA.DATE[CONFIG][5]==3) && (RTC_DATA.TIME[CONFIG][4]==1)){
+			if((RTC_DATA.DATE[CONFIG][5]==3) && (RTC_DATA.DATE[CONFIG][4]==1)){
 				RTC_DATA.DATE[CONFIG][4]=1;
 				RTC_DATA.DATE[CONFIG][5]=0;
 			}else{
@@ -118,7 +127,7 @@ void increase(uint8_t type,uint8_t unit){
 			}
 		break;
 		case D_MONTH:
-			if((RTC_DATA.DATE[CONFIG][3]==1) && (RTC_DATA.TIME[CONFIG][2]==2)){
+			if((RTC_DATA.DATE[CONFIG][3]==1) && (RTC_DATA.DATE[CONFIG][2]==2)){
 				RTC_DATA.DATE[CONFIG][2]=1;
 				RTC_DATA.DATE[CONFIG][3]=0;
 			}else{
@@ -145,7 +154,7 @@ void increase(uint8_t type,uint8_t unit){
 			break;
 			}
 		break;
-	case D_ALARM:
+	case DB_ALARM:
 		switch(unit){
 		case D_SECONDS:
 			if((RTC_DATA.ALARM[CONFIG][1]==5) && (RTC_DATA.ALARM[CONFIG][0]==9)){

@@ -83,13 +83,12 @@ TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
 osThreadId pullingHandle;
-osThreadId SensorHandle;
 osThreadId ButtonsHandle;
 osThreadId AlarmHandle;
 osMessageQId Q_ButtonsHandle;
 osSemaphoreId S_AlarmHandle;
-osSemaphoreId S_SensorHandle;
 /* USER CODE BEGIN PV */
+uint8_t buttonFlag[4]={0,0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,7 +100,6 @@ static void MX_TIM3_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_TIM4_Init(void);
 void StartPullingTask(void const * argument);
-void StartSensorTask(void const * argument);
 void StartButtosTask(void const * argument);
 void StartAlarmTask(void const * argument);
 
@@ -111,7 +109,59 @@ void StartAlarmTask(void const * argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+uint8_t event(){
+	uint8_t aux=0;
+	static uint8_t start[3]={1,1,1};
+	if((HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin))==GPIO_PIN_RESET){
+		if(!buttonFlag[E_B1]){
+			aux=E_B1;
+			if(start[E_B1]){
+				buttonFlag[E_B1]=10;
+				start[E_B1]=0;
+			}else{
+				buttonFlag[E_B1]=1;
+			}
+		}
+	}else{
+		buttonFlag[E_B1]=0;
+		start[E_B1]=1;
+	}
+	if((HAL_GPIO_ReadPin(B2_GPIO_Port,B2_Pin))==GPIO_PIN_RESET){
+		if(!buttonFlag[E_B2]){
+			aux=E_B2;
+			if(start[E_B2]){
+				buttonFlag[E_B2]=10;
+				start[E_B2]=0;
+			}else{
+				buttonFlag[E_B2]=1;
+			}
+		}
+	}else{
+		buttonFlag[E_B2]=0;
+		start[E_B2]=1;
+	}
+	if((HAL_GPIO_ReadPin(B3_GPIO_Port,B3_Pin))==GPIO_PIN_RESET){
+		if(!buttonFlag[E_B3]){
+			aux=E_B3;
+			if(start[E_B3]){
+				buttonFlag[E_B3]=10;
+				start[E_B3]=0;
+			}else{
+				buttonFlag[E_B3]=1;
+			}
+		}
+	}else{
+		buttonFlag[E_B3]=0;
+		start[E_B3]=1;
+	}
+	if((HAL_GPIO_ReadPin(SENSOR_GPIO_Port,SENSOR_Pin))==GPIO_PIN_SET){
+		if(!buttonFlag[E_SENSOR-E_SENSOR]){
+			aux=E_SENSOR;
+			buttonFlag[E_SENSOR-E_SENSOR]=15;
+		}
+	}
+	return aux;
+}
 /* USER CODE END 0 */
 
 /**
@@ -160,10 +210,6 @@ int main(void)
   osSemaphoreDef(S_Alarm);
   S_AlarmHandle = osSemaphoreCreate(osSemaphore(S_Alarm), 1);
 
-  /* definition and creation of S_Sensor */
-  osSemaphoreDef(S_Sensor);
-  S_SensorHandle = osSemaphoreCreate(osSemaphore(S_Sensor), 1);
-
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -176,10 +222,6 @@ int main(void)
   /* definition and creation of pulling */
   osThreadDef(pulling, StartPullingTask, osPriorityHigh, 0, 128);
   pullingHandle = osThreadCreate(osThread(pulling), NULL);
-
-  /* definition and creation of Sensor */
-  osThreadDef(Sensor, StartSensorTask, osPriorityNormal, 0, 128);
-  SensorHandle = osThreadCreate(osThread(Sensor), NULL);
 
   /* definition and creation of Buttons */
   osThreadDef(Buttons, StartButtosTask, osPriorityBelowNormal, 0, 128);
@@ -196,7 +238,7 @@ int main(void)
 
   /* Create the queue(s) */
   /* definition and creation of Q_Buttons */
-  osMessageQDef(Q_Buttons, 3, uint8_t);
+  osMessageQDef(Q_Buttons, 4, uint8_t);
   Q_ButtonsHandle = osMessageCreate(osMessageQ(Q_Buttons), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -460,13 +502,15 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, LedRed_Pin|LedGreen_Pin|LedBlue_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, Buzzer_Pin|NixieCrl_P_Pin|Nixie_5_Pin|Nixie_4_Pin 
-                          |Nixie_3_Pin|Nixie_2_Pin|Nixie_1_Pin|NixieCrl_0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, Buzzer_Pin|Nixie_0_Pin|NixieCrl_P_Pin|Nixie_5_Pin 
+                          |Nixie_4_Pin|Nixie_3_Pin|Nixie_2_Pin|Nixie_1_Pin 
+                          |NixieCrl_0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, Nixie_LP_Pin|Nixie_DP_Pin|Nixie_0_Pin|Nixie_9_Pin 
-                          |Nixie_8_Pin|Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin 
-                          |NixieCrl_2_Pin|NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin 
+                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin 
+                          |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin|GPIO_STATE_Pin 
+                          |SQRT_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LedRed_Pin LedGreen_Pin LedBlue_Pin */
   GPIO_InitStruct.Pin = LedRed_Pin|LedGreen_Pin|LedBlue_Pin;
@@ -475,20 +519,22 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Buzzer_Pin NixieCrl_P_Pin Nixie_5_Pin Nixie_4_Pin 
-                           Nixie_3_Pin Nixie_2_Pin Nixie_1_Pin NixieCrl_0_Pin */
-  GPIO_InitStruct.Pin = Buzzer_Pin|NixieCrl_P_Pin|Nixie_5_Pin|Nixie_4_Pin 
-                          |Nixie_3_Pin|Nixie_2_Pin|Nixie_1_Pin|NixieCrl_0_Pin;
+  /*Configure GPIO pins : Buzzer_Pin Nixie_0_Pin NixieCrl_P_Pin Nixie_5_Pin 
+                           Nixie_4_Pin Nixie_3_Pin Nixie_2_Pin Nixie_1_Pin 
+                           NixieCrl_0_Pin */
+  GPIO_InitStruct.Pin = Buzzer_Pin|Nixie_0_Pin|NixieCrl_P_Pin|Nixie_5_Pin 
+                          |Nixie_4_Pin|Nixie_3_Pin|Nixie_2_Pin|Nixie_1_Pin 
+                          |NixieCrl_0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Alarm_Pin Sensor_Pin */
-  GPIO_InitStruct.Pin = Alarm_Pin|Sensor_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  /*Configure GPIO pin : Alarm_Pin */
+  GPIO_InitStruct.Pin = Alarm_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(Alarm_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : B1_Pin B2_Pin B3_Pin */
   GPIO_InitStruct.Pin = B1_Pin|B2_Pin|B3_Pin;
@@ -496,12 +542,20 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Nixie_LP_Pin Nixie_DP_Pin Nixie_0_Pin Nixie_9_Pin 
-                           Nixie_8_Pin Nixie_7_Pin Nixie_6_Pin NixieCrl_1_Pin 
-                           NixieCrl_2_Pin NixieCrl_3_Pin NixieCrl_4_Pin NixieCrl_5_Pin */
-  GPIO_InitStruct.Pin = Nixie_LP_Pin|Nixie_DP_Pin|Nixie_0_Pin|Nixie_9_Pin 
-                          |Nixie_8_Pin|Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin 
-                          |NixieCrl_2_Pin|NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin;
+  /*Configure GPIO pin : SENSOR_Pin */
+  GPIO_InitStruct.Pin = SENSOR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(SENSOR_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Nixie_LP_Pin Nixie_DP_Pin Nixie_9_Pin Nixie_8_Pin 
+                           Nixie_7_Pin Nixie_6_Pin NixieCrl_1_Pin NixieCrl_2_Pin 
+                           NixieCrl_3_Pin NixieCrl_4_Pin NixieCrl_5_Pin GPIO_STATE_Pin 
+                           SQRT_Pin */
+  GPIO_InitStruct.Pin = Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin 
+                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin 
+                          |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin|GPIO_STATE_Pin 
+                          |SQRT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -511,18 +565,11 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI1_IRQn);
 
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-
 }
 
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	portBASE_TYPE X	=pdFALSE;
-	if(GPIO_Pin==GPIO_PIN_5){
-		xSemaphoreGiveFromISR(S_SensorHandle,&X);
-
-	}
 	if(GPIO_Pin==GPIO_PIN_1){
 		xSemaphoreGiveFromISR(S_AlarmHandle,&X);
 	}
@@ -546,44 +593,18 @@ void StartPullingTask(void const * argument)
 {
 
   /* USER CODE BEGIN 5 */
+
   /* Infinite loop */
 	uint8_t aux=0;
   for(;;)
   {
-	  if((HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_2))==GPIO_PIN_RESET){
-		  aux=E_B1;
-		  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
+	  aux=event();
+	  if(aux){
+	  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
 	  }
-	  if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_3)==GPIO_PIN_RESET){
-		  aux=E_B2;
-		  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
-	  }
-	  if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_4)==GPIO_PIN_RESET){
-		  aux=E_B3;
-		  xQueueSendToBack(Q_ButtonsHandle,&aux,(portTickType)0);
-	  }
-    osDelay(150);
+    osDelay(100);
   }
   /* USER CODE END 5 */ 
-}
-
-/* USER CODE BEGIN Header_StartSensorTask */
-/**
-* @brief Function implementing the Sensor thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartSensorTask */
-void StartSensorTask(void const * argument)
-{
-  /* USER CODE BEGIN StartSensorTask */
-  /* Infinite loop */
-  for(;;)
-  {
-	xSemaphoreTake(S_SensorHandle,portMAX_DELAY);
-	nixieEvent(E_SENSOR);
-  }
-  /* USER CODE END StartSensorTask */
 }
 
 /* USER CODE BEGIN Header_StartButtosTask */
@@ -636,7 +657,7 @@ void StartAlarmTask(void const * argument)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
-	static uint8_t aux=0;
+	static uint8_t aux=0,aux2=0,aux3=0;
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1) {
     HAL_IncTick();
@@ -649,9 +670,34 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	 if (!aux){
 		getRTC(&hi2c2);
 	 }
-	 nixieDisplay();
+
+	 if(!aux2){
+			if(buttonFlag[E_B1]){
+				buttonFlag[E_B1]--;
+			}
+			if(buttonFlag[E_B2]){
+				buttonFlag[E_B2]--;
+			}
+			if(buttonFlag[E_B3]){
+				buttonFlag[E_B3]--;
+			}
+			if(buttonFlag[E_SENSOR-E_SENSOR]){
+				buttonFlag[E_SENSOR-E_SENSOR]--;
+			}
+	 }
+
+	 if(!aux3){
+		 HAL_GPIO_TogglePin(SQRT_GPIO_Port,SQRT_Pin);
+	 }
+
+	 //nixieDisplay();
+	 segmentDisplay();
 	 nixieLed();
 	 aux++;
+	 aux2++;
+	 aux3++;
+	 aux3%=3;
+	 aux2%=100;
 	 aux%=250;
   }
   if (htim->Instance == TIM2){

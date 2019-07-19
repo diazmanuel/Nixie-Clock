@@ -43,6 +43,9 @@ typedef void (*raise_event_cb_t)(void *, sc_eventid);
 #define WHITE 0x2f
 #define BLACK 0x00
 
+
+void segment(uint8_t);
+void segmentDisplay();
 void nixieDisplay();
 void nixieTickUpdate();
 void nixieInit();
