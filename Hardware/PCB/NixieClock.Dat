@@ -1,0 +1,51 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~NixieClock.PrjPcb|ReportField=ProjectFullPath~C:\Users\Public\Documents\Altium\Projects\NixieClock\NixieClock.PrjPcb|ReportField=Title~Bill of Materials For Project [NixieClock.PrjPcb] (No PCB Document Selected)|ReportField=ReportTime~15:57:51|ReportField=ReportDate~18/07/2019|ReportField=ReportDateTime~18/07/2019 15:57:51|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=TotalQuantity~187|ReportField=TotalActualPrice~0|ReportField=TotalTargetPrice~0|ReportField=VersionControl_RevNumber~|ReportField=VersionControl_ProjFolderRevNumber~|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~18/07/2019|ReportField=CurrentTime~15:57:37|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\Public\Documents\Altium\Projects\NixieClock\Sheet1.SchDoc|ReportField=DocumentName~Sheet1.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~02/05/2019|ReportField=Organization~|ReportField=ProjectName~NixieClock.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~NixieClock.PrjPcb|ReportField=DataSourceFullPath~C:\Users\Public\Documents\Altium\Projects\NixieClock\NixieClock.PrjPcb|ReportField=PCBConfigurationName~Default Configuration|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
+1|BUZZER||A1|BUZZER|BUZZER|1
+2|3V||BAT|HOLDER-2032|BAT|1
+3|470PF 16V C0G||C1|0603|CAP|1
+4|2.2uF  400V||C2|CAP-SIZE-F|CAP_pol|1
+5|100nF 16V Y5R||C3, C5, C10, C11, C12, C13, C14, C15, C19, C23, C24, C25, C26|0603|CAP|13
+6|10uF 16V Y5R||C4, C6|0603|CAP|2
+7|15nF 16V Y5R||C7|0603|CAP|1
+8|100pF 16V C0G||C8|0603|CAP|1
+9|47uF  4V||C9|AVX-B-CASE|CAP_pol|1
+10|1uF 16V Y5R||C16, C20, C21, C22|0603|CAP|4
+11|20pF 16V C0G||C17, C18|0603|CAP|2
+12|STPS1L20MF||D1, D3|DO-222AA|DIO|2
+13|US1GWF-7||D2|SOD-123F|DIO|1
+14|Vin||J1|BORNERAx2|Vin|1
+15|JTAG||J2|PIN-HEADERx4|JTAG|1
+16|GPIO||J3|PIN-HEADERx3|GPIO|1
+17|BUTTONS||J4|BORNERAx4|BUTTONx3|1
+18|150uH   10%||L1, L2|SRR1240|IND|2
+19|RGB||LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8|1205-RGB|RGB|8
+20|NIXIE-IN14||N0, N1, N2, N3, N4, N5|NIXIE_IN-14|NIXIE-IN14|6
+21|NEON-LAMP||NE1, NE2|NIXIE_IN-3|NEON-LAMP|2
+22|2.5KΩ  25N||P1, P2|3296W|POTE|2
+23|680KΩ   1%||R1|0603|RES|1
+24|4.7KΩ   1%||R2, R13, R14, R15|0603|RES|4
+25|9.1KΩ   1%||R3|0603|RES|1
+26|5.49KΩ   1%||R4|0603|RES|1
+27|13KΩ   1%||R5|0603|RES|1
+28|0Ω||R6, R7, R8, R9|0603|RES|4
+29|10KΩ   1%||R10, R11, R12, R46, R67, R70, R73, R76, R79, R82|0603|RES|10
+30|400Ω   1%||R16, R19, R22, R25, R28, R31, R34, R37|0603|RES|8
+31|700Ω   1%||R17, R20, R23, R26, R29, R32, R35, R38|0603|RES|8
+32|175Ω   1%||R18, R21, R24, R27, R30, R33, R36, R39, R45|0603|RES|9
+33|33KΩ   1%||R40, R41, R42, R43, R44, R48, R49, R50, R51, R52, R53, R54, R55, R56, R57, R58, R59, R60, R61, R62, R63, R64, R65, R66|0603|RES|24
+34|100KΩ   1%||R68, R72, R75, R78, R80, R84, R85, R86, R89|0603|RES|9
+35|470KΩ   1%||R69, R71, R74, R77, R81, R83, R87, R88|0603|RES|8
+36|1KΩ   1%||R90|0603|RES|1
+37|BUTTON||RESET|FSMSM|BUTTON|1
+38|TCRT5000||S1|BORNERAx4|E/R infrarojo|1
+39|IRF644PBF||T1|TO263-3S|N-MOS|1
+40|PZTA42||T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T31|SOT-23|NPN|24
+41|PZTA92||T25, T26, T27, T28, T29, T30|SOT-23|PNP|6
+42|HV-TEST-POINT||TP1|Test_Point_HV|HV-TEST-POINT|1
+43|TEST-POINT||TP2, TP3|Test_Point|TEST-POINT|2
+44|STM32F103C8T6||U1|LQFP48|STM32F103C8T6|1
+45|MC34063||U2|SOIC-8|MC34063|1
+46|A5972D||U3|SOIC-8|A5972D|1
+47|DS3231||U4|SO16W|DS3231|1
+48|MC33202DG||U5|SOIC-8|Operacional|1
+49|74LV1T86||U6|SOT-23-5|XOR|1
+50|ABM3B-8MHz||Y1|ABM3B|Cristal|1
