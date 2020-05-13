@@ -1,0 +1,8 @@
+Record=DiagramHierarchy|SourceDocument=NixieMultiBoard1.MbsDoc|Kind=Multi-board Schematic Module|Designator=Nixie_B1|Source=..\NixieClock_B1\NixieClock_B1.PrjPcb
+Record=SubProject|SourceDocument=NixieMultiBoard1.MbsDoc|ProjectPath=..\NixieClock_B1\NixieClock_B1.PrjPcb
+Record=DiagramHierarchy|SourceDocument=NixieMultiBoard1.MbsDoc|Kind=Multi-board Schematic Module|Designator=Nixie_B2|Source=..\NixieClock_B2\NixieClock_B2.PrjPcb
+Record=SubProject|SourceDocument=NixieMultiBoard1.MbsDoc|ProjectPath=..\NixieClock_B2\NixieClock_B2.PrjPcb
+Record=DiagramHierarchy|SourceDocument=NixieClock.MbsDoc|Kind=Multi-board Schematic Module|Designator=Nixie_B1|Source=..\NixieClock_B1\NixieClock_B1.PrjPcb
+Record=SubProject|SourceDocument=NixieClock.MbsDoc|ProjectPath=..\NixieClock_B1\NixieClock_B1.PrjPcb
+Record=DiagramHierarchy|SourceDocument=NixieClock.MbsDoc|Kind=Multi-board Schematic Module|Designator=Nixie_B2|Source=..\NixieClock_B2\NixieClock_B2.PrjPcb
+Record=SubProject|SourceDocument=NixieClock.MbsDoc|ProjectPath=..\NixieClock_B2\NixieClock_B2.PrjPcb

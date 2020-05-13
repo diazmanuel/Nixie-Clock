@@ -1,0 +1,26 @@
+	funcionamiento
+		freceuencia de shifteo con el maximo que figura en la hoja de datos del in-14
+		pinout
+		RESISTENCIAS DE LOS LEDS con un excel expllicando de donde salen los valores
+	
+	Software
+		apagar todos los pines del nixie al iniciar
+
+	PCB
+		top level esquematico
+		modelo 3D valvulas
+		actualizar cambios a diseño multi board
+		TAMAÑO DE LOS AGUJEROS	
+		espesor PCB 3D
+		agregar nombre los esquematicos
+		proteccion sobre tension
+		proteccion sobre corriente
+
+	diseño 3d
+		TAMAÑO DEL SEPARADOR DE LAS VALVULAS
+		no se dañen los archivos cuando los comprimo y los subo al git
+
+
+
+
+		
