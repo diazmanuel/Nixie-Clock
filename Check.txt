@@ -9,6 +9,9 @@
 	PCB
 		proteccion sobre tension
 		proteccion sobre corriente
+		ver de rotar el mosfet por las dudas de que toque con los botones
+		cambiar modelo del inductor de 180v
+		mover para atras un poco el pote
 
 
 		
