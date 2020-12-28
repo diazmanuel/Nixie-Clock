@@ -13,5 +13,7 @@
 		cambiar modelo del inductor de 180v
 		mover para atras un poco el pote
 
-
+	testeos
+		testear sensor touch
+		nixie tube en shifteo
 		
