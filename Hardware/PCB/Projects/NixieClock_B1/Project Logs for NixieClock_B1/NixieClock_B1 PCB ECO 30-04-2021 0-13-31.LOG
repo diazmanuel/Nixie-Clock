@@ -1,0 +1,18 @@
+Change Component Footprint: Designator=LED1 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED2 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED3 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED4 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED5 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED6 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED7 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Footprint: Designator=LED8 Old Footprint=1205-RGB New Footprint=1210-RGB
+Change Component Library : Designator=LED1 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED2 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED3 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED4 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED5 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED6 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED7 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Component Library : Designator=LED8 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Added Pin To Net: NetName=12V Pin=J1-4
+Added Pin To Net: NetName=GND Pin=J1-14

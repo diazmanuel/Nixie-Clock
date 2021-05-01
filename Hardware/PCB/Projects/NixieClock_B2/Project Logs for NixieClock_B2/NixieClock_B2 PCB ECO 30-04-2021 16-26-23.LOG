@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=TACTIL_SENSOR Pin=R1-1
+Change Net Name : Old Net Name=BOARD SELECTOR New Net Name=BOARD_SELECTOR
+Added Pin To Net: NetName=TOUCH_SENSOR Pin=R1-1
+Added Net: Name=TOUCH_SENSOR

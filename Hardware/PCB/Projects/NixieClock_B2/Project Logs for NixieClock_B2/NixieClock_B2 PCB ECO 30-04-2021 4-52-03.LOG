@@ -1,0 +1,2 @@
+Added Pin To Net: NetName=12V Pin=J1-4
+Added Member To Class: ClassName=nixie_power Member=Component J4 Vin
