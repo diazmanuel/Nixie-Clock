@@ -1,0 +1,14 @@
+Change Component Comment : Designator=C17 Old Comment=2.2uF  400V New Comment=2.2uF  250V
+Change Component Comment : Designator=C14 Old Comment=20pF 16V New Comment=22pF 16V
+Change Component Comment : Designator=C15 Old Comment=20pF 16V New Comment=22pF 16V
+Added Component: Designator=C27(0603)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R18(0603)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=C27-1
+Added Pin To Net: NetName=12V Pin=C27-2
+Added Pin To Net: NetName=OSCOUT Pin=R18-1
+Added Pin To Net: NetName=OSCIN Pin=R18-2
+Change Net Name : Old Net Name=NC New Net Name=NDC
+Added Member To Class: ClassName=nixie_power Member=Component C27 10uF 16V
+Added Member To Class: ClassName=nixie_power Member=Component R18 1MO   1%
