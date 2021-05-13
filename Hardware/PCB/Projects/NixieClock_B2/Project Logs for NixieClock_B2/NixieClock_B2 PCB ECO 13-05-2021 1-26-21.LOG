@@ -1,0 +1,13 @@
+Change Component Comment : Designator=C2 Old Comment=(10-50)nF 16V New Comment=2.2nF 16V
+Change Component Comment : Designator=A2 Old Comment=3V New Comment=BAT
+Change Component Comment : Designator=R3 Old Comment=10KO   1% New Comment=100KO   1%
+Change Component Comment : Designator=Y1 Old Comment=ABM3B-8MHz New Comment=8MHz
+Change Component Designator: OldDesignator=A2 NewDesignator=J6
+Change Component Designator: OldDesignator=T1 NewDesignator=Q1
+Change Component Designator: OldDesignator=T2 NewDesignator=Q2
+Change Component Designator: OldDesignator=T3 NewDesignator=Q3
+Change Component Designator: OldDesignator=T4 NewDesignator=Q4
+Change Component Description : Designator=Y1 Old Description= New Description=ABM3B
+Change Component Description : Designator=J6 Old Description= New Description=CR2032
+Change Component Library : Designator=J6 Old Library=Nixielib.SchLib New Library=MyLib.SchLib
+Change Net Name : Old Net Name=NetR8_1 New Net Name=NetQ2_2

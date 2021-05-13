@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=J6 Old Footprint=HOLDER-2032 New Footprint=120591-1
+Added Member To Class: ClassName=nixie_power Member=Component J6 BAT

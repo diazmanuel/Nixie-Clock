@@ -1,9 +1,12 @@
-Output: Bill of Materials
-Type  : BOM
-From  : Variant [[No Variations]] of Project [NixieClock_B1.PrjPcb]
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [NixieClock_B1.PrjPcb]
+   Generated File[NixieClock_B1.TXT]
+   Generated File[NixieClock_B1.LDP]
+   Generated File[NixieClock_B1.DRR]
 
 
-Files Generated   : 0
+Files Generated   : 3
 Documents Printed : 0
 
-Finished Output Generation At 18:49:30 On 30/04/2021
+Finished Output Generation At 1:15:10 On 11/05/2021

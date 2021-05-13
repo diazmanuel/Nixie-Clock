@@ -1,9 +1,22 @@
-Output: Bill of Materials
-Type  : BOM
+Output: Gerber Files
+Type  : Gerber
 From  : Variant [[No Variations]] of Project [NixieClock_B2.PrjPcb]
+   Generated File[NixieClock_B2.GTO]
+   Generated File[NixieClock_B2.GTP]
+   Generated File[NixieClock_B2.GTS]
+   Generated File[NixieClock_B2.GTL]
+   Generated File[NixieClock_B2.GBL]
+   Generated File[NixieClock_B2.GBS]
+   Generated File[NixieClock_B2.GBP]
+   Generated File[NixieClock_B2.GBO]
+   Generated File[NixieClock_B2.GM1]
+   Generated File[NixieClock_B2.GKO]
+   Generated File[NixieClock_B2.RUL]
+   Generated File[NixieClock_B2.EXTREP]
+   Generated File[NixieClock_B2.REP]
 
 
-Files Generated   : 0
+Files Generated   : 13
 Documents Printed : 0
 
-Finished Output Generation At 18:53:36 On 30/04/2021
+Finished Output Generation At 1:20:57 On 11/05/2021

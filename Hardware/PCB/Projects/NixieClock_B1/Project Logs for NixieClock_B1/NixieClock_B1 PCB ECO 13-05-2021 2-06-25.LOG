@@ -1,0 +1,46 @@
+Change Component Designator: OldDesignator=LED1 NewDesignator=D1
+Change Component Designator: OldDesignator=LED2 NewDesignator=D2
+Change Component Designator: OldDesignator=LED3 NewDesignator=D3
+Change Component Designator: OldDesignator=LED4 NewDesignator=D4
+Change Component Designator: OldDesignator=LED5 NewDesignator=D5
+Change Component Designator: OldDesignator=LED6 NewDesignator=D6
+Change Component Designator: OldDesignator=LED7 NewDesignator=D7
+Change Component Designator: OldDesignator=LED8 NewDesignator=D8
+Change Component Designator: OldDesignator=T1 NewDesignator=Q1
+Change Component Designator: OldDesignator=T2 NewDesignator=Q2
+Change Component Designator: OldDesignator=T3 NewDesignator=Q3
+Change Component Designator: OldDesignator=T4 NewDesignator=Q4
+Change Component Designator: OldDesignator=T5 NewDesignator=Q5
+Change Component Designator: OldDesignator=T6 NewDesignator=Q6
+Change Component Designator: OldDesignator=T7 NewDesignator=Q7
+Change Component Designator: OldDesignator=T8 NewDesignator=Q8
+Change Component Designator: OldDesignator=T9 NewDesignator=Q9
+Change Component Designator: OldDesignator=T10 NewDesignator=Q10
+Change Component Designator: OldDesignator=T11 NewDesignator=Q11
+Change Component Designator: OldDesignator=T12 NewDesignator=Q12
+Change Component Designator: OldDesignator=T13 NewDesignator=Q13
+Change Component Designator: OldDesignator=T14 NewDesignator=Q14
+Change Component Designator: OldDesignator=T15 NewDesignator=Q15
+Change Component Designator: OldDesignator=T16 NewDesignator=Q16
+Change Component Designator: OldDesignator=T17 NewDesignator=Q17
+Change Component Designator: OldDesignator=T18 NewDesignator=Q18
+Change Component Designator: OldDesignator=T19 NewDesignator=Q19
+Change Component Designator: OldDesignator=T20 NewDesignator=Q20
+Change Component Designator: OldDesignator=T21 NewDesignator=Q21
+Change Component Designator: OldDesignator=T22 NewDesignator=Q22
+Change Component Designator: OldDesignator=T23 NewDesignator=Q23
+Change Component Designator: OldDesignator=T24 NewDesignator=Q24
+Change Component Designator: OldDesignator=T25 NewDesignator=Q25
+Change Component Designator: OldDesignator=T26 NewDesignator=Q26
+Change Component Designator: OldDesignator=T27 NewDesignator=Q27
+Change Component Designator: OldDesignator=T28 NewDesignator=Q28
+Change Component Description : Designator=D1 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D2 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D3 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D4 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D5 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D6 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D7 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=D8 Old Description= New Description=qblp655-rgb
+Change Component Description : Designator=J1 Old Description= New Description=TSW-110-15-F-D-LL
+Change Component Description : Designator=J2 Old Description= New Description=TSW-110-15-F-D-LL
