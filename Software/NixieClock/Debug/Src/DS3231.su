@@ -1,0 +1,9 @@
+DS3231.c:13:6:getRTC	16	static
+DS3231.c:16:11:Display	0	static
+DS3231.c:44:6:setConfigRTC	32	static
+DS3231.c:54:6:stopAlarm	24	static
+DS3231.c:60:9:enableAlarm	24	static
+DS3231.c:69:6:increase	0	static
+DS3231.c:203:6:resetVarRTC	0	static
+DS3231.c:215:6:setRTC	32	static
+DS3231.c:257:6:loadRTC	8	static

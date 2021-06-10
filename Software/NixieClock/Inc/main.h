@@ -90,23 +90,23 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LedRed_Pin GPIO_PIN_13
 #define LedRed_GPIO_Port GPIOC
-#define LedGreen_Pin GPIO_PIN_14
-#define LedGreen_GPIO_Port GPIOC
-#define LedBlue_Pin GPIO_PIN_15
+#define LedBlue_Pin GPIO_PIN_14
 #define LedBlue_GPIO_Port GPIOC
+#define LedGreen_Pin GPIO_PIN_15
+#define LedGreen_GPIO_Port GPIOC
 #define Buzzer_Pin GPIO_PIN_0
 #define Buzzer_GPIO_Port GPIOA
 #define Alarm_Pin GPIO_PIN_1
 #define Alarm_GPIO_Port GPIOA
 #define Alarm_EXTI_IRQn EXTI1_IRQn
-#define B1_Pin GPIO_PIN_2
+#define BL_Pin GPIO_PIN_2
+#define BL_GPIO_Port GPIOA
+#define B1_Pin GPIO_PIN_3
 #define B1_GPIO_Port GPIOA
-#define B2_Pin GPIO_PIN_3
+#define B2_Pin GPIO_PIN_4
 #define B2_GPIO_Port GPIOA
-#define B3_Pin GPIO_PIN_4
+#define B3_Pin GPIO_PIN_5
 #define B3_GPIO_Port GPIOA
-#define SENSOR_Pin GPIO_PIN_5
-#define SENSOR_GPIO_Port GPIOA
 #define Nixie_0_Pin GPIO_PIN_6
 #define Nixie_0_GPIO_Port GPIOA
 #define NixieCrl_P_Pin GPIO_PIN_7
@@ -115,6 +115,8 @@ void Error_Handler(void);
 #define Nixie_LP_GPIO_Port GPIOB
 #define Nixie_DP_Pin GPIO_PIN_1
 #define Nixie_DP_GPIO_Port GPIOB
+#define BOOT1_Pin GPIO_PIN_2
+#define BOOT1_GPIO_Port GPIOB
 #define Nixie_9_Pin GPIO_PIN_12
 #define Nixie_9_GPIO_Port GPIOB
 #define Nixie_8_Pin GPIO_PIN_13
@@ -127,12 +129,12 @@ void Error_Handler(void);
 #define Nixie_5_GPIO_Port GPIOA
 #define Nixie_4_Pin GPIO_PIN_9
 #define Nixie_4_GPIO_Port GPIOA
-#define Nixie_3_Pin GPIO_PIN_10
-#define Nixie_3_GPIO_Port GPIOA
+#define Nixie_1_Pin GPIO_PIN_10
+#define Nixie_1_GPIO_Port GPIOA
 #define Nixie_2_Pin GPIO_PIN_11
 #define Nixie_2_GPIO_Port GPIOA
-#define Nixie_1_Pin GPIO_PIN_12
-#define Nixie_1_GPIO_Port GPIOA
+#define Nixie_3_Pin GPIO_PIN_12
+#define Nixie_3_GPIO_Port GPIOA
 #define NixieCrl_0_Pin GPIO_PIN_15
 #define NixieCrl_0_GPIO_Port GPIOA
 #define NixieCrl_1_Pin GPIO_PIN_3
@@ -145,10 +147,10 @@ void Error_Handler(void);
 #define NixieCrl_4_GPIO_Port GPIOB
 #define NixieCrl_5_Pin GPIO_PIN_7
 #define NixieCrl_5_GPIO_Port GPIOB
-#define GPIO_STATE_Pin GPIO_PIN_8
-#define GPIO_STATE_GPIO_Port GPIOB
-#define SQRT_Pin GPIO_PIN_9
-#define SQRT_GPIO_Port GPIOB
+#define SENSOR_Pin GPIO_PIN_8
+#define SENSOR_GPIO_Port GPIOB
+#define BOARD_SEL_Pin GPIO_PIN_9
+#define BOARD_SEL_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

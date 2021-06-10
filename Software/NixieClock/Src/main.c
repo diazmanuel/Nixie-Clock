@@ -47,7 +47,6 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
@@ -88,7 +87,7 @@ osThreadId AlarmHandle;
 osMessageQId Q_ButtonsHandle;
 osSemaphoreId S_AlarmHandle;
 /* USER CODE BEGIN PV */
-uint8_t buttonFlag[4]={0,0,0,0};
+uint8_t buttonFlag[5]={0,0,0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -111,7 +110,7 @@ void StartAlarmTask(void const * argument);
 /* USER CODE BEGIN 0 */
 uint8_t event(){
 	uint8_t aux=0;
-	static uint8_t start[3]={1,1,1};
+	static uint8_t start[5]={1,1,1,0,0};
 	if((HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin))==GPIO_PIN_RESET){
 		if(!buttonFlag[E_B1]){
 			aux=E_B1;
@@ -154,10 +153,11 @@ uint8_t event(){
 		buttonFlag[E_B3]=0;
 		start[E_B3]=1;
 	}
-	if((HAL_GPIO_ReadPin(SENSOR_GPIO_Port,SENSOR_Pin))==GPIO_PIN_SET){
-		if(!buttonFlag[E_SENSOR-E_SENSOR]){
+	if((HAL_GPIO_ReadPin(SENSOR_GPIO_Port,SENSOR_Pin))!=start[E_SENSOR]){
+		if(!buttonFlag[E_SENSOR]){
+			start[E_SENSOR]=!start[E_SENSOR];
 			aux=E_SENSOR;
-			buttonFlag[E_SENSOR-E_SENSOR]=15;
+			buttonFlag[E_SENSOR]=1;
 		}
 	}
 	return aux;
@@ -218,6 +218,15 @@ int main(void)
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* definition and creation of Q_Buttons */
+  osMessageQDef(Q_Buttons, 4, uint8_t);
+  Q_ButtonsHandle = osMessageCreate(osMessageQ(Q_Buttons), NULL);
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
   /* Create the thread(s) */
   /* definition and creation of pulling */
   osThreadDef(pulling, StartPullingTask, osPriorityHigh, 0, 128);
@@ -236,21 +245,10 @@ int main(void)
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
-  /* Create the queue(s) */
-  /* definition and creation of Q_Buttons */
-  osMessageQDef(Q_Buttons, 4, uint8_t);
-  Q_ButtonsHandle = osMessageCreate(osMessageQ(Q_Buttons), NULL);
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
- 
-
   /* Start scheduler */
   osKernelStart();
-  
-  /* We should never get here as control is now taken by the scheduler */
 
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -271,7 +269,8 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /**Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -284,7 +283,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /**Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -468,11 +467,12 @@ static void MX_TIM4_Init(void)
 
 }
 
-/** 
+/**
   * Enable DMA controller clock
   */
-static void MX_DMA_Init(void) 
+static void MX_DMA_Init(void)
 {
+
   /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
 
@@ -499,32 +499,31 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, LedRed_Pin|LedGreen_Pin|LedBlue_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, LedRed_Pin|LedBlue_Pin|LedGreen_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, Buzzer_Pin|Nixie_0_Pin|NixieCrl_P_Pin|Nixie_5_Pin 
-                          |Nixie_4_Pin|Nixie_3_Pin|Nixie_2_Pin|Nixie_1_Pin 
-                          |NixieCrl_0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, Buzzer_Pin|BL_Pin|Nixie_0_Pin|NixieCrl_P_Pin
+                          |Nixie_5_Pin|Nixie_4_Pin|Nixie_1_Pin|Nixie_2_Pin
+                          |Nixie_3_Pin|NixieCrl_0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin 
-                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin 
-                          |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin|GPIO_STATE_Pin 
-                          |SQRT_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin
+                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin
+                          |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LedRed_Pin LedGreen_Pin LedBlue_Pin */
-  GPIO_InitStruct.Pin = LedRed_Pin|LedGreen_Pin|LedBlue_Pin;
+  /*Configure GPIO pins : LedRed_Pin LedBlue_Pin LedGreen_Pin */
+  GPIO_InitStruct.Pin = LedRed_Pin|LedBlue_Pin|LedGreen_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Buzzer_Pin Nixie_0_Pin NixieCrl_P_Pin Nixie_5_Pin 
-                           Nixie_4_Pin Nixie_3_Pin Nixie_2_Pin Nixie_1_Pin 
-                           NixieCrl_0_Pin */
-  GPIO_InitStruct.Pin = Buzzer_Pin|Nixie_0_Pin|NixieCrl_P_Pin|Nixie_5_Pin 
-                          |Nixie_4_Pin|Nixie_3_Pin|Nixie_2_Pin|Nixie_1_Pin 
-                          |NixieCrl_0_Pin;
+  /*Configure GPIO pins : Buzzer_Pin BL_Pin Nixie_0_Pin NixieCrl_P_Pin
+                           Nixie_5_Pin Nixie_4_Pin Nixie_1_Pin Nixie_2_Pin
+                           Nixie_3_Pin NixieCrl_0_Pin */
+  GPIO_InitStruct.Pin = Buzzer_Pin|BL_Pin|Nixie_0_Pin|NixieCrl_P_Pin
+                          |Nixie_5_Pin|Nixie_4_Pin|Nixie_1_Pin|Nixie_2_Pin
+                          |Nixie_3_Pin|NixieCrl_0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -536,29 +535,33 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(Alarm_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : B1_Pin B2_Pin B3_Pin */
-  GPIO_InitStruct.Pin = B1_Pin|B2_Pin|B3_Pin;
+  /*Configure GPIO pins : B1_Pin B2_Pin */
+  GPIO_InitStruct.Pin = B1_Pin|B2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : SENSOR_Pin */
-  GPIO_InitStruct.Pin = SENSOR_Pin;
+  /*Configure GPIO pin : B3_Pin */
+  GPIO_InitStruct.Pin = B3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(SENSOR_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(B3_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Nixie_LP_Pin Nixie_DP_Pin Nixie_9_Pin Nixie_8_Pin 
-                           Nixie_7_Pin Nixie_6_Pin NixieCrl_1_Pin NixieCrl_2_Pin 
-                           NixieCrl_3_Pin NixieCrl_4_Pin NixieCrl_5_Pin GPIO_STATE_Pin 
-                           SQRT_Pin */
-  GPIO_InitStruct.Pin = Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin 
-                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin 
-                          |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin|GPIO_STATE_Pin 
-                          |SQRT_Pin;
+  /*Configure GPIO pins : Nixie_LP_Pin Nixie_DP_Pin Nixie_9_Pin Nixie_8_Pin
+                           Nixie_7_Pin Nixie_6_Pin NixieCrl_1_Pin NixieCrl_2_Pin
+                           NixieCrl_3_Pin NixieCrl_4_Pin NixieCrl_5_Pin */
+  GPIO_InitStruct.Pin = Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin
+                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin
+                          |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : BOOT1_Pin SENSOR_Pin BOARD_SEL_Pin */
+  GPIO_InitStruct.Pin = BOOT1_Pin|SENSOR_Pin|BOARD_SEL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
@@ -591,7 +594,6 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c){
 /* USER CODE END Header_StartPullingTask */
 void StartPullingTask(void const * argument)
 {
-
   /* USER CODE BEGIN 5 */
 
   /* Infinite loop */
@@ -604,7 +606,7 @@ void StartPullingTask(void const * argument)
 	  }
     osDelay(100);
   }
-  /* USER CODE END 5 */ 
+  /* USER CODE END 5 */
 }
 
 /* USER CODE BEGIN Header_StartButtosTask */
@@ -646,7 +648,7 @@ void StartAlarmTask(void const * argument)
   /* USER CODE END StartAlarmTask */
 }
 
-/**
+ /**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM1 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
@@ -657,7 +659,7 @@ void StartAlarmTask(void const * argument)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
-	static uint8_t aux=0,aux2=0,aux3=0;
+	static uint8_t aux=0,aux2=0;
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1) {
     HAL_IncTick();
@@ -681,13 +683,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			if(buttonFlag[E_B3]){
 				buttonFlag[E_B3]--;
 			}
-			if(buttonFlag[E_SENSOR-E_SENSOR]){
-				buttonFlag[E_SENSOR-E_SENSOR]--;
+			if(buttonFlag[E_SENSOR]){
+				buttonFlag[E_SENSOR]--;
 			}
-	 }
-
-	 if(!aux3){
-		 HAL_GPIO_TogglePin(SQRT_GPIO_Port,SQRT_Pin);
 	 }
 
 	 //nixieDisplay();
@@ -695,8 +693,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	 nixieLed();
 	 aux++;
 	 aux2++;
-	 aux3++;
-	 aux3%=3;
 	 aux2%=100;
 	 aux%=250;
   }
@@ -727,7 +723,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

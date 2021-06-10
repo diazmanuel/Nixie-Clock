@@ -233,26 +233,6 @@ void nixieDisplay(){
 		HAL_GPIO_WritePin(Nixie_9_GPIO_Port,Nixie_9_Pin,GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(Nixie_DP_GPIO_Port,Nixie_DP_Pin,GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(Nixie_LP_GPIO_Port,Nixie_LP_Pin,GPIO_PIN_RESET);
-		switch(digit){
-				case 0:
-					HAL_GPIO_WritePin(NixieCrl_0_GPIO_Port,NixieCrl_0_Pin,GPIO_PIN_SET);
-					break;
-				case 1:
-					HAL_GPIO_WritePin(NixieCrl_1_GPIO_Port,NixieCrl_1_Pin,GPIO_PIN_SET);
-					break;
-				case 2:
-					HAL_GPIO_WritePin(NixieCrl_2_GPIO_Port,NixieCrl_2_Pin,GPIO_PIN_SET);
-					break;
-				case 3:
-					HAL_GPIO_WritePin(NixieCrl_3_GPIO_Port,NixieCrl_3_Pin,GPIO_PIN_SET);
-					break;
-				case 4:
-					HAL_GPIO_WritePin(NixieCrl_4_GPIO_Port,NixieCrl_4_Pin,GPIO_PIN_SET);
-					break;
-				case 5:
-					HAL_GPIO_WritePin(NixieCrl_5_GPIO_Port,NixieCrl_5_Pin,GPIO_PIN_SET);
-					break;
-				}
 		switch(display[digit]){
 				case 0:
 					HAL_GPIO_WritePin(Nixie_0_GPIO_Port,Nixie_0_Pin,GPIO_PIN_SET);
@@ -285,6 +265,27 @@ void nixieDisplay(){
 					HAL_GPIO_WritePin(Nixie_9_GPIO_Port,Nixie_9_Pin,GPIO_PIN_SET);
 					break;
 		}
+		switch(digit){
+				case 0:
+					HAL_GPIO_WritePin(NixieCrl_0_GPIO_Port,NixieCrl_0_Pin,GPIO_PIN_SET);
+					break;
+				case 1:
+					HAL_GPIO_WritePin(NixieCrl_1_GPIO_Port,NixieCrl_1_Pin,GPIO_PIN_SET);
+					break;
+				case 2:
+					HAL_GPIO_WritePin(NixieCrl_2_GPIO_Port,NixieCrl_2_Pin,GPIO_PIN_SET);
+					break;
+				case 3:
+					HAL_GPIO_WritePin(NixieCrl_3_GPIO_Port,NixieCrl_3_Pin,GPIO_PIN_SET);
+					break;
+				case 4:
+					HAL_GPIO_WritePin(NixieCrl_4_GPIO_Port,NixieCrl_4_Pin,GPIO_PIN_SET);
+					break;
+				case 5:
+					HAL_GPIO_WritePin(NixieCrl_5_GPIO_Port,NixieCrl_5_Pin,GPIO_PIN_SET);
+					break;
+				}
+
 
 		if(DisplayIndex==N_TEMP){
 			HAL_GPIO_WritePin(NixieCrl_P_GPIO_Port,NixieCrl_P_Pin,GPIO_PIN_RESET);

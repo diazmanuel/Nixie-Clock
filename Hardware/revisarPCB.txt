@@ -1,3 +1,0 @@
-chequear polaridad del holder de bateria
-regenerar los gerbers ,pdf y modelo 3d, BOM
-ver modo Boot del stm32 y sus resistencias en dichos pines

@@ -1,19 +1,12 @@
-	funcionamiento
-		freceuencia de shifteo con el maximo que figura en la hoja de datos del in-14
-		pinout
-		RESISTENCIAS DE LOS LEDS con un excel expllicando de donde salen los valores
+Hardware:
+chequear polaridad del holder de bateria
+regenerar los gerbers ,pdf y modelo 3d, BOM
 
-	Software
-		apagar todos los pines del nixie al iniciar
 
-	PCB
-		proteccion sobre tension
-		proteccion sobre corriente
-		ver de rotar el mosfet por las dudas de que toque con los botones
-		cambiar modelo del inductor de 180v
-		mover para atras un poco el pote
-
-	testeos
-		testear sensor touch
-		nixie tube en shifteo
-		
+Software:
+apagar todos los pines del nixie al iniciar (ver en que estado arrancan los gpio output al bootear)
+led de botones
+funcion nixieLed
+frecuencia de nixie (20ms?)
+funcionamiento botones
+ver frecuencia de los timers

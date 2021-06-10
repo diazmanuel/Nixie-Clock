@@ -1,141 +1,145 @@
-Src/main.o: ../Src/main.c C:/Users/Manuel/Documents/NixieClock/Inc/main.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
- C:/Users/Manuel/Documents/NixieClock/Inc/stm32f1xx_hal_conf.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/core_cm3.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/core_cmInstr.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/cmsis_gcc.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/core_cmFunc.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- C:/Users/Manuel/Documents/NixieClock/Inc/FreeRTOSConfig.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/Users/Manuel/Documents/NixieClock/Inc/nixieDisplay.h \
- C:/Users/Manuel/Documents/NixieClock/Inc/main.h \
- C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
- C:/Users/Manuel/Documents/NixieClock/Inc/DS3231.h \
- c:\users\manuel\documents\nixieclock\yakindu\src-gen\nixie.h \
- c:\users\manuel\documents\nixieclock\yakindu\src\sc_types.h
+Src/main.o: ../Src/main.c ../Inc/main.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+ ../Inc/stm32f1xx_hal_conf.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
+ ../Drivers/CMSIS/Include/core_cm3.h \
+ ../Drivers/CMSIS/Include/cmsis_version.h \
+ ../Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../Drivers/CMSIS/Include/cmsis_gcc.h \
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../Inc/nixieDisplay.h ../Inc/main.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h ../Inc/DS3231.h \
+ ../Inc/../Yakindu/src-gen/Nixie.h \
+ ../Inc/../Yakindu/src-gen/..\src\sc_types.h
 
-C:/Users/Manuel/Documents/NixieClock/Inc/main.h:
+../Inc/main.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
-C:/Users/Manuel/Documents/NixieClock/Inc/stm32f1xx_hal_conf.h:
+../Inc/stm32f1xx_hal_conf.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/core_cm3.h:
+../Drivers/CMSIS/Include/core_cm3.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/core_cmInstr.h:
+../Drivers/CMSIS/Include/cmsis_version.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/cmsis_gcc.h:
+../Drivers/CMSIS/Include/cmsis_compiler.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Include/core_cmFunc.h:
+../Drivers/CMSIS/Include/cmsis_gcc.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
-C:/Users/Manuel/Documents/NixieClock/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Inc/FreeRTOSConfig.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 
-C:/Users/Manuel/Documents/NixieClock/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 
-C:/Users/Manuel/Documents/NixieClock/Inc/nixieDisplay.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 
-C:/Users/Manuel/Documents/NixieClock/Inc/main.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 
-C:/Users/Manuel/Documents/NixieClock/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:
+../Inc/nixieDisplay.h:
 
-C:/Users/Manuel/Documents/NixieClock/Inc/DS3231.h:
+../Inc/main.h:
 
-c:\users\manuel\documents\nixieclock\yakindu\src-gen\nixie.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:
 
-c:\users\manuel\documents\nixieclock\yakindu\src\sc_types.h:
+../Inc/DS3231.h:
+
+../Inc/../Yakindu/src-gen/Nixie.h:
+
+../Inc/../Yakindu/src-gen/..\src\sc_types.h:
