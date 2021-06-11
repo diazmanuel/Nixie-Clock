@@ -37,15 +37,16 @@ typedef void (*raise_event_cb_t)(void *, sc_eventid);
 #define ON 1
 #define OFF 0
 
-#define RED 0x03
-#define GREEN 0x0C
-#define BLUE 0x30
-#define WHITE 0x2f
+#define RED 0x04
+#define GREEN 0x02
+#define BLUE 0x01
+#define WHITE 0x07
 #define BLACK 0x00
 
 
-void segment(uint8_t);
-void segmentDisplay();
+//void segment(uint8_t);
+//void segmentDisplay();
+void resetGpio();
 void nixieDisplay();
 void nixieTickUpdate();
 void nixieInit();

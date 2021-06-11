@@ -2973,8 +2973,6 @@ Discarded input sections
  .group         0x0000000000000000        0xc Src/nixieDisplay.o
  .group         0x0000000000000000        0xc Src/nixieDisplay.o
  .text          0x0000000000000000        0x0 Src/nixieDisplay.o
- .text.nixieDisplay
-                0x0000000000000000      0x264 Src/nixieDisplay.o
  .debug_macro   0x0000000000000000      0xaa2 Src/nixieDisplay.o
  .debug_macro   0x0000000000000000      0x221 Src/nixieDisplay.o
  .debug_macro   0x0000000000000000       0x2e Src/nixieDisplay.o
@@ -3525,7 +3523,7 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000000                g_pfnVectors
                 0x000000000800010c                . = ALIGN (0x4)
 
-.text           0x0000000008000110     0x698c
+.text           0x0000000008000110     0x6884
                 0x0000000008000110                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000110       0x40 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
@@ -3980,546 +3978,547 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008004f38       0x52 Src/main.o
                 0x0000000008004f38                SystemClock_Config
  *fill*         0x0000000008004f8a        0x2 
- .text.main     0x0000000008004f8c       0xc8 Src/main.o
+ .text.main     0x0000000008004f8c       0xcc Src/main.o
                 0x0000000008004f8c                main
  .text.HAL_GPIO_EXTI_Callback
-                0x0000000008005054       0x3c Src/main.o
-                0x0000000008005054                HAL_GPIO_EXTI_Callback
+                0x0000000008005058       0x3c Src/main.o
+                0x0000000008005058                HAL_GPIO_EXTI_Callback
  .text.HAL_I2C_MemRxCpltCallback
-                0x0000000008005090       0x18 Src/main.o
-                0x0000000008005090                HAL_I2C_MemRxCpltCallback
+                0x0000000008005094       0x18 Src/main.o
+                0x0000000008005094                HAL_I2C_MemRxCpltCallback
  .text.HAL_TIM_PeriodElapsedCallback
-                0x00000000080050a8       0xd8 Src/main.o
-                0x00000000080050a8                HAL_TIM_PeriodElapsedCallback
+                0x00000000080050ac       0xd8 Src/main.o
+                0x00000000080050ac                HAL_TIM_PeriodElapsedCallback
  .text.Error_Handler
-                0x0000000008005180        0x2 Src/main.o
-                0x0000000008005180                Error_Handler
- *fill*         0x0000000008005182        0x2 
+                0x0000000008005184        0x2 Src/main.o
+                0x0000000008005184                Error_Handler
+ *fill*         0x0000000008005186        0x2 
+ .text.resetGpio
+                0x0000000008005188      0x120 Src/nixieDisplay.o
+                0x0000000008005188                resetGpio
  .text.resetVarNixie
-                0x0000000008005184       0x30 Src/nixieDisplay.o
-                0x0000000008005184                resetVarNixie
+                0x00000000080052a8       0x2c Src/nixieDisplay.o
+                0x00000000080052a8                resetVarNixie
  .text.nixieLed
-                0x00000000080051b4       0xec Src/nixieDisplay.o
-                0x00000000080051b4                nixieLed
- .text.segment  0x00000000080052a0      0x3a4 Src/nixieDisplay.o
-                0x00000000080052a0                segment
- .text.segmentDisplay
-                0x0000000008005644       0xd8 Src/nixieDisplay.o
-                0x0000000008005644                segmentDisplay
+                0x00000000080052d4       0xd8 Src/nixieDisplay.o
+                0x00000000080052d4                nixieLed
+ .text.nixieDisplay
+                0x00000000080053ac      0x268 Src/nixieDisplay.o
+                0x00000000080053ac                nixieDisplay
  .text.nixieIface_increase
-                0x000000000800571c        0xe Src/nixieDisplay.o
-                0x000000000800571c                nixieIface_increase
- *fill*         0x000000000800572a        0x2 
+                0x0000000008005614        0xe Src/nixieDisplay.o
+                0x0000000008005614                nixieIface_increase
+ *fill*         0x0000000008005622        0x2 
  .text.nixieIface_show
-                0x000000000800572c        0xc Src/nixieDisplay.o
-                0x000000000800572c                nixieIface_show
+                0x0000000008005624        0xc Src/nixieDisplay.o
+                0x0000000008005624                nixieIface_show
  .text.nixieIface_increaseLed
-                0x0000000008005738       0x14 Src/nixieDisplay.o
-                0x0000000008005738                nixieIface_increaseLed
+                0x0000000008005630       0x14 Src/nixieDisplay.o
+                0x0000000008005630                nixieIface_increaseLed
  .text.nixieIface_init
-                0x000000000800574c       0x34 Src/nixieDisplay.o
-                0x000000000800574c                nixieIface_init
+                0x0000000008005644       0x34 Src/nixieDisplay.o
+                0x0000000008005644                nixieIface_init
  .text.nixieIface_showLed
-                0x0000000008005780        0xc Src/nixieDisplay.o
-                0x0000000008005780                nixieIface_showLed
+                0x0000000008005678        0xc Src/nixieDisplay.o
+                0x0000000008005678                nixieIface_showLed
  .text.nixieIface_ledPower
-                0x000000000800578c        0xc Src/nixieDisplay.o
-                0x000000000800578c                nixieIface_ledPower
+                0x0000000008005684        0xc Src/nixieDisplay.o
+                0x0000000008005684                nixieIface_ledPower
  .text.nixieIface_send
-                0x0000000008005798       0x10 Src/nixieDisplay.o
-                0x0000000008005798                nixieIface_send
+                0x0000000008005690       0x10 Src/nixieDisplay.o
+                0x0000000008005690                nixieIface_send
  .text.nixieIface_nixiePower
-                0x00000000080057a8        0xc Src/nixieDisplay.o
-                0x00000000080057a8                nixieIface_nixiePower
+                0x00000000080056a0        0xc Src/nixieDisplay.o
+                0x00000000080056a0                nixieIface_nixiePower
  .text.nixieIface_buzzer
-                0x00000000080057b4        0xc Src/nixieDisplay.o
-                0x00000000080057b4                nixieIface_buzzer
+                0x00000000080056ac        0xc Src/nixieDisplay.o
+                0x00000000080056ac                nixieIface_buzzer
  .text.nixieIface_swapAlarm
-                0x00000000080057c0       0x20 Src/nixieDisplay.o
-                0x00000000080057c0                nixieIface_swapAlarm
+                0x00000000080056b8       0x20 Src/nixieDisplay.o
+                0x00000000080056b8                nixieIface_swapAlarm
  .text.nixieIface_swapLedFlag
-                0x00000000080057e0       0x10 Src/nixieDisplay.o
-                0x00000000080057e0                nixieIface_swapLedFlag
+                0x00000000080056d8       0x10 Src/nixieDisplay.o
+                0x00000000080056d8                nixieIface_swapLedFlag
  .text.nixieIface_alarmFlag
-                0x00000000080057f0       0x10 Src/nixieDisplay.o
-                0x00000000080057f0                nixieIface_alarmFlag
+                0x00000000080056e8       0x10 Src/nixieDisplay.o
+                0x00000000080056e8                nixieIface_alarmFlag
  .text.nixieIface_resetVar
-                0x0000000008005800        0x8 Src/nixieDisplay.o
-                0x0000000008005800                nixieIface_resetVar
+                0x00000000080056f8        0x8 Src/nixieDisplay.o
+                0x00000000080056f8                nixieIface_resetVar
  .text.nixieInit
-                0x0000000008005808       0x1c Src/nixieDisplay.o
-                0x0000000008005808                nixieInit
+                0x0000000008005700       0x1c Src/nixieDisplay.o
+                0x0000000008005700                nixieInit
  .text.nixieEvent
-                0x0000000008005824       0x44 Src/nixieDisplay.o
-                0x0000000008005824                nixieEvent
+                0x000000000800571c       0x44 Src/nixieDisplay.o
+                0x000000000800571c                nixieEvent
  .text.stateTimer_start
-                0x0000000008005868       0x64 Src/nixieDisplay.o
-                0x0000000008005868                stateTimer_start
+                0x0000000008005760       0x64 Src/nixieDisplay.o
+                0x0000000008005760                stateTimer_start
  .text.nixie_setTimer
-                0x00000000080058cc       0x18 Src/nixieDisplay.o
-                0x00000000080058cc                nixie_setTimer
+                0x00000000080057c4       0x18 Src/nixieDisplay.o
+                0x00000000080057c4                nixie_setTimer
  .text.stateTimer_update
-                0x00000000080058e4       0x64 Src/nixieDisplay.o
-                0x00000000080058e4                stateTimer_update
+                0x00000000080057dc       0x64 Src/nixieDisplay.o
+                0x00000000080057dc                stateTimer_update
  .text.stateTimer_stop
-                0x0000000008005948       0x40 Src/nixieDisplay.o
-                0x0000000008005948                stateTimer_stop
+                0x0000000008005840       0x40 Src/nixieDisplay.o
+                0x0000000008005840                stateTimer_stop
  .text.nixie_unsetTimer
-                0x0000000008005988        0xa Src/nixieDisplay.o
-                0x0000000008005988                nixie_unsetTimer
- *fill*         0x0000000008005992        0x2 
+                0x0000000008005880        0xa Src/nixieDisplay.o
+                0x0000000008005880                nixie_unsetTimer
+ *fill*         0x000000000800588a        0x2 
  .text.nixieTickUpdate
-                0x0000000008005994       0x14 Src/nixieDisplay.o
-                0x0000000008005994                nixieTickUpdate
+                0x000000000800588c       0x14 Src/nixieDisplay.o
+                0x000000000800588c                nixieTickUpdate
  .text.nixieBuzzer
-                0x00000000080059a8       0x54 Src/nixieDisplay.o
-                0x00000000080059a8                nixieBuzzer
+                0x00000000080058a0       0x54 Src/nixieDisplay.o
+                0x00000000080058a0                nixieBuzzer
  .text.HAL_MspInit
-                0x00000000080059fc       0x54 Src/stm32f1xx_hal_msp.o
-                0x00000000080059fc                HAL_MspInit
+                0x00000000080058f4       0x54 Src/stm32f1xx_hal_msp.o
+                0x00000000080058f4                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x0000000008005a50       0xac Src/stm32f1xx_hal_msp.o
-                0x0000000008005a50                HAL_I2C_MspInit
+                0x0000000008005948       0xac Src/stm32f1xx_hal_msp.o
+                0x0000000008005948                HAL_I2C_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x0000000008005afc       0xa0 Src/stm32f1xx_hal_msp.o
-                0x0000000008005afc                HAL_TIM_Base_MspInit
+                0x00000000080059f4       0xa0 Src/stm32f1xx_hal_msp.o
+                0x00000000080059f4                HAL_TIM_Base_MspInit
  .text.HAL_InitTick
-                0x0000000008005b9c       0x78 Src/stm32f1xx_hal_timebase_tim.o
-                0x0000000008005b9c                HAL_InitTick
+                0x0000000008005a94       0x78 Src/stm32f1xx_hal_timebase_tim.o
+                0x0000000008005a94                HAL_InitTick
  .text.NMI_Handler
-                0x0000000008005c14        0x2 Src/stm32f1xx_it.o
-                0x0000000008005c14                NMI_Handler
+                0x0000000008005b0c        0x2 Src/stm32f1xx_it.o
+                0x0000000008005b0c                NMI_Handler
  .text.HardFault_Handler
-                0x0000000008005c16        0x2 Src/stm32f1xx_it.o
-                0x0000000008005c16                HardFault_Handler
+                0x0000000008005b0e        0x2 Src/stm32f1xx_it.o
+                0x0000000008005b0e                HardFault_Handler
  .text.MemManage_Handler
-                0x0000000008005c18        0x2 Src/stm32f1xx_it.o
-                0x0000000008005c18                MemManage_Handler
+                0x0000000008005b10        0x2 Src/stm32f1xx_it.o
+                0x0000000008005b10                MemManage_Handler
  .text.BusFault_Handler
-                0x0000000008005c1a        0x2 Src/stm32f1xx_it.o
-                0x0000000008005c1a                BusFault_Handler
+                0x0000000008005b12        0x2 Src/stm32f1xx_it.o
+                0x0000000008005b12                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000000008005c1c        0x2 Src/stm32f1xx_it.o
-                0x0000000008005c1c                UsageFault_Handler
+                0x0000000008005b14        0x2 Src/stm32f1xx_it.o
+                0x0000000008005b14                UsageFault_Handler
  .text.DebugMon_Handler
-                0x0000000008005c1e        0x2 Src/stm32f1xx_it.o
-                0x0000000008005c1e                DebugMon_Handler
+                0x0000000008005b16        0x2 Src/stm32f1xx_it.o
+                0x0000000008005b16                DebugMon_Handler
  .text.EXTI1_IRQHandler
-                0x0000000008005c20        0xa Src/stm32f1xx_it.o
-                0x0000000008005c20                EXTI1_IRQHandler
- *fill*         0x0000000008005c2a        0x2 
+                0x0000000008005b18        0xa Src/stm32f1xx_it.o
+                0x0000000008005b18                EXTI1_IRQHandler
+ *fill*         0x0000000008005b22        0x2 
  .text.DMA1_Channel5_IRQHandler
-                0x0000000008005c2c       0x10 Src/stm32f1xx_it.o
-                0x0000000008005c2c                DMA1_Channel5_IRQHandler
+                0x0000000008005b24       0x10 Src/stm32f1xx_it.o
+                0x0000000008005b24                DMA1_Channel5_IRQHandler
  .text.TIM1_UP_IRQHandler
-                0x0000000008005c3c       0x10 Src/stm32f1xx_it.o
-                0x0000000008005c3c                TIM1_UP_IRQHandler
+                0x0000000008005b34       0x10 Src/stm32f1xx_it.o
+                0x0000000008005b34                TIM1_UP_IRQHandler
  .text.TIM2_IRQHandler
-                0x0000000008005c4c       0x10 Src/stm32f1xx_it.o
-                0x0000000008005c4c                TIM2_IRQHandler
+                0x0000000008005b44       0x10 Src/stm32f1xx_it.o
+                0x0000000008005b44                TIM2_IRQHandler
  .text.TIM3_IRQHandler
-                0x0000000008005c5c       0x10 Src/stm32f1xx_it.o
-                0x0000000008005c5c                TIM3_IRQHandler
+                0x0000000008005b54       0x10 Src/stm32f1xx_it.o
+                0x0000000008005b54                TIM3_IRQHandler
  .text.TIM4_IRQHandler
-                0x0000000008005c6c       0x10 Src/stm32f1xx_it.o
-                0x0000000008005c6c                TIM4_IRQHandler
+                0x0000000008005b64       0x10 Src/stm32f1xx_it.o
+                0x0000000008005b64                TIM4_IRQHandler
  .text.I2C2_EV_IRQHandler
-                0x0000000008005c7c       0x10 Src/stm32f1xx_it.o
-                0x0000000008005c7c                I2C2_EV_IRQHandler
+                0x0000000008005b74       0x10 Src/stm32f1xx_it.o
+                0x0000000008005b74                I2C2_EV_IRQHandler
  .text.SystemInit
-                0x0000000008005c8c       0x4c Src/system_stm32f1xx.o
-                0x0000000008005c8c                SystemInit
+                0x0000000008005b84       0x4c Src/system_stm32f1xx.o
+                0x0000000008005b84                SystemInit
  .text.clearInEvents
-                0x0000000008005cd8       0x1c Yakindu/src-gen/Nixie.o
+                0x0000000008005bd0       0x1c Yakindu/src-gen/Nixie.o
  .text.check_t__choice_0_tr0_tr0
-                0x0000000008005cf4        0xc Yakindu/src-gen/Nixie.o
+                0x0000000008005bec        0xc Yakindu/src-gen/Nixie.o
  .text.check_t__choice_0_tr2_tr2
-                0x0000000008005d00        0xc Yakindu/src-gen/Nixie.o
+                0x0000000008005bf8        0xc Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2
-                0x0000000008005d0c        0x6 Yakindu/src-gen/Nixie.o
+                0x0000000008005c04        0x6 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Hour_default
-                0x0000000008005d12        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c0a        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Minutes_default
-                0x0000000008005d1c        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c14        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Year_default
-                0x0000000008005d26        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c1e        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Month_default
-                0x0000000008005d30        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c28        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Day_default
-                0x0000000008005d3a        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c32        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_Awake_default
-                0x0000000008005d44        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c3c        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_AlarmConfig_default
-                0x0000000008005d4e        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c46        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_Hour_default
-                0x0000000008005d58        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c50        0xa Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_Minute_default
-                0x0000000008005d62        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008005c5a        0xa Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Config
-                0x0000000008005d6c        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c64        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Hour
-                0x0000000008005d74        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c6c        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Minutes
-                0x0000000008005d7c        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c74        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Year
-                0x0000000008005d84        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c7c        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Month
-                0x0000000008005d8c        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c84        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration_Day
-                0x0000000008005d94        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c8c        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake_Awake
-                0x0000000008005d9c        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c94        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Sleep
-                0x0000000008005da4        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005c9c        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm_AlarmConfig
-                0x0000000008005dac        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005ca4        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm_Hour
-                0x0000000008005db4        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005cac        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm_Minute
-                0x0000000008005dbc        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005cb4        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START_Configuration
-                0x0000000008005dc4       0x38 Yakindu/src-gen/Nixie.o
+                0x0000000008005cbc       0x38 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3_Alarm
-                0x0000000008005dfc       0x24 Yakindu/src-gen/Nixie.o
+                0x0000000008005cf4       0x24 Yakindu/src-gen/Nixie.o
  .text.react_t_MODE1_Awake__entry_Default
-                0x0000000008005e20        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d18        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_default
-                0x0000000008005e28        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d20        0x8 Yakindu/src-gen/Nixie.o
  .text.react_t_MODE3_Alarm__entry_Default
-                0x0000000008005e30        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d28        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_Alarm_default
-                0x0000000008005e38        0x8 Yakindu/src-gen/Nixie.o
- .text.react    0x0000000008005e40        0x4 Yakindu/src-gen/Nixie.o
+                0x0000000008005d30        0x8 Yakindu/src-gen/Nixie.o
+ .text.react    0x0000000008005d38        0x4 Yakindu/src-gen/Nixie.o
  .text.enact_t_START
-                0x0000000008005e44        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d3c        0x8 Yakindu/src-gen/Nixie.o
  .text.enact_t_START_Configuration_Config
-                0x0000000008005e4c       0x14 Yakindu/src-gen/Nixie.o
+                0x0000000008005d44       0x14 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_Config_default
-                0x0000000008005e60       0x12 Yakindu/src-gen/Nixie.o
+                0x0000000008005d58       0x12 Yakindu/src-gen/Nixie.o
  .text.react_t_START_Configuration__entry_Default
-                0x0000000008005e72        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d6a        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_Configuration_default
-                0x0000000008005e7a        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d72        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_START_default
-                0x0000000008005e82       0x10 Yakindu/src-gen/Nixie.o
+                0x0000000008005d7a       0x10 Yakindu/src-gen/Nixie.o
  .text.react_t__entry_Default
-                0x0000000008005e92        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d8a        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_default
-                0x0000000008005e9a        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d92        0x8 Yakindu/src-gen/Nixie.o
  .text.exact_t_START
-                0x0000000008005ea2        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005d9a        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_START
-                0x0000000008005eaa       0x10 Yakindu/src-gen/Nixie.o
+                0x0000000008005da2       0x10 Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE3
-                0x0000000008005eba        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005db2        0x8 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE3
-                0x0000000008005ec2       0x10 Yakindu/src-gen/Nixie.o
+                0x0000000008005dba       0x10 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE1
-                0x0000000008005ed2       0x1e Yakindu/src-gen/Nixie.o
+                0x0000000008005dca       0x1e Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_default
-                0x0000000008005ef0       0x10 Yakindu/src-gen/Nixie.o
+                0x0000000008005de8       0x10 Yakindu/src-gen/Nixie.o
  .text.t_START_react
-                0x0000000008005f00       0x26 Yakindu/src-gen/Nixie.o
+                0x0000000008005df8       0x26 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Config_react
-                0x0000000008005f26       0x32 Yakindu/src-gen/Nixie.o
+                0x0000000008005e1e       0x32 Yakindu/src-gen/Nixie.o
  .text.effect_t__choice_0_tr1
-                0x0000000008005f58        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005e50        0x8 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE3
-                0x0000000008005f60       0x20 Yakindu/src-gen/Nixie.o
+                0x0000000008005e58       0x20 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE3_default
-                0x0000000008005f80       0x10 Yakindu/src-gen/Nixie.o
+                0x0000000008005e78       0x10 Yakindu/src-gen/Nixie.o
  .text.effect_t__choice_0_tr2
-                0x0000000008005f90        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008005e88        0x8 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Hour_react
-                0x0000000008005f98       0x46 Yakindu/src-gen/Nixie.o
+                0x0000000008005e90       0x46 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Year_react
-                0x0000000008005fde       0x46 Yakindu/src-gen/Nixie.o
+                0x0000000008005ed6       0x46 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Month_react
-                0x0000000008006024       0x46 Yakindu/src-gen/Nixie.o
+                0x0000000008005f1c       0x46 Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Minutes_react
-                0x000000000800606a       0x5e Yakindu/src-gen/Nixie.o
+                0x0000000008005f62       0x5e Yakindu/src-gen/Nixie.o
  .text.t_START_Configuration_Day_react
-                0x00000000080060c8       0x4e Yakindu/src-gen/Nixie.o
+                0x0000000008005fc0       0x4e Yakindu/src-gen/Nixie.o
  .text.enact_t_Alarm
-                0x0000000008006116       0x22 Yakindu/src-gen/Nixie.o
+                0x000000000800600e       0x22 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE1_Awake_Date
-                0x0000000008006138       0x24 Yakindu/src-gen/Nixie.o
+                0x0000000008006030       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_Date_default
-                0x000000000800615c       0x12 Yakindu/src-gen/Nixie.o
+                0x0000000008006054       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE1_Awake_Temperature
-                0x000000000800616e       0x24 Yakindu/src-gen/Nixie.o
+                0x0000000008006066       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE1_Awake_Temperature_default
-                0x0000000008006192       0x12 Yakindu/src-gen/Nixie.o
+                0x000000000800608a       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Date
-                0x00000000080061a4       0x24 Yakindu/src-gen/Nixie.o
+                0x000000000800609c       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Date_default
-                0x00000000080061c8       0x12 Yakindu/src-gen/Nixie.o
+                0x00000000080060c0       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Temperature
-                0x00000000080061da       0x24 Yakindu/src-gen/Nixie.o
+                0x00000000080060d2       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Temperature_default
-                0x00000000080061fe       0x12 Yakindu/src-gen/Nixie.o
+                0x00000000080060f6       0x12 Yakindu/src-gen/Nixie.o
  .text.enact_t_Alarm_Alarm_Alarm_ON_
-                0x0000000008006210       0x20 Yakindu/src-gen/Nixie.o
+                0x0000000008006108       0x20 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_Alarm_Alarm_ON__default
-                0x0000000008006230       0x12 Yakindu/src-gen/Nixie.o
+                0x0000000008006128       0x12 Yakindu/src-gen/Nixie.o
  .text.react_t_Alarm_Alarm__entry_Default
-                0x0000000008006242        0x8 Yakindu/src-gen/Nixie.o
+                0x000000000800613a        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_Alarm_default
-                0x000000000800624a        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008006142        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_default
-                0x0000000008006252       0x10 Yakindu/src-gen/Nixie.o
+                0x000000000800614a       0x10 Yakindu/src-gen/Nixie.o
  .text.t_MODE3_react
-                0x0000000008006262       0x38 Yakindu/src-gen/Nixie.o
+                0x000000000800615a       0x38 Yakindu/src-gen/Nixie.o
  .text.t_MODE3_Alarm_Hour_react
-                0x000000000800629a       0x46 Yakindu/src-gen/Nixie.o
+                0x0000000008006192       0x46 Yakindu/src-gen/Nixie.o
  .text.t_MODE3_Alarm_Minute_react
-                0x00000000080062e0       0x56 Yakindu/src-gen/Nixie.o
+                0x00000000080061d8       0x56 Yakindu/src-gen/Nixie.o
  .text.exact_t_Alarm
-                0x0000000008006336        0xc Yakindu/src-gen/Nixie.o
- *fill*         0x0000000008006342        0x2 
+                0x000000000800622e        0xc Yakindu/src-gen/Nixie.o
+ *fill*         0x000000000800623a        0x2 
  .text.enact_t_Alarm_Alarm_Alarm_OFF_
-                0x0000000008006344       0x24 Yakindu/src-gen/Nixie.o
+                0x000000000800623c       0x24 Yakindu/src-gen/Nixie.o
  .text.enseq_t_Alarm_Alarm_Alarm_OFF__default
-                0x0000000008006368       0x12 Yakindu/src-gen/Nixie.o
+                0x0000000008006260       0x12 Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE1_Awake_Date
-                0x000000000800637a        0xc Yakindu/src-gen/Nixie.o
+                0x0000000008006272        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake_Date
-                0x0000000008006386        0xe Yakindu/src-gen/Nixie.o
+                0x000000000800627e        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE1_Awake_Temperature
-                0x0000000008006394       0x1e Yakindu/src-gen/Nixie.o
+                0x000000000800628c       0x1e Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake_Temperature
-                0x00000000080063b2        0xe Yakindu/src-gen/Nixie.o
+                0x00000000080062aa        0xe Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1_Awake
-                0x00000000080063c0       0x24 Yakindu/src-gen/Nixie.o
+                0x00000000080062b8       0x24 Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE1
-                0x00000000080063e4        0x8 Yakindu/src-gen/Nixie.o
+                0x00000000080062dc        0x8 Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2_Sleep_Date
-                0x00000000080063ec        0xc Yakindu/src-gen/Nixie.o
+                0x00000000080062e4        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Date
-                0x00000000080063f8        0xe Yakindu/src-gen/Nixie.o
+                0x00000000080062f0        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2_Sleep_Temperature
-                0x0000000008006406        0xc Yakindu/src-gen/Nixie.o
+                0x00000000080062fe        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Temperature
-                0x0000000008006412        0xe Yakindu/src-gen/Nixie.o
+                0x000000000800630a        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2_Sleep_Wake_Up
-                0x0000000008006420        0xc Yakindu/src-gen/Nixie.o
+                0x0000000008006318        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep_Wake_Up
-                0x000000000800642c        0xe Yakindu/src-gen/Nixie.o
+                0x0000000008006324        0xe Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2_Sleep
-                0x000000000800643a       0x2a Yakindu/src-gen/Nixie.o
+                0x0000000008006332       0x2a Yakindu/src-gen/Nixie.o
  .text.exact_t_Alarm_Alarm_Alarm_OFF_
-                0x0000000008006464        0xc Yakindu/src-gen/Nixie.o
+                0x000000000800635c        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm_Alarm_Alarm_OFF_
-                0x0000000008006470        0xe Yakindu/src-gen/Nixie.o
+                0x0000000008006368        0xe Yakindu/src-gen/Nixie.o
  .text.exact_t_Alarm_Alarm_Alarm_ON_
-                0x000000000800647e        0xc Yakindu/src-gen/Nixie.o
+                0x0000000008006376        0xc Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm_Alarm_Alarm_ON_
-                0x000000000800648a        0xe Yakindu/src-gen/Nixie.o
+                0x0000000008006382        0xe Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm_Alarm
-                0x0000000008006498       0x1a Yakindu/src-gen/Nixie.o
+                0x0000000008006390       0x1a Yakindu/src-gen/Nixie.o
  .text.exseq_t_Alarm
-                0x00000000080064b2       0x10 Yakindu/src-gen/Nixie.o
+                0x00000000080063aa       0x10 Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Sleep
-                0x00000000080064c2       0x14 Yakindu/src-gen/Nixie.o
+                0x00000000080063ba       0x14 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Sleep_default
-                0x00000000080064d6       0x12 Yakindu/src-gen/Nixie.o
+                0x00000000080063ce       0x12 Yakindu/src-gen/Nixie.o
  .text.react_t_MODE2_Sleep__entry_Default
-                0x00000000080064e8        0x8 Yakindu/src-gen/Nixie.o
+                0x00000000080063e0        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_default
-                0x00000000080064f0        0x8 Yakindu/src-gen/Nixie.o
+                0x00000000080063e8        0x8 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_default
-                0x00000000080064f8       0x10 Yakindu/src-gen/Nixie.o
+                0x00000000080063f0       0x10 Yakindu/src-gen/Nixie.o
  .text.t_MODE1_react
-                0x0000000008006508       0x38 Yakindu/src-gen/Nixie.o
+                0x0000000008006400       0x38 Yakindu/src-gen/Nixie.o
  .text.t_MODE1_Awake_Awake_react
-                0x0000000008006540       0x5a Yakindu/src-gen/Nixie.o
+                0x0000000008006438       0x5a Yakindu/src-gen/Nixie.o
  .text.t_MODE1_Awake_Date_react
-                0x000000000800659a       0x2a Yakindu/src-gen/Nixie.o
+                0x0000000008006492       0x2a Yakindu/src-gen/Nixie.o
  .text.t_MODE1_Awake_Temperature_react
-                0x00000000080065c4       0x2a Yakindu/src-gen/Nixie.o
+                0x00000000080064bc       0x2a Yakindu/src-gen/Nixie.o
  .text.effect_t__choice_0_tr0
-                0x00000000080065ee        0x8 Yakindu/src-gen/Nixie.o
+                0x00000000080064e6        0x8 Yakindu/src-gen/Nixie.o
  .text.react_t__choice_0
-                0x00000000080065f6       0x2a Yakindu/src-gen/Nixie.o
+                0x00000000080064ee       0x2a Yakindu/src-gen/Nixie.o
  .text.t_Alarm_react
-                0x0000000008006620       0x2c Yakindu/src-gen/Nixie.o
+                0x0000000008006518       0x2c Yakindu/src-gen/Nixie.o
  .text.t_Alarm_Alarm_Alarm_ON__react
-                0x000000000800664c       0x2a Yakindu/src-gen/Nixie.o
+                0x0000000008006544       0x2a Yakindu/src-gen/Nixie.o
  .text.t_Alarm_Alarm_Alarm_OFF__react
-                0x0000000008006676       0x2a Yakindu/src-gen/Nixie.o
+                0x000000000800656e       0x2a Yakindu/src-gen/Nixie.o
  .text.exact_t_MODE2
-                0x00000000080066a0        0xa Yakindu/src-gen/Nixie.o
+                0x0000000008006598        0xa Yakindu/src-gen/Nixie.o
  .text.exseq_t_MODE2
-                0x00000000080066aa       0x10 Yakindu/src-gen/Nixie.o
+                0x00000000080065a2       0x10 Yakindu/src-gen/Nixie.o
  .text.t_MODE2_react
-                0x00000000080066ba       0x38 Yakindu/src-gen/Nixie.o
+                0x00000000080065b2       0x38 Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Wake_Up_react
-                0x00000000080066f2       0x3c Yakindu/src-gen/Nixie.o
+                0x00000000080065ea       0x3c Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Date_react
-                0x000000000800672e       0x2a Yakindu/src-gen/Nixie.o
+                0x0000000008006626       0x2a Yakindu/src-gen/Nixie.o
  .text.enact_t_MODE2_Sleep_Wake_Up
-                0x0000000008006758       0x34 Yakindu/src-gen/Nixie.o
+                0x0000000008006650       0x34 Yakindu/src-gen/Nixie.o
  .text.enseq_t_MODE2_Sleep_Wake_Up_default
-                0x000000000800678c       0x12 Yakindu/src-gen/Nixie.o
+                0x0000000008006684       0x12 Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Sleep_react
-                0x000000000800679e       0x2a Yakindu/src-gen/Nixie.o
+                0x0000000008006696       0x2a Yakindu/src-gen/Nixie.o
  .text.t_MODE2_Sleep_Temperature_react
-                0x00000000080067c8       0x2a Yakindu/src-gen/Nixie.o
+                0x00000000080066c0       0x2a Yakindu/src-gen/Nixie.o
  .text.t_MODE3_Alarm_AlarmConfig_react
-                0x00000000080067f2       0x4a Yakindu/src-gen/Nixie.o
+                0x00000000080066ea       0x4a Yakindu/src-gen/Nixie.o
  .text.nixie_init
-                0x000000000800683c       0x22 Yakindu/src-gen/Nixie.o
-                0x000000000800683c                nixie_init
+                0x0000000008006734       0x22 Yakindu/src-gen/Nixie.o
+                0x0000000008006734                nixie_init
  .text.nixie_enter
-                0x000000000800685e        0x8 Yakindu/src-gen/Nixie.o
-                0x000000000800685e                nixie_enter
- *fill*         0x0000000008006866        0x2 
+                0x0000000008006756        0x8 Yakindu/src-gen/Nixie.o
+                0x0000000008006756                nixie_enter
+ *fill*         0x000000000800675e        0x2 
  .text.nixie_runCycle
-                0x0000000008006868      0x13c Yakindu/src-gen/Nixie.o
-                0x0000000008006868                nixie_runCycle
+                0x0000000008006760      0x13c Yakindu/src-gen/Nixie.o
+                0x0000000008006760                nixie_runCycle
  .text.nixie_raiseTimeEvent
-                0x00000000080069a4       0x12 Yakindu/src-gen/Nixie.o
-                0x00000000080069a4                nixie_raiseTimeEvent
+                0x000000000800689c       0x12 Yakindu/src-gen/Nixie.o
+                0x000000000800689c                nixie_raiseTimeEvent
  .text.nixieIface_raise_s_SENSOR
-                0x00000000080069b6        0x6 Yakindu/src-gen/Nixie.o
-                0x00000000080069b6                nixieIface_raise_s_SENSOR
+                0x00000000080068ae        0x6 Yakindu/src-gen/Nixie.o
+                0x00000000080068ae                nixieIface_raise_s_SENSOR
  .text.nixieIface_raise_b_1
-                0x00000000080069bc        0x6 Yakindu/src-gen/Nixie.o
-                0x00000000080069bc                nixieIface_raise_b_1
+                0x00000000080068b4        0x6 Yakindu/src-gen/Nixie.o
+                0x00000000080068b4                nixieIface_raise_b_1
  .text.nixieIface_raise_b_2
-                0x00000000080069c2        0x6 Yakindu/src-gen/Nixie.o
-                0x00000000080069c2                nixieIface_raise_b_2
+                0x00000000080068ba        0x6 Yakindu/src-gen/Nixie.o
+                0x00000000080068ba                nixieIface_raise_b_2
  .text.nixieIface_raise_b_3
-                0x00000000080069c8        0x6 Yakindu/src-gen/Nixie.o
-                0x00000000080069c8                nixieIface_raise_b_3
+                0x00000000080068c0        0x6 Yakindu/src-gen/Nixie.o
+                0x00000000080068c0                nixieIface_raise_b_3
  .text.nixieIface_raise_e_ALARM
-                0x00000000080069ce        0x6 Yakindu/src-gen/Nixie.o
-                0x00000000080069ce                nixieIface_raise_e_ALARM
+                0x00000000080068c6        0x6 Yakindu/src-gen/Nixie.o
+                0x00000000080068c6                nixieIface_raise_e_ALARM
  .text.Reset_Handler
-                0x00000000080069d4       0x48 startup/startup_stm32f103xb.o
-                0x00000000080069d4                Reset_Handler
+                0x00000000080068cc       0x48 startup/startup_stm32f103xb.o
+                0x00000000080068cc                Reset_Handler
  .text.Default_Handler
-                0x0000000008006a1c        0x2 startup/startup_stm32f103xb.o
-                0x0000000008006a1c                RTC_Alarm_IRQHandler
-                0x0000000008006a1c                EXTI2_IRQHandler
-                0x0000000008006a1c                TIM1_CC_IRQHandler
-                0x0000000008006a1c                PVD_IRQHandler
-                0x0000000008006a1c                EXTI3_IRQHandler
-                0x0000000008006a1c                EXTI0_IRQHandler
-                0x0000000008006a1c                ADC1_2_IRQHandler
-                0x0000000008006a1c                SPI1_IRQHandler
-                0x0000000008006a1c                TAMPER_IRQHandler
-                0x0000000008006a1c                DMA1_Channel4_IRQHandler
-                0x0000000008006a1c                USART3_IRQHandler
-                0x0000000008006a1c                RTC_IRQHandler
-                0x0000000008006a1c                DMA1_Channel7_IRQHandler
-                0x0000000008006a1c                CAN1_RX1_IRQHandler
-                0x0000000008006a1c                I2C1_EV_IRQHandler
-                0x0000000008006a1c                DMA1_Channel6_IRQHandler
-                0x0000000008006a1c                RCC_IRQHandler
-                0x0000000008006a1c                TIM1_TRG_COM_IRQHandler
-                0x0000000008006a1c                DMA1_Channel1_IRQHandler
-                0x0000000008006a1c                Default_Handler
-                0x0000000008006a1c                EXTI15_10_IRQHandler
-                0x0000000008006a1c                EXTI9_5_IRQHandler
-                0x0000000008006a1c                SPI2_IRQHandler
-                0x0000000008006a1c                EXTI4_IRQHandler
-                0x0000000008006a1c                USB_LP_CAN1_RX0_IRQHandler
-                0x0000000008006a1c                USB_HP_CAN1_TX_IRQHandler
-                0x0000000008006a1c                DMA1_Channel3_IRQHandler
-                0x0000000008006a1c                WWDG_IRQHandler
-                0x0000000008006a1c                TIM1_BRK_IRQHandler
-                0x0000000008006a1c                USART2_IRQHandler
-                0x0000000008006a1c                I2C2_ER_IRQHandler
-                0x0000000008006a1c                DMA1_Channel2_IRQHandler
-                0x0000000008006a1c                CAN1_SCE_IRQHandler
-                0x0000000008006a1c                FLASH_IRQHandler
-                0x0000000008006a1c                USART1_IRQHandler
-                0x0000000008006a1c                I2C1_ER_IRQHandler
-                0x0000000008006a1c                USBWakeUp_IRQHandler
- *fill*         0x0000000008006a1e        0x2 
+                0x0000000008006914        0x2 startup/startup_stm32f103xb.o
+                0x0000000008006914                RTC_Alarm_IRQHandler
+                0x0000000008006914                EXTI2_IRQHandler
+                0x0000000008006914                TIM1_CC_IRQHandler
+                0x0000000008006914                PVD_IRQHandler
+                0x0000000008006914                EXTI3_IRQHandler
+                0x0000000008006914                EXTI0_IRQHandler
+                0x0000000008006914                ADC1_2_IRQHandler
+                0x0000000008006914                SPI1_IRQHandler
+                0x0000000008006914                TAMPER_IRQHandler
+                0x0000000008006914                DMA1_Channel4_IRQHandler
+                0x0000000008006914                USART3_IRQHandler
+                0x0000000008006914                RTC_IRQHandler
+                0x0000000008006914                DMA1_Channel7_IRQHandler
+                0x0000000008006914                CAN1_RX1_IRQHandler
+                0x0000000008006914                I2C1_EV_IRQHandler
+                0x0000000008006914                DMA1_Channel6_IRQHandler
+                0x0000000008006914                RCC_IRQHandler
+                0x0000000008006914                TIM1_TRG_COM_IRQHandler
+                0x0000000008006914                DMA1_Channel1_IRQHandler
+                0x0000000008006914                Default_Handler
+                0x0000000008006914                EXTI15_10_IRQHandler
+                0x0000000008006914                EXTI9_5_IRQHandler
+                0x0000000008006914                SPI2_IRQHandler
+                0x0000000008006914                EXTI4_IRQHandler
+                0x0000000008006914                USB_LP_CAN1_RX0_IRQHandler
+                0x0000000008006914                USB_HP_CAN1_TX_IRQHandler
+                0x0000000008006914                DMA1_Channel3_IRQHandler
+                0x0000000008006914                WWDG_IRQHandler
+                0x0000000008006914                TIM1_BRK_IRQHandler
+                0x0000000008006914                USART2_IRQHandler
+                0x0000000008006914                I2C2_ER_IRQHandler
+                0x0000000008006914                DMA1_Channel2_IRQHandler
+                0x0000000008006914                CAN1_SCE_IRQHandler
+                0x0000000008006914                FLASH_IRQHandler
+                0x0000000008006914                USART1_IRQHandler
+                0x0000000008006914                I2C1_ER_IRQHandler
+                0x0000000008006914                USBWakeUp_IRQHandler
+ *fill*         0x0000000008006916        0x2 
  .text.__libc_init_array
-                0x0000000008006a20       0x48 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
-                0x0000000008006a20                __libc_init_array
- .text.memcpy   0x0000000008006a68       0x1c c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000008006a68                memcpy
+                0x0000000008006918       0x48 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                0x0000000008006918                __libc_init_array
+ .text.memcpy   0x0000000008006960       0x1c c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000008006960                memcpy
  *(.glue_7)
- .glue_7        0x0000000008006a84        0x0 linker stubs
+ .glue_7        0x000000000800697c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008006a84        0x0 linker stubs
+ .glue_7t       0x000000000800697c        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008006a84        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x000000000800697c        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x0000000008006a84        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crti.o
-                0x0000000008006a84                _init
- .init          0x0000000008006a88        0x8 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x000000000800697c        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crti.o
+                0x000000000800697c                _init
+ .init          0x0000000008006980        0x8 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000008006a90        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crti.o
-                0x0000000008006a90                _fini
- .fini          0x0000000008006a94        0x8 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtn.o
-                0x0000000008006a9c                . = ALIGN (0x4)
-                0x0000000008006a9c                _etext = .
+ .fini          0x0000000008006988        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crti.o
+                0x0000000008006988                _fini
+ .fini          0x000000000800698c        0x8 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtn.o
+                0x0000000008006994                . = ALIGN (0x4)
+                0x0000000008006994                _etext = .
 
-.vfp11_veneer   0x0000000008006a9c        0x0
- .vfp11_veneer  0x0000000008006a9c        0x0 linker stubs
+.vfp11_veneer   0x0000000008006994        0x0
+ .vfp11_veneer  0x0000000008006994        0x0 linker stubs
 
-.v4_bx          0x0000000008006a9c        0x0
- .v4_bx         0x0000000008006a9c        0x0 linker stubs
+.v4_bx          0x0000000008006994        0x0
+ .v4_bx         0x0000000008006994        0x0 linker stubs
 
-.iplt           0x0000000008006a9c        0x0
- .iplt          0x0000000008006a9c        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x0000000008006994        0x0
+ .iplt          0x0000000008006994        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x0000000008006a9c       0xb0
-                0x0000000008006a9c                . = ALIGN (0x4)
+.rodata         0x0000000008006994       0xb0
+                0x0000000008006994                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008006a9c       0x64 Src/main.o
- .rodata        0x0000000008006b00       0x18 Src/system_stm32f1xx.o
-                0x0000000008006b00                AHBPrescTable
-                0x0000000008006b10                APBPrescTable
+ .rodata        0x0000000008006994       0x64 Src/main.o
+ .rodata        0x00000000080069f8       0x18 Src/system_stm32f1xx.o
+                0x00000000080069f8                AHBPrescTable
+                0x0000000008006a08                APBPrescTable
  *(.rodata*)
  .rodata.str1.4
-                0x0000000008006b18       0x11 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- *fill*         0x0000000008006b29        0x3 
+                0x0000000008006a10       0x11 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ *fill*         0x0000000008006a21        0x3 
  .rodata.str1.4
-                0x0000000008006b2c        0x5 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- *fill*         0x0000000008006b31        0x3 
+                0x0000000008006a24        0x5 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ *fill*         0x0000000008006a29        0x3 
  .rodata.str1.4
-                0x0000000008006b34       0x16 Src/main.o
-                0x0000000008006b4c                . = ALIGN (0x4)
- *fill*         0x0000000008006b4a        0x2 
+                0x0000000008006a2c       0x16 Src/main.o
+                0x0000000008006a44                . = ALIGN (0x4)
+ *fill*         0x0000000008006a42        0x2 
 
-.rel.dyn        0x0000000008006b4c        0x0
- .rel.iplt      0x0000000008006b4c        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x0000000008006a44        0x0
+ .rel.iplt      0x0000000008006a44        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0000000008006b4c        0x0
-                0x0000000008006b4c                __exidx_start = .
+.ARM            0x0000000008006a44        0x0
+                0x0000000008006a44                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008006b4c                __exidx_end = .
+                0x0000000008006a44                __exidx_end = .
 
-.preinit_array  0x0000000008006b4c        0x0
-                0x0000000008006b4c                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008006a44        0x0
+                0x0000000008006a44                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008006b4c                PROVIDE (__preinit_array_end = .)
+                0x0000000008006a44                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0000000008006b4c        0x4
-                0x0000000008006b4c                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008006a44        0x4
+                0x0000000008006a44                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008006b4c        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x0000000008006b50                PROVIDE (__init_array_end = .)
+ .init_array    0x0000000008006a44        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x0000000008006a48                PROVIDE (__init_array_end = .)
 
-.fini_array     0x0000000008006b50        0x4
+.fini_array     0x0000000008006a48        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008006b50        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x0000000008006a48        0x4 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008006b54                _sidata = LOADADDR (.data)
+                0x0000000008006a4c                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x18 load address 0x0000000008006b54
+.data           0x0000000020000000       0x18 load address 0x0000000008006a4c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -4535,11 +4534,11 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020000018                . = ALIGN (0x4)
                 0x0000000020000018                _edata = .
 
-.igot.plt       0x0000000020000018        0x0 load address 0x0000000008006b6c
+.igot.plt       0x0000000020000018        0x0 load address 0x0000000008006a64
  .igot.plt      0x0000000020000018        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x0000000020000018                . = ALIGN (0x4)
 
-.bss            0x0000000020000018     0x2678 load address 0x0000000008006b6c
+.bss            0x0000000020000018     0x2678 load address 0x0000000008006a64
                 0x0000000020000018                _sbss = .
                 0x0000000020000018                __bss_start__ = _sbss
  *(.bss)
@@ -4579,7 +4578,7 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020002690                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020002690      0x600 load address 0x0000000008006b6c
+                0x0000000020002690      0x600 load address 0x0000000008006a64
                 0x0000000020002690                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -4661,7 +4660,7 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x22347
+.debug_info     0x0000000000000000    0x21c56
  .debug_info    0x0000000000000000      0x835 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_info    0x0000000000000835      0xe4a Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_info    0x000000000000167f      0x936 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -4678,16 +4677,16 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_info    0x0000000000015a8a      0xd26 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_info    0x00000000000167b0      0xb9c Src/DS3231.o
  .debug_info    0x000000000001734c      0x36a Src/freertos.o
- .debug_info    0x00000000000176b6     0x1ecf Src/main.o
- .debug_info    0x0000000000019585     0x2760 Src/nixieDisplay.o
- .debug_info    0x000000000001bce5     0x10ce Src/stm32f1xx_hal_msp.o
- .debug_info    0x000000000001cdb3      0xafd Src/stm32f1xx_hal_timebase_tim.o
- .debug_info    0x000000000001d8b0      0xb8b Src/stm32f1xx_it.o
- .debug_info    0x000000000001e43b      0x48c Src/system_stm32f1xx.o
- .debug_info    0x000000000001e8c7     0x3a5e Yakindu/src-gen/Nixie.o
- .debug_info    0x0000000000022325       0x22 startup/startup_stm32f103xb.o
+ .debug_info    0x00000000000176b6     0x1ee4 Src/main.o
+ .debug_info    0x000000000001959a     0x205a Src/nixieDisplay.o
+ .debug_info    0x000000000001b5f4     0x10ce Src/stm32f1xx_hal_msp.o
+ .debug_info    0x000000000001c6c2      0xafd Src/stm32f1xx_hal_timebase_tim.o
+ .debug_info    0x000000000001d1bf      0xb8b Src/stm32f1xx_it.o
+ .debug_info    0x000000000001dd4a      0x48c Src/system_stm32f1xx.o
+ .debug_info    0x000000000001e1d6     0x3a5e Yakindu/src-gen/Nixie.o
+ .debug_info    0x0000000000021c34       0x22 startup/startup_stm32f103xb.o
 
-.debug_abbrev   0x0000000000000000     0x3b29
+.debug_abbrev   0x0000000000000000     0x3af9
  .debug_abbrev  0x0000000000000000      0x21c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_abbrev  0x000000000000021c      0x36a Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_abbrev  0x0000000000000586      0x265 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -4705,15 +4704,15 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_abbrev  0x0000000000002801      0x243 Src/DS3231.o
  .debug_abbrev  0x0000000000002a44      0x11d Src/freertos.o
  .debug_abbrev  0x0000000000002b61      0x2e8 Src/main.o
- .debug_abbrev  0x0000000000002e49      0x31b Src/nixieDisplay.o
- .debug_abbrev  0x0000000000003164      0x241 Src/stm32f1xx_hal_msp.o
- .debug_abbrev  0x00000000000033a5      0x21c Src/stm32f1xx_hal_timebase_tim.o
- .debug_abbrev  0x00000000000035c1      0x1dc Src/stm32f1xx_it.o
- .debug_abbrev  0x000000000000379d      0x154 Src/system_stm32f1xx.o
- .debug_abbrev  0x00000000000038f1      0x226 Yakindu/src-gen/Nixie.o
- .debug_abbrev  0x0000000000003b17       0x12 startup/startup_stm32f103xb.o
+ .debug_abbrev  0x0000000000002e49      0x2eb Src/nixieDisplay.o
+ .debug_abbrev  0x0000000000003134      0x241 Src/stm32f1xx_hal_msp.o
+ .debug_abbrev  0x0000000000003375      0x21c Src/stm32f1xx_hal_timebase_tim.o
+ .debug_abbrev  0x0000000000003591      0x1dc Src/stm32f1xx_it.o
+ .debug_abbrev  0x000000000000376d      0x154 Src/system_stm32f1xx.o
+ .debug_abbrev  0x00000000000038c1      0x226 Yakindu/src-gen/Nixie.o
+ .debug_abbrev  0x0000000000003ae7       0x12 startup/startup_stm32f103xb.o
 
-.debug_loc      0x0000000000000000    0x13d3d
+.debug_loc      0x0000000000000000    0x13d00
  .debug_loc     0x0000000000000000      0x141 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_loc     0x0000000000000141      0x71f Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_loc     0x0000000000000860      0x7d1 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -4729,14 +4728,14 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_loc     0x0000000000010383       0xe8 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_loc     0x000000000001046b      0x320 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_loc     0x000000000001078b      0x2d1 Src/DS3231.o
- .debug_loc     0x0000000000010a5c      0x1b2 Src/main.o
- .debug_loc     0x0000000000010c0e      0x5cb Src/nixieDisplay.o
- .debug_loc     0x00000000000111d9      0x18b Src/stm32f1xx_hal_msp.o
- .debug_loc     0x0000000000011364       0x89 Src/stm32f1xx_hal_timebase_tim.o
- .debug_loc     0x00000000000113ed       0xff Src/system_stm32f1xx.o
- .debug_loc     0x00000000000114ec     0x2851 Yakindu/src-gen/Nixie.o
+ .debug_loc     0x0000000000010a5c      0x1df Src/main.o
+ .debug_loc     0x0000000000010c3b      0x561 Src/nixieDisplay.o
+ .debug_loc     0x000000000001119c      0x18b Src/stm32f1xx_hal_msp.o
+ .debug_loc     0x0000000000011327       0x89 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_loc     0x00000000000113b0       0xff Src/system_stm32f1xx.o
+ .debug_loc     0x00000000000114af     0x2851 Yakindu/src-gen/Nixie.o
 
-.debug_aranges  0x0000000000000000     0x1850
+.debug_aranges  0x0000000000000000     0x1848
  .debug_aranges
                 0x0000000000000000       0xe0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_aranges
@@ -4772,21 +4771,21 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_aranges
                 0x00000000000010c0       0x98 Src/main.o
  .debug_aranges
-                0x0000000000001158       0xf0 Src/nixieDisplay.o
+                0x0000000000001158       0xe8 Src/nixieDisplay.o
  .debug_aranges
-                0x0000000000001248       0x40 Src/stm32f1xx_hal_msp.o
+                0x0000000000001240       0x40 Src/stm32f1xx_hal_msp.o
  .debug_aranges
-                0x0000000000001288       0x30 Src/stm32f1xx_hal_timebase_tim.o
+                0x0000000000001280       0x30 Src/stm32f1xx_hal_timebase_tim.o
  .debug_aranges
-                0x00000000000012b8       0x80 Src/stm32f1xx_it.o
+                0x00000000000012b0       0x80 Src/stm32f1xx_it.o
  .debug_aranges
-                0x0000000000001338       0x28 Src/system_stm32f1xx.o
+                0x0000000000001330       0x28 Src/system_stm32f1xx.o
  .debug_aranges
-                0x0000000000001360      0x4c8 Yakindu/src-gen/Nixie.o
+                0x0000000000001358      0x4c8 Yakindu/src-gen/Nixie.o
  .debug_aranges
-                0x0000000000001828       0x28 startup/startup_stm32f103xb.o
+                0x0000000000001820       0x28 startup/startup_stm32f103xb.o
 
-.debug_ranges   0x0000000000000000     0x1920
+.debug_ranges   0x0000000000000000     0x1918
  .debug_ranges  0x0000000000000000       0xd0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_ranges  0x00000000000000d0       0xe0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_ranges  0x00000000000001b0       0x70 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -4804,13 +4803,13 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_ranges  0x0000000000001170       0x50 Src/DS3231.o
  .debug_ranges  0x00000000000011c0       0x10 Src/freertos.o
  .debug_ranges  0x00000000000011d0       0x88 Src/main.o
- .debug_ranges  0x0000000000001258      0x118 Src/nixieDisplay.o
- .debug_ranges  0x0000000000001370       0x30 Src/stm32f1xx_hal_msp.o
- .debug_ranges  0x00000000000013a0       0x20 Src/stm32f1xx_hal_timebase_tim.o
- .debug_ranges  0x00000000000013c0       0x70 Src/stm32f1xx_it.o
- .debug_ranges  0x0000000000001430       0x18 Src/system_stm32f1xx.o
- .debug_ranges  0x0000000000001448      0x4b8 Yakindu/src-gen/Nixie.o
- .debug_ranges  0x0000000000001900       0x20 startup/startup_stm32f103xb.o
+ .debug_ranges  0x0000000000001258      0x110 Src/nixieDisplay.o
+ .debug_ranges  0x0000000000001368       0x30 Src/stm32f1xx_hal_msp.o
+ .debug_ranges  0x0000000000001398       0x20 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_ranges  0x00000000000013b8       0x70 Src/stm32f1xx_it.o
+ .debug_ranges  0x0000000000001428       0x18 Src/system_stm32f1xx.o
+ .debug_ranges  0x0000000000001440      0x4b8 Yakindu/src-gen/Nixie.o
+ .debug_ranges  0x00000000000018f8       0x20 startup/startup_stm32f103xb.o
 
 .debug_macro    0x0000000000000000    0x19afe
  .debug_macro   0x0000000000000000      0x1c7 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
@@ -4915,7 +4914,7 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x00000000000198c1      0x1a9 Src/system_stm32f1xx.o
  .debug_macro   0x0000000000019a6a       0x94 Yakindu/src-gen/Nixie.o
 
-.debug_line     0x0000000000000000    0x1e9c1
+.debug_line     0x0000000000000000    0x1e8da
  .debug_line    0x0000000000000000      0x990 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_line    0x0000000000000990      0xb08 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_line    0x0000000000001498      0xef9 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -4932,16 +4931,16 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000000000017003      0xa39 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_line    0x0000000000017a3c      0xd6d Src/DS3231.o
  .debug_line    0x00000000000187a9      0x77e Src/freertos.o
- .debug_line    0x0000000000018f27      0xfad Src/main.o
- .debug_line    0x0000000000019ed4      0xe06 Src/nixieDisplay.o
- .debug_line    0x000000000001acda      0x827 Src/stm32f1xx_hal_msp.o
- .debug_line    0x000000000001b501      0x704 Src/stm32f1xx_hal_timebase_tim.o
- .debug_line    0x000000000001bc05      0x7cf Src/stm32f1xx_it.o
- .debug_line    0x000000000001c3d4      0x758 Src/system_stm32f1xx.o
- .debug_line    0x000000000001cb2c     0x1e18 Yakindu/src-gen/Nixie.o
- .debug_line    0x000000000001e944       0x7d startup/startup_stm32f103xb.o
+ .debug_line    0x0000000000018f27      0xfac Src/main.o
+ .debug_line    0x0000000000019ed3      0xd20 Src/nixieDisplay.o
+ .debug_line    0x000000000001abf3      0x827 Src/stm32f1xx_hal_msp.o
+ .debug_line    0x000000000001b41a      0x704 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_line    0x000000000001bb1e      0x7cf Src/stm32f1xx_it.o
+ .debug_line    0x000000000001c2ed      0x758 Src/system_stm32f1xx.o
+ .debug_line    0x000000000001ca45     0x1e18 Yakindu/src-gen/Nixie.o
+ .debug_line    0x000000000001e85d       0x7d startup/startup_stm32f103xb.o
 
-.debug_str      0x0000000000000000    0x94b8c
+.debug_str      0x0000000000000000    0x94b7f
  .debug_str     0x0000000000000000    0x8339d Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
                                       0x8383c (size before relaxing)
  .debug_str     0x000000000008339d      0x2bc Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
@@ -4974,21 +4973,21 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                                       0x838b4 (size before relaxing)
  .debug_str     0x0000000000092473      0x63d Src/freertos.o
                                       0x871f5 (size before relaxing)
- .debug_str     0x0000000000092ab0      0x8a5 Src/main.o
-                                      0x8af7a (size before relaxing)
- .debug_str     0x0000000000093355      0x752 Src/nixieDisplay.o
-                                      0x84fbb (size before relaxing)
- .debug_str     0x0000000000093aa7       0x25 Src/stm32f1xx_hal_msp.o
+ .debug_str     0x0000000000092ab0      0x8ad Src/main.o
+                                      0x8af82 (size before relaxing)
+ .debug_str     0x000000000009335d      0x73d Src/nixieDisplay.o
+                                      0x84fae (size before relaxing)
+ .debug_str     0x0000000000093a9a       0x25 Src/stm32f1xx_hal_msp.o
                                       0x842bc (size before relaxing)
- .debug_str     0x0000000000093acc       0x50 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_str     0x0000000000093abf       0x50 Src/stm32f1xx_hal_timebase_tim.o
                                       0x83a3b (size before relaxing)
- .debug_str     0x0000000000093b1c       0xfa Src/stm32f1xx_it.o
+ .debug_str     0x0000000000093b0f       0xfa Src/stm32f1xx_it.o
                                       0x83f82 (size before relaxing)
- .debug_str     0x0000000000093c16       0x69 Src/system_stm32f1xx.o
+ .debug_str     0x0000000000093c09       0x69 Src/system_stm32f1xx.o
                                       0x831db (size before relaxing)
- .debug_str     0x0000000000093c7f      0xede Yakindu/src-gen/Nixie.o
+ .debug_str     0x0000000000093c72      0xede Yakindu/src-gen/Nixie.o
                                        0x5797 (size before relaxing)
- .debug_str     0x0000000000094b5d       0x2f startup/startup_stm32f103xb.o
+ .debug_str     0x0000000000094b50       0x2f startup/startup_stm32f103xb.o
                                          0x6d (size before relaxing)
 
 .comment        0x0000000000000000       0x53
@@ -5017,7 +5016,7 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .comment       0x0000000000000053       0x54 Src/system_stm32f1xx.o
  .comment       0x0000000000000053       0x54 Yakindu/src-gen/Nixie.o
 
-.debug_frame    0x0000000000000000     0x44bc
+.debug_frame    0x0000000000000000     0x44a0
  .debug_frame   0x0000000000000000      0x1cc Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
  .debug_frame   0x00000000000001cc      0x12c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .debug_frame   0x00000000000002f8      0x148 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
@@ -5034,12 +5033,12 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_frame   0x0000000000002f24       0xac Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_frame   0x0000000000002fd0       0xfc Src/DS3231.o
  .debug_frame   0x00000000000030cc       0x20 Src/freertos.o
- .debug_frame   0x00000000000030ec      0x1cc Src/main.o
- .debug_frame   0x00000000000032b8      0x28c Src/nixieDisplay.o
- .debug_frame   0x0000000000003544       0xa4 Src/stm32f1xx_hal_msp.o
- .debug_frame   0x00000000000035e8       0x50 Src/stm32f1xx_hal_timebase_tim.o
- .debug_frame   0x0000000000003638      0x118 Src/stm32f1xx_it.o
- .debug_frame   0x0000000000003750       0x30 Src/system_stm32f1xx.o
- .debug_frame   0x0000000000003780      0xce8 Yakindu/src-gen/Nixie.o
- .debug_frame   0x0000000000004468       0x2c c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
- .debug_frame   0x0000000000004494       0x28 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000000000030ec      0x1c8 Src/main.o
+ .debug_frame   0x00000000000032b4      0x274 Src/nixieDisplay.o
+ .debug_frame   0x0000000000003528       0xa4 Src/stm32f1xx_hal_msp.o
+ .debug_frame   0x00000000000035cc       0x50 Src/stm32f1xx_hal_timebase_tim.o
+ .debug_frame   0x000000000000361c      0x118 Src/stm32f1xx_it.o
+ .debug_frame   0x0000000000003734       0x30 Src/system_stm32f1xx.o
+ .debug_frame   0x0000000000003764      0xce8 Yakindu/src-gen/Nixie.o
+ .debug_frame   0x000000000000444c       0x2c c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000004478       0x28 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)

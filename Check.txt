@@ -1,12 +1,4 @@
 Hardware:
-chequear polaridad del holder de bateria
 regenerar los gerbers ,pdf y modelo 3d, BOM
 
-
 Software:
-apagar todos los pines del nixie al iniciar (ver en que estado arrancan los gpio output al bootear)
-led de botones
-funcion nixieLed
-frecuencia de nixie (20ms?)
-funcionamiento botones
-ver frecuencia de los timers

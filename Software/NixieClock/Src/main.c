@@ -115,7 +115,7 @@ uint8_t event(){
 		if(!buttonFlag[E_B1]){
 			aux=E_B1;
 			if(start[E_B1]){
-				buttonFlag[E_B1]=10;
+				buttonFlag[E_B1]=20;
 				start[E_B1]=0;
 			}else{
 				buttonFlag[E_B1]=1;
@@ -129,7 +129,7 @@ uint8_t event(){
 		if(!buttonFlag[E_B2]){
 			aux=E_B2;
 			if(start[E_B2]){
-				buttonFlag[E_B2]=10;
+				buttonFlag[E_B2]=20;
 				start[E_B2]=0;
 			}else{
 				buttonFlag[E_B2]=1;
@@ -143,7 +143,7 @@ uint8_t event(){
 		if(!buttonFlag[E_B3]){
 			aux=E_B3;
 			if(start[E_B3]){
-				buttonFlag[E_B3]=10;
+				buttonFlag[E_B3]=20;
 				start[E_B3]=0;
 			}else{
 				buttonFlag[E_B3]=1;
@@ -157,7 +157,7 @@ uint8_t event(){
 		if(!buttonFlag[E_SENSOR]){
 			start[E_SENSOR]=!start[E_SENSOR];
 			aux=E_SENSOR;
-			buttonFlag[E_SENSOR]=1;
+			buttonFlag[E_SENSOR]=10;
 		}
 	}
 	return aux;
@@ -180,7 +180,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  resetGpio();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -665,40 +665,55 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+  if (htim->Instance == TIM2){
+	  //base freq =72 Mhz
+	  //precaler 17999
+	  //counter 499
+	  //per int = (18000/72M)*500 = 125ms
+     nixieBuzzer(B_PERIOD,B_ACTIVITY);
+  }
   if(htim->Instance == TIM3){
+	  //base freq =72 Mhz
+	  //precaler 999
+	  //counter 71
+	  //per int = (1000/72M)*72 = 1ms
 	  nixieTickUpdate();
   }
   if(htim->Instance==TIM4){
+	  //base freq =72 Mhz
+	  //precaler 999
+	  //counter 143
+	  //period int = (1000/72M)*144 = 2ms
 	 if (!aux){
+		//period = 500ms
 		getRTC(&hi2c2);
 	 }
 
 	 if(!aux2){
-			if(buttonFlag[E_B1]){
-				buttonFlag[E_B1]--;
-			}
-			if(buttonFlag[E_B2]){
-				buttonFlag[E_B2]--;
-			}
-			if(buttonFlag[E_B3]){
-				buttonFlag[E_B3]--;
-			}
-			if(buttonFlag[E_SENSOR]){
-				buttonFlag[E_SENSOR]--;
-			}
+		//period = 100ms
+		if(buttonFlag[E_B1]){
+			buttonFlag[E_B1]--;
+		}
+		if(buttonFlag[E_B2]){
+			buttonFlag[E_B2]--;
+		}
+		if(buttonFlag[E_B3]){
+			buttonFlag[E_B3]--;
+		}
+		if(buttonFlag[E_SENSOR]){
+			buttonFlag[E_SENSOR]--;
+		}
 	 }
-
-	 //nixieDisplay();
-	 segmentDisplay();
+	 //total time for 1 cycle of nixie 6*2ms =12ms <20ms
+	 nixieDisplay();
+	 //segmentDisplay();
 	 nixieLed();
 	 aux++;
 	 aux2++;
-	 aux2%=100;
+	 aux2%=50;
 	 aux%=250;
   }
-  if (htim->Instance == TIM2){
-     nixieBuzzer(B_PERIOD,B_ACTIVITY);
-  }
+
   /* USER CODE END Callback 1 */
 }
 
