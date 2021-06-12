@@ -1,48 +1,49 @@
-﻿Field=#~Integer~#~50|Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~NixieClock_B2.PrjPcb|ReportField=ProjectFullPath~C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\NixieClock_B2.PrjPcb|ReportField=Title~Bill of Materials For Project [NixieClock_B2.PrjPcb] (No PCB Document Selected)|ReportField=ReportTime~16:07:15|ReportField=ReportDate~09/05/2021|ReportField=ReportDateTime~09/05/2021 16:07:15|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=TotalQuantity~81|ReportField=TotalActualPrice~0|ReportField=TotalTargetPrice~0|ReportField=VersionControl_RevNumber~|ReportField=VersionControl_ProjFolderRevNumber~b9db2766777b2a99aaf9c1575833ab38fc21f645|ReportField=Address1~2|ReportField=Address2~2|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~Manuel Diaz Alonso|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~09/05/2021|ReportField=CurrentTime~15:53:46|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\nixie_peripherals.SchDoc|ReportField=DocumentName~nixie_peripherals.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~30/04/2021|ReportField=Organization~|ReportField=ProjectName~NixieClock_B2.PrjPcb|ReportField=Revision~1|ReportField=Rule~|ReportField=SheetNumber~2|ReportField=SheetTotal~2|ReportField=Time~|ReportField=Title~Nixie Peripherals|ReportField=DataSourceFileName~NixieClock_B2.PrjPcb|ReportField=DataSourceFullPath~C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\NixieClock_B2.PrjPcb|ReportField=PCBConfigurationName~Sources|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~NixieClock_B2.PrjPcb|ReportField=ProjectFullPath~C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\NixieClock_B2.PrjPcb|ReportField=Title~Bill of Materials For Project [NixieClock_B2.PrjPcb] (No PCB Document Selected)|ReportField=ReportTime~2:19:48|ReportField=ReportDate~12/06/2021|ReportField=ReportDateTime~12/06/2021 2:19:48|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=TotalQuantity~81|ReportField=TotalActualPrice~0|ReportField=TotalTargetPrice~0|ReportField=VersionControl_RevNumber~|ReportField=VersionControl_ProjFolderRevNumber~e0655c9dad4303fd89b29ab6dc3091c682548c98|ReportField=Address1~2|ReportField=Address2~2|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~Manuel Diaz Alonso|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~12/06/2021|ReportField=CurrentTime~2:19:42|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\nixie_peripherals.SchDoc|ReportField=DocumentName~nixie_peripherals.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~10/06/2021|ReportField=Organization~|ReportField=ProjectName~NixieClock_B2.PrjPcb|ReportField=Revision~1|ReportField=Rule~|ReportField=SheetNumber~2|ReportField=SheetTotal~2|ReportField=Time~|ReportField=Title~Nixie Peripherals|ReportField=DataSourceFileName~NixieClock_B2.PrjPcb|ReportField=DataSourceFullPath~C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\NixieClock_B2.PrjPcb|ReportField=PCBConfigurationName~Sources|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
 1|BUZZER||A1|BUZZER|BUZZER|1
-2|3V||A2|HOLDER-2032|BAT|1
-3|100nF 16V||C1, C6, C7, C9, C18, C21, C22, C23, C25, C26|0603|CAP|10
-4|(10-50)nF 16V||C2|0603|CAP|1
-5|1uF 16V||C3, C4, C5, C24|0603|CAP|4
-6|10uF 16V||C8, C27|0603|CAP|2
-7|100pF 16V||C10|0603|CAP|1
-8|15nF 16V||C11|0603|CAP|1
-9|47uF  4V||C12|AVX-B-CASE|CAP_pol|1
-10|10nF 16V||C13, C20|0603|CAP|2
-11|22pF 16V||C14, C15|0603|CAP|2
-12|220uF  16V||C16|CAP-SIZE-F|CAP_pol|1
-13|2.2uF  250V||C17|CAP-SIZE-F|CAP_pol|1
-14|1nF 16V||C19|0603|CAP|1
-15|STPS1L20MF||D1, D2|DO-222AA|DIO|2
-16|US1G-13-f||D3|SMA|DIO|1
-17|BAS16H||D4|SOD-123F|DIO|1
-18|PIN_2X10||J1, J2|PIN_2X10_SKT|PIN_2X10|2
-19|HEADERx10||J3|HEADERx10|HEADERx10|1
-20|Vin||J4|HEADERx2_POL|Vin|1
-21|JTAG||J5|PIN_1X4_HDR_RA|JTAG|1
+2|100nF 16V||C1, C6, C7, C9, C18, C21, C22, C23, C25, C26|0603|CAP|10
+3|2.2nF 16V||C2|0603|CAP|1
+4|1uF 16V||C3, C4, C5, C24|0603|CAP|4
+5|10uF 16V||C8, C27|0603|CAP|2
+6|100pF 16V||C10|0603|CAP|1
+7|15nF 16V||C11|0603|CAP|1
+8|47uF  4V||C12|AVX-B-CASE|CAP_pol|1
+9|10nF 16V||C13, C20|0603|CAP|2
+10|22pF 16V||C14, C15|0603|CAP|2
+11|220uF  16V||C16|CAP-SIZE-F|CAP_pol|1
+12|2.2uF  250V||C17|CAP-SIZE-F|CAP_pol|1
+13|1nF 16V||C19|0603|CAP|1
+14|STPS1L20MF||D1, D2|DO-222AA|DIO|2
+15|US1G-13-f||D3|SMA|DIO|1
+16|BAS16H||D4|SOD-123F|DIO|1
+17|PIN_2X10|SSW-110-01-L-D|J1, J2|PIN_2X10_SKT|PIN_2X10|2
+18|HEADERx10|1-282837-0|J3|HEADERx10|HEADERx10|1
+19|Vin|282837-2|J4|HEADERx2_POL|Vin|1
+20|JTAG|TSW-104-08-F-S-RA|J5|PIN_1X4_HDR_RA|JTAG|1
+21|BAT|CR2032|J6|120591-1|BAT|1
 22|150uH  10%|SRR1240|L1|SRR1240|IND|1
 23|220uH  20%|B82477P4|L2|12.5x12.5|IND|1
 24|500Ω   10N||P1|3006P|POTE|1
-25|10KΩ   1%||R1, R3, R5, R6, R7, R22, R23, R24, R25|0603|RES|9
-26|33KΩ   1%||R2|0603|RES|1
-27|1MΩ   1%||R4, R18|0603|RES|2
-28|470Ω   1%||R8, R9, R10|0603|RES|3
-29|4.7KΩ   1%||R11, R12, R13|0603|RES|3
-30|9.1KΩ   1%||R14|0603|RES|1
-31|13KΩ   1%||R15|0603|RES|1
-32|5.49KΩ   1%||R16|0603|RES|1
-33|10mΩ   1%||R17|0603|RES|1
-34|680KΩ   1%||R19|0603|RES|1
-35|1KΩ   1%||R20|0603|RES|1
-36|4.53KΩ   1%||R21|0603|RES|1
-37|RESET||S1|FSMSM|BUTTON|1
-38|MMBTA42||T1, T2|SOT-23|NPN|2
-39|IRF644s||T3|TO263-3S|N-MOS|1
-40|MMBTA92||T4|SOT-23|PNP|1
-41|TEST-POINT||TP1, TP2, TP3, TP4|Test_Point|TEST-POINT|4
-42|AT42QT1012||U1|SOT-23-6|AT42QT1012|1
-43|STM32F103C8T6||U2|LQFP48|STM32F103C8T6|1
-44|DS3231||U3|SO16W|DS3231|1
-45|A5972D||U4|SOIC-8|A5972D|1
-46|MC34063||U5|SOIC-8|MC34063|1
-47|ABM3B-8MHz||Y1|ABM3B|Cristal|1
+25|MMBTA42||Q1, Q2|SOT-23|NPN|2
+26|IRF644s||Q3|TO263-3S|N-MOS|1
+27|MMBTA92||Q4|SOT-23|PNP|1
+28|10KΩ   1%||R1, R5, R6, R7, R22, R23, R24, R25|0603|RES|8
+29|33KΩ   1%||R2|0603|RES|1
+30|100KΩ   1%||R3|0603|RES|1
+31|1MΩ   1%||R4, R18|0603|RES|2
+32|470Ω   1%||R8, R9, R10|0603|RES|3
+33|4.7KΩ   1%||R11, R12, R13|0603|RES|3
+34|9.1KΩ   1%||R14|0603|RES|1
+35|13KΩ   1%||R15|0603|RES|1
+36|5.49KΩ   1%||R16|0603|RES|1
+37|10mΩ   1%||R17|0603|RES|1
+38|680KΩ   1%||R19|0603|RES|1
+39|1KΩ   1%||R20|0603|RES|1
+40|4.53KΩ   1%||R21|0603|RES|1
+41|RESET||S1|FSMSM|BUTTON|1
+42|TEST-POINT||TP1, TP2, TP3, TP4|Test_Point|TEST-POINT|4
+43|AT42QT1012||U1|SOT-23-6|AT42QT1012|1
+44|STM32F103C8T6||U2|LQFP48|STM32F103C8T6|1
+45|DS3231||U3|SO16W|DS3231|1
+46|A5972D||U4|SOIC-8|A5972D|1
+47|MC34063||U5|SOIC-8|MC34063|1
+48|8MHz|ABM3B|Y1|ABM3B|Cristal|1

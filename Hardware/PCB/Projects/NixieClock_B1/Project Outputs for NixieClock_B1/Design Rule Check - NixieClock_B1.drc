@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B1\NixieClock_B1.PcbDoc
-Date     : 30/04/2021
-Time     : 3:41:16
+Date     : 12/06/2021
+Time     : 2:40:05
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
@@ -42,4 +42,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:00

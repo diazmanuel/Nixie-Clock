@@ -1,15 +1,15 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Manuel\Desktop\Nixie-Clock\Hardware\PCB\Projects\NixieClock_B2\NixieClock_B2.PcbDoc
-Date     : 30/04/2021
-Time     : 16:28:11
+Date     : 12/06/2021
+Time     : 2:40:20
 
-Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
+Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=10mil) (InNamedPolygon('Bottom Layer-No Net')),(All)
+Processing Rule : Clearance Constraint (Gap=0.254mm) (InNamedPolygon('Bottom Layer-No Net')),(All)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=10mil) (InNamedPolygon('Top Layer-No Net')),(All)
+Processing Rule : Clearance Constraint (Gap=0.254mm) (InNamedPolygon('Top Layer-No Net')),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
@@ -21,19 +21,19 @@ Rule Violations :0
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=6mil) (Max=50mil) (Preferred=20mil) (All)
+Processing Rule : Width Constraint (Min=0.152mm) (Max=1.27mm) (Preferred=0.508mm) (All)
 Rule Violations :0
 
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
 Rule Violations :0
 
-Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
-Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:00
+Time Elapsed        : 00:00:01

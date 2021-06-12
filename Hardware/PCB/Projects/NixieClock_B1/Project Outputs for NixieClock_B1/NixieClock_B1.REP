@@ -2,38 +2,6 @@
 FileName = NixieClock_B1.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 1
-      File : NixieClock_B1.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D11
-*************************************************************
-
-*************************************************************
-Generating : Keep-Out Layer
-      File : NixieClock_B1.GKO
-
-    Adding Layer      : Keep-Out Layer
-
-
-Used DCodes :
-    D11
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : NixieClock_B1.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
 Generating : Bottom Paste
       File : NixieClock_B1.GBP
 
@@ -64,25 +32,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Solder
-      File : NixieClock_B1.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D16
-    D17
-    D18
-    D19
-    D20
-*************************************************************
-
-*************************************************************
 Generating : Top Paste
       File : NixieClock_B1.GTP
 
@@ -100,32 +49,54 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Overlay
-      File : NixieClock_B1.GTO
+Generating : Keep-Out Layer
+      File : NixieClock_B1.GKO
 
-    Adding Layer      : Top Overlay
+    Adding Layer      : Keep-Out Layer
 
 
 Used DCodes :
-    D10
     D11
-    D12
 *************************************************************
 
 *************************************************************
-Generating : Bottom Layer
-      File : NixieClock_B1.GBL
+Generating : Mechanical 1
+      File : NixieClock_B1.GM1
 
-    Adding Layer      : Bottom Layer
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : NixieClock_B1.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : NixieClock_B1.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D10
-    D11
-    D22
-    D23
+    D16
+    D17
+    D18
+    D19
+    D20
 *************************************************************
 
 *************************************************************
@@ -146,5 +117,34 @@ Used DCodes :
     D21
     D22
     D23
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : NixieClock_B1.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D22
+    D23
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : NixieClock_B1.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
 *************************************************************
 

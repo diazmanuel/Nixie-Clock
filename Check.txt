@@ -1,4 +1,6 @@
 Hardware:
-regenerar los gerbers ,pdf y modelo 3d, BOM
 
 Software:
+
+Modelo 3D:
+actualizar con los modelos de ambos pcb
