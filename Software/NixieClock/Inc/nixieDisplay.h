@@ -43,9 +43,8 @@ typedef void (*raise_event_cb_t)(void *, sc_eventid);
 #define WHITE 0x07
 #define BLACK 0x00
 
+#define DUTY 1 //10%
 
-//void segment(uint8_t);
-//void segmentDisplay();
 void resetGpio();
 void nixieDisplay();
 void nixieTickUpdate();
@@ -55,7 +54,7 @@ void nixieEvent(uint8_t event);
 uint8_t nixieBuzzer(uint8_t Period, uint8_t Activity);
 void resetVarNixie();
 void nixieLed();
-
+void testni();
 uint8_t stateTimer_start(void * sm_handle, sc_eventid ev_id, raise_event_cb_t cb,uint32_t timeout, bool periodic);
 void stateTimer_update(void);
 uint8_t stateTimer_stop(sc_eventid ev_id);

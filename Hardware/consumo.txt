@@ -1,0 +1,7 @@
+logica 23ma
+luz boton 1ma x 3 3ma
+valvulas x6 7ma
+led white 12ma x 8 100ma 
+
+consumo maximo 150ma
+pot max 2w

@@ -87,7 +87,7 @@ osThreadId AlarmHandle;
 osMessageQId Q_ButtonsHandle;
 osSemaphoreId S_AlarmHandle;
 /* USER CODE BEGIN PV */
-uint8_t buttonFlag[5]={0,0,0,0,0};
+uint8_t buttonFlag[6]={0,0,0,0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,8 +109,8 @@ void StartAlarmTask(void const * argument);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t event(){
-	uint8_t aux=0;
-	static uint8_t start[5]={1,1,1,0,0};
+	uint8_t aux=0,aux2=0;
+	static uint8_t start[6]={0,1,1,1,0,1};
 	if((HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin))==GPIO_PIN_RESET){
 		if(!buttonFlag[E_B1]){
 			aux=E_B1;
@@ -153,7 +153,8 @@ uint8_t event(){
 		buttonFlag[E_B3]=0;
 		start[E_B3]=1;
 	}
-	if((HAL_GPIO_ReadPin(SENSOR_GPIO_Port,SENSOR_Pin))!=start[E_SENSOR]){
+	aux2= HAL_GPIO_ReadPin(SENSOR_GPIO_Port,SENSOR_Pin);
+	if(aux2!=start[E_SENSOR]){
 		if(!buttonFlag[E_SENSOR]){
 			start[E_SENSOR]=!start[E_SENSOR];
 			aux=E_SENSOR;
@@ -441,7 +442,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 999;
+  htim4.Init.Prescaler = 99;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 143;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -502,13 +503,13 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, LedRed_Pin|LedBlue_Pin|LedGreen_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, Buzzer_Pin|BL_Pin|Nixie_0_Pin|NixieCrl_P_Pin
-                          |Nixie_5_Pin|Nixie_4_Pin|Nixie_1_Pin|Nixie_2_Pin
-                          |Nixie_3_Pin|NixieCrl_0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, Buzzer_Pin|BL_Pin|Nixie_1_Pin|NixieCrl_P_Pin
+                          |Nixie_6_Pin|Nixie_7_Pin|Nixie_0_Pin|Nixie_9_Pin
+                          |Nixie_8_Pin|NixieCrl_0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin
-                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin
+  HAL_GPIO_WritePin(GPIOB, Nixie_DP_Pin|Nixie_LP_Pin|Nixie_2_Pin|Nixie_3_Pin
+                          |Nixie_4_Pin|Nixie_5_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin
                           |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LedRed_Pin LedBlue_Pin LedGreen_Pin */
@@ -518,12 +519,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Buzzer_Pin BL_Pin Nixie_0_Pin NixieCrl_P_Pin
-                           Nixie_5_Pin Nixie_4_Pin Nixie_1_Pin Nixie_2_Pin
-                           Nixie_3_Pin NixieCrl_0_Pin */
-  GPIO_InitStruct.Pin = Buzzer_Pin|BL_Pin|Nixie_0_Pin|NixieCrl_P_Pin
-                          |Nixie_5_Pin|Nixie_4_Pin|Nixie_1_Pin|Nixie_2_Pin
-                          |Nixie_3_Pin|NixieCrl_0_Pin;
+  /*Configure GPIO pins : Buzzer_Pin BL_Pin Nixie_1_Pin NixieCrl_P_Pin
+                           Nixie_6_Pin Nixie_7_Pin Nixie_0_Pin Nixie_9_Pin
+                           Nixie_8_Pin NixieCrl_0_Pin */
+  GPIO_InitStruct.Pin = Buzzer_Pin|BL_Pin|Nixie_1_Pin|NixieCrl_P_Pin
+                          |Nixie_6_Pin|Nixie_7_Pin|Nixie_0_Pin|Nixie_9_Pin
+                          |Nixie_8_Pin|NixieCrl_0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -547,11 +548,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(B3_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Nixie_LP_Pin Nixie_DP_Pin Nixie_9_Pin Nixie_8_Pin
-                           Nixie_7_Pin Nixie_6_Pin NixieCrl_1_Pin NixieCrl_2_Pin
+  /*Configure GPIO pins : Nixie_DP_Pin Nixie_LP_Pin Nixie_2_Pin Nixie_3_Pin
+                           Nixie_4_Pin Nixie_5_Pin NixieCrl_1_Pin NixieCrl_2_Pin
                            NixieCrl_3_Pin NixieCrl_4_Pin NixieCrl_5_Pin */
-  GPIO_InitStruct.Pin = Nixie_LP_Pin|Nixie_DP_Pin|Nixie_9_Pin|Nixie_8_Pin
-                          |Nixie_7_Pin|Nixie_6_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin
+  GPIO_InitStruct.Pin = Nixie_DP_Pin|Nixie_LP_Pin|Nixie_2_Pin|Nixie_3_Pin
+                          |Nixie_4_Pin|Nixie_5_Pin|NixieCrl_1_Pin|NixieCrl_2_Pin
                           |NixieCrl_3_Pin|NixieCrl_4_Pin|NixieCrl_5_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -583,6 +584,8 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c){
 		loadRTC();
 	}
 }
+
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartPullingTask */
@@ -681,9 +684,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   if(htim->Instance==TIM4){
 	  //base freq =72 Mhz
-	  //precaler 999
+	  //precaler 99
 	  //counter 143
-	  //period int = (1000/72M)*144 = 2ms
+	  //period int = (100/72M)*144 = 200us
 	 if (!aux){
 		//period = 500ms
 		getRTC(&hi2c2);
@@ -704,14 +707,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			buttonFlag[E_SENSOR]--;
 		}
 	 }
-	 //total time for 1 cycle of nixie 6*2ms =12ms <20ms
-	 nixieDisplay();
-	 //segmentDisplay();
+	 nixieDisplay(); //periodo de 200us * 10 = 2ms con duty 10%
 	 nixieLed();
 	 aux++;
 	 aux2++;
-	 aux2%=50;
-	 aux%=250;
+	 aux2%=500;
+	 aux%=2500;
   }
 
   /* USER CODE END Callback 1 */
